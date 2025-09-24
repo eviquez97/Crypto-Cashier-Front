@@ -127,7 +127,7 @@ class CashiraFrontendHandler(http.server.SimpleHTTPRequestHandler):
 
 def main():
     """Main function"""
-    port = int(os.getenv('FRONTEND_PORT', 3000))
+    port = int(os.getenv(\'PORT\', os.getenv(\'FRONTEND_PORT\', 3000)))
     
     print(f"🚀 Starting Cashira Frontend Server")
     print(f"📁 Serving files from: {os.getcwd()}")

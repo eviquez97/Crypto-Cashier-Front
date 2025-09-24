@@ -422,3 +422,5 @@ class CashiraApp {
 document.addEventListener('DOMContentLoaded', () => {
     window.app = new CashiraApp();
 });
+#   U p d a t e d   0 9 / 2 4 / 2 0 2 5   1 4 : 1 9 : 1 8  
+ 

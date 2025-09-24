@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashira - Crypto Cashier</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-coins"></i>
+                    <h1>Cashira</h1>
+                </div>
+                <nav class="nav">
+                    <button id="loginBtn" class="btn btn-primary">Iniciar Sesión</button>
+                    <button id="logoutBtn" class="btn btn-secondary" style="display: none;">Cerrar Sesión</button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Login Modal -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Iniciar Sesión</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- Dashboard -->
+                <div id="dashboard" class="dashboard" style="display: none;">
+                    <div class="dashboard-header">
+                        <h2>Panel de Control</h2>
+                        <div class="user-info">
+                            <span id="userEmail"></span>
+                            <span id="userRole"></span>
+                        </div>
+                    </div>
+
+                    <!-- Admin Panel -->
+                    <div id="adminPanel" class="admin-panel" style="display: none;">
+                        <h3>Panel de Administración</h3>
+                        
+                        <!-- Create Tenant -->
+                        <div class="card">
+                            <h4>Crear Tenant</h4>
+                            <form id="createTenantForm">
+                                <div class="form-group">
+                                    <label for="tenantName">Nombre del Tenant:</label>
+                                    <input type="text" id="tenantName" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="kycLevel">Nivel KYC:</label>
+                                    <select id="kycLevel" name="kyc_level">
+                                        <option value="1">Nivel 1</option>
+                                        <option value="2">Nivel 2</option>
+                                        <option value="3">Nivel 3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Chains Habilitadas:</label>
+                                    <div class="checkbox-group">
+                                        <label><input type="checkbox" name="chains" value="btc" checked> BTC</label>
+                                        <label><input type="checkbox" name="chains" value="tron" checked> TRON</label>
+                                        <label><input type="checkbox" name="chains" value="bep20" checked> BEP20</label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Crear Tenant</button>
+                            </form>
+                        </div>
+
+                        <!-- Tenants List -->
+                        <div class="card">
+                            <h4>Tenants</h4>
+                            <button id="loadTenantsBtn" class="btn btn-secondary">Cargar Tenants</button>
+                            <div id="tenantsList" class="tenants-list"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tenant Panel -->
+                    <div id="tenantPanel" class="tenant-panel" style="display: none;">
+                        <h3>Panel del Tenant</h3>
+                        
+                        <!-- Create Deposit -->
+                        <div class="card">
+                            <h4>Crear Depósito</h4>
+                            <form id="createDepositForm">
+                                <div class="form-group">
+                                    <label for="depositChain">Chain:</label>
+                                    <select id="depositChain" name="chain">
+                                        <option value="tron">TRON (USDT)</option>
+                                        <option value="bep20">BEP20 (USDT)</option>
+                                        <option value="btc">BTC</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="depositAmount">Monto Esperado:</label>
+                                    <input type="number" id="depositAmount" name="amount_expected" step="0.01" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Crear Depósito</button>
+                            </form>
+                        </div>
+
+                        <!-- Deposits List -->
+                        <div class="card">
+                            <h4>Depósitos</h4>
+                            <button id="loadDepositsBtn" class="btn btn-secondary">Cargar Depósitos</button>
+                            <div id="depositsList" class="deposits-list"></div>
+                        </div>
+
+                        <!-- Withdrawal Quote -->
+                        <div class="card">
+                            <h4>Cotizar Retiro</h4>
+                            <form id="withdrawalQuoteForm">
+                                <div class="form-group">
+                                    <label for="withdrawChain">Chain:</label>
+                                    <select id="withdrawChain" name="chain">
+                                        <option value="tron">TRON (USDT)</option>
+                                        <option value="bep20">BEP20 (USDT)</option>
+                                        <option value="btc">BTC</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="withdrawType">Tipo:</label>
+                                    <select id="withdrawType" name="request_type">
+                                        <option value="to_receive">A Recibir</option>
+                                        <option value="to_deduct">A Descontar</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="withdrawAmount">Monto:</label>
+                                    <input type="number" id="withdrawAmount" name="request_amount" step="0.01" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Cotizar</button>
+                            </form>
+                            <div id="quoteResult" class="quote-result"></div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing -->
+                    <div class="card">
+                        <h4>Precios</h4>
+                        <button id="loadPricesBtn" class="btn btn-secondary">Cargar Precios</button>
+                        <div id="pricesList" class="prices-list"></div>
+                    </div>
+                </div>
+
+                <!-- Welcome Screen -->
+                <div id="welcomeScreen" class="welcome-screen">
+                    <div class="welcome-content">
+                        <i class="fas fa-coins welcome-icon"></i>
+                        <h2>Bienvenido a Cashira</h2>
+                        <p>Sistema de Custodial Crypto Cashier</p>
+                        <p>Inicia sesión para acceder al panel de control</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2024 Cashira - Crypto Cashier System</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 // Cashira Frontend Application
 class CashiraApp {
     constructor() {
-        this.apiBase = 'http://localhost:8000'; // Cambiar por la URL de Railway
+        this.apiBase = \'https://crypto-cashier-production.up.railway.app\'; // Cambiar por la URL de Railway
         this.token = localStorage.getItem('cashira_token');
         this.user = null;
         this.currentTenant = null;

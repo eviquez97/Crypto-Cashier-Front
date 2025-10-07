@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashira - Sistema de Custodia Crypto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">C</div>
+                <span>CASHIRA</span>
+            </div>
+            <nav>
+                <ul class="header-nav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#blog">Blog <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline" onclick="document.getElementById('loginModal').style.display = 'block'">Login</button>
+                <button class="btn btn-primary" onclick="document.getElementById('loginModal').style.display = 'block'">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('loginModal').style.display = 'none'">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Dashboard (Hidden by default) -->
+        <div id="dashboard" class="dashboard" style="display: none;">
+            <div class="container">
+                <div class="dashboard-header">
+                    <h2>Panel de Control</h2>
+                    <div class="user-info">
+                        <span id="userEmail"></span>
+                        <span id="userRole"></span>
+                    </div>
+                </div>
+                <!-- Dashboard content here -->
+            </div>
+        </div>
+
+        <!-- Landing Page -->
+        <div id="welcomeScreen">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Your Global OTC desk for Cryptocurrencies</h1>
+                        <p class="hero-subtitle">Transfer USD, EUR, or Crypto and start trading today!</p>
+                        <div class="hero-cta">
+                            <button class="btn btn-primary" onclick="document.getElementById('loginModal').style.display = 'block'">Get Started</button>
+                        </div>
+                        <div class="hero-graphics">
+                            <div class="hero-graphic">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="hero-graphic">
+                                <i class="fab fa-bitcoin"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Crypto Cards Section -->
+            <section class="crypto-cards-section">
+                <div class="container">
+                    <div class="crypto-cards-grid">
+                        <div class="crypto-card">
+                            <div class="crypto-header">
+                                <div class="crypto-icon btc">B</div>
+                                <div>
+                                    <div class="crypto-name">Bitcoin</div>
+                                    <div class="crypto-symbol">BTC</div>
+                                </div>
+                            </div>
+                            <div class="crypto-price">$16,048.40</div>
+                            <div class="crypto-change negative">-1.26%</div>
+                        </div>
+                        <div class="crypto-card">
+                            <div class="crypto-header">
+                                <div class="crypto-icon eth">Ξ</div>
+                                <div>
+                                    <div class="crypto-name">Ethereum</div>
+                                    <div class="crypto-symbol">ETH</div>
+                                </div>
+                            </div>
+                            <div class="crypto-price">$1,122.44</div>
+                            <div class="crypto-change negative">-1.55%</div>
+                        </div>
+                        <div class="crypto-card">
+                            <div class="crypto-header">
+                                <div class="crypto-icon usdt">T</div>
+                                <div>
+                                    <div class="crypto-name">Tether</div>
+                                    <div class="crypto-symbol">USDT</div>
+                                </div>
+                            </div>
+                            <div class="crypto-price">$1.00</div>
+                            <div class="crypto-change positive">0.0099%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Trust Us Section -->
+            <section class="trust-section">
+                <div class="container">
+                    <h2 class="section-title">Why Trust Us?</h2>
+                    <p class="section-subtitle">Trust comes from experience. Many of the pleased customers may function as a guide for you.</p>
+                    <div class="trust-cards">
+                        <div class="trust-card">
+                            <div class="trust-icon">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <h3 class="trust-title">Buy Cryptocurrency with cash</h3>
+                            <p class="trust-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <button class="btn btn-primary">Read More</button>
+                        </div>
+                        <div class="trust-card">
+                            <div class="trust-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="trust-title">Cryptocurrency Consultancy</h3>
+                            <p class="trust-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <button class="btn btn-primary">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How to Purchase Section -->
+            <section class="purchase-section">
+                <div class="container">
+                    <h2 class="section-title">How to Purchase from us?</h2>
+                    <p class="section-subtitle">Fill out the below form and we will contact you via email & details.</p>
+                    <div class="purchase-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Wallet Address</label>
+                                <input type="text" placeholder="Enter wallet address">
+                            </div>
+                            <div class="form-group">
+                                <label>Cryptocurrency</label>
+                                <div class="crypto-select">
+                                    <div class="crypto-select-icon">B</div>
+                                    <select>
+                                        <option>Bitcoin</option>
+                                        <option>Ethereum</option>
+                                        <option>Tether</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>How much worth in $?</label>
+                                <input type="text" placeholder="Enter amount">
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <button class="btn btn-primary">Get Started</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <div class="container">
+                    <h2 class="section-title">One-stop solution to buy and sell cryptocurrency with Cash</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <h3 class="feature-title">Competitive Pricing</h3>
+                            <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3 class="feature-title">Support</h3>
+                            <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-file-check"></i>
+                            </div>
+                            <h3 class="feature-title">Fast and Easy KYC</h3>
+                            <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="feature-title">Security</h3>
+                            <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <h3 class="feature-title">Fast Transaction</h3>
+                            <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="feature-card call-card">
+                            <div class="feature-icon call-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3 class="feature-title call-title">Call Us</h3>
+                            <p class="feature-description call-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <button class="btn btn-primary">Call Us</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

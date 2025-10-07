@@ -10,11 +10,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy frontend files
 COPY . .
 
-# Expose port
-EXPOSE 3000
+# Expose port (Railway will set PORT env var)
+EXPOSE $PORT
 
 # Set environment variables
-ENV FRONTEND_PORT=3000
 ENV API_BASE=${API_BASE:-http://localhost:8000}
 
 # Start server

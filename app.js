@@ -449,10 +449,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add scroll effect to header
     let lastScrollTop = 0;
-    const header = document.querySelector('.header');
+    const header = document.getElementById('header');
     
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
         
         if (scrollTop > lastScrollTop && scrollTop > 100) {
             // Scrolling down

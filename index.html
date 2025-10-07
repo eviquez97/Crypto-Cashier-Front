@@ -10,15 +10,15 @@
 <body>
     <div id="app">
         <!-- Header -->
-        <header class="header">
+        <header class="header" id="header">
             <div class="container">
-                <div class="logo">
-                    <i class="fas fa-coins"></i>
+                <a href="#" class="logo">
+                    <div class="logo-icon">C</div>
                     <h1>Cashira</h1>
-                </div>
+                </a>
                 <nav class="nav">
                     <button id="loginBtn" class="btn btn-primary">Iniciar Sesión</button>
-                    <button id="logoutBtn" class="btn btn-secondary" style="display: none;">Cerrar Sesión</button>
+                    <button id="logoutBtn" class="btn btn-ghost" style="display: none;">Cerrar Sesión</button>
                 </nav>
             </div>
         </header>
@@ -169,15 +169,33 @@
                     <section class="hero-section">
                         <div class="hero-content">
                             <div class="hero-text">
+                                <div class="hero-badge">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Plataforma de Custodia Institucional</span>
+                                </div>
                                 <h1 class="hero-title">La Plataforma de Custodia Crypto Más Confiable</h1>
-                                <p class="hero-subtitle">Simplifica la gestión de criptomonedas para tu negocio con nuestra solución de custodia segura, multi-cadena y fácil de usar.</p>
+                                <p class="hero-subtitle">Simplifica la gestión de criptomonedas para tu negocio con nuestra solución de custodia segura, multi-cadena y fácil de usar. Diseñada para empresas que buscan la máxima seguridad y confiabilidad.</p>
                                 <div class="hero-buttons">
                                     <button class="btn btn-primary btn-large" onclick="document.getElementById('loginModal').style.display = 'block'">
-                                        <i class="fas fa-sign-in-alt"></i> Acceder al Sistema
+                                        <i class="fas fa-rocket"></i> Comenzar Ahora
                                     </button>
                                     <button class="btn btn-outline btn-large" onclick="scrollToSection('features')">
-                                        <i class="fas fa-info-circle"></i> Conocer Más
+                                        <i class="fas fa-play-circle"></i> Ver Demo
                                     </button>
+                                </div>
+                                <div class="hero-stats">
+                                    <div class="hero-stat">
+                                        <span class="hero-stat-number">99.9%</span>
+                                        <span class="hero-stat-label">Uptime</span>
+                                    </div>
+                                    <div class="hero-stat">
+                                        <span class="hero-stat-number">24/7</span>
+                                        <span class="hero-stat-label">Soporte</span>
+                                    </div>
+                                    <div class="hero-stat">
+                                        <span class="hero-stat-number">5+</span>
+                                        <span class="hero-stat-label">Blockchains</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="hero-visual">
@@ -346,7 +364,7 @@
                                 <h4>Horario</h4>
                                 <p>24/7 Soporte Técnico</p>
                             </div>
-                        </div>
+                    </div>
                     </section>
                 </div>
             </div>

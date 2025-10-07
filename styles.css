@@ -1,4 +1,4 @@
-/* Cashira Frontend Styles - Exact Reference Design */
+/* Cashira Frontend Styles - EXACT REFERENCE DESIGN */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 * {
@@ -8,27 +8,21 @@
 }
 
 :root {
-    /* Dark Theme Colors - Exact Reference */
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #2d2d2d;
-    --bg-tertiary: #3a3a3a;
-    --text-primary: #ffffff;
-    --text-secondary: #cccccc;
+    /* EXACT REFERENCE COLORS */
+    --bg-dark: #1a1a1a;
+    --bg-darker: #0d0d0d;
+    --text-white: #ffffff;
+    --text-gray: #cccccc;
     --accent-green: #00ff88;
-    --accent-green-dark: #00cc6a;
-    --border-color: #404040;
-    
-    /* Spacing */
-    --section-padding: 80px 0;
-    --container-padding: 0 20px;
-    --max-width: 1200px;
+    --accent-green-hover: #00cc6a;
+    --border-gray: #333333;
 }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: var(--text-primary);
-    background-color: var(--bg-primary);
+    color: var(--text-white);
+    background-color: var(--bg-dark);
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -40,32 +34,32 @@ body {
     padding: 0 20px;
 }
 
-/* Header - Exact Reference Design */
+/* Header - EXACT REFERENCE */
 .header {
-    background: var(--bg-primary);
-    color: var(--text-primary);
+    background: var(--bg-dark);
+    color: var(--text-white);
     padding: 20px 0;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-gray);
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: var(--max-width);
+    max-width: 1200px;
     margin: 0 auto;
-    padding: var(--container-padding);
+    padding: 0 20px;
 }
 
 .header-left {
     font-size: 18px;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--text-white);
 }
 
 .header-center {
@@ -81,7 +75,7 @@ body {
 }
 
 .header-nav a {
-    color: var(--text-primary);
+    color: var(--text-white);
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
@@ -103,7 +97,7 @@ body {
 }
 
 .social-icons a {
-    color: var(--text-secondary);
+    color: var(--text-gray);
     font-size: 18px;
     transition: color 0.3s ease;
 }
@@ -366,14 +360,15 @@ body {
     min-height: 100vh;
 }
 
-/* Hero Section - Exact Reference Design */
+/* Hero Section - EXACT REFERENCE */
 .hero-section {
     padding: 120px 0 80px;
-    background: var(--bg-primary);
-    color: var(--text-primary);
+    background: var(--bg-dark);
+    color: var(--text-white);
     min-height: 100vh;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .hero-content {
@@ -381,9 +376,9 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
-    max-width: var(--max-width);
+    max-width: 1200px;
     margin: 0 auto;
-    padding: var(--container-padding);
+    padding: 0 20px;
 }
 
 .hero-text {
@@ -395,6 +390,7 @@ body {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 30px;
+    color: var(--text-white);
 }
 
 .hero-title .highlight {
@@ -405,7 +401,7 @@ body {
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 40px;
-    color: var(--text-secondary);
+    color: var(--text-gray);
 }
 
 .hero-buttons {
@@ -501,20 +497,20 @@ body {
     bottom: 150px;
     right: 30px;
     font-size: 30px;
-    color: var(--text-secondary);
+    color: var(--text-gray);
 }
 
-/* Benefits Section - Exact Reference Design */
+/* Benefits Section - EXACT REFERENCE */
 .benefits-section {
-    padding: var(--section-padding);
-    background: var(--bg-primary);
-    color: var(--text-primary);
+    padding: 80px 0;
+    background: var(--bg-dark);
+    color: var(--text-white);
 }
 
 .benefits-content {
-    max-width: var(--max-width);
+    max-width: 1200px;
     margin: 0 auto;
-    padding: var(--container-padding);
+    padding: 0 20px;
 }
 
 .benefits-title {
@@ -522,14 +518,14 @@ body {
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
-    color: var(--text-primary);
+    color: var(--text-white);
 }
 
 .benefits-subtitle {
     font-size: 18px;
     text-align: center;
     margin-bottom: 60px;
-    color: var(--text-secondary);
+    color: var(--text-gray);
 }
 
 .benefits-grid {
@@ -540,8 +536,8 @@ body {
 }
 
 .benefit-card {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
+    background: var(--bg-darker);
+    border: 1px solid var(--border-gray);
     border-radius: 12px;
     padding: 30px 20px;
     text-align: center;
@@ -564,24 +560,24 @@ body {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 15px;
-    color: var(--text-primary);
+    color: var(--text-white);
 }
 
 .benefit-description {
     font-size: 14px;
     line-height: 1.6;
-    color: var(--text-secondary);
+    color: var(--text-gray);
 }
 
 .benefits-cta {
     text-align: center;
 }
 
-/* Course Section - Exact Reference Design */
+/* Course Section - EXACT REFERENCE */
 .course-section {
-    padding: var(--section-padding);
-    background: var(--bg-primary);
-    color: var(--text-primary);
+    padding: 80px 0;
+    background: var(--bg-dark);
+    color: var(--text-white);
 }
 
 .course-content {
@@ -589,9 +585,9 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
-    max-width: var(--max-width);
+    max-width: 1200px;
     margin: 0 auto;
-    padding: var(--container-padding);
+    padding: 0 20px;
 }
 
 .course-left {
@@ -602,7 +598,7 @@ body {
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: var(--text-primary);
+    color: var(--text-white);
 }
 
 .course-cta {
@@ -628,8 +624,8 @@ body {
 }
 
 .course-module {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
+    background: var(--bg-darker);
+    border: 1px solid var(--border-gray);
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 15px;
@@ -650,15 +646,15 @@ body {
 
 .module-description {
     font-size: 14px;
-    color: var(--text-secondary);
+    color: var(--text-gray);
     line-height: 1.5;
 }
 
-/* FAQ Section - Exact Reference Design */
+/* FAQ Section - EXACT REFERENCE */
 .faq-section {
-    padding: var(--section-padding);
-    background: var(--bg-primary);
-    color: var(--text-primary);
+    padding: 80px 0;
+    background: var(--bg-dark);
+    color: var(--text-white);
 }
 
 .faq-content {
@@ -732,11 +728,11 @@ body {
     font-weight: 700;
 }
 
-/* Final CTA Section - Exact Reference Design */
+/* Final CTA Section - EXACT REFERENCE */
 .final-cta-section {
-    padding: var(--section-padding);
-    background: var(--bg-primary);
-    color: var(--text-primary);
+    padding: 80px 0;
+    background: var(--bg-dark);
+    color: var(--text-white);
 }
 
 .final-cta-content {
@@ -859,27 +855,27 @@ body {
     color: var(--text-secondary);
 }
 
-/* Footer - Exact Reference Design */
+/* Footer - EXACT REFERENCE */
 .footer {
-    background: var(--bg-secondary);
-    color: var(--text-primary);
+    background: var(--bg-darker);
+    color: var(--text-white);
     padding: 40px 0;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-gray);
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: var(--max-width);
+    max-width: 1200px;
     margin: 0 auto;
-    padding: var(--container-padding);
+    padding: 0 20px;
 }
 
 .footer-left {
     font-size: 18px;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--text-white);
 }
 
 .footer-center {
@@ -887,11 +883,11 @@ body {
     gap: 30px;
     align-items: center;
     font-size: 14px;
-    color: var(--text-secondary);
+    color: var(--text-gray);
 }
 
 .footer-center a {
-    color: var(--text-secondary);
+    color: var(--text-gray);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -908,7 +904,7 @@ body {
 
 .footer-phone {
     font-size: 16px;
-    color: var(--text-primary);
+    color: var(--text-white);
     font-weight: 600;
 }
 

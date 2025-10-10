@@ -6,10 +6,14 @@ import Link from 'next/link'
 import { ArrowLeft, Eye, EyeOff } from 'lucide-react'
 import { motion } from 'framer-motion'
 
+// API Configuration
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE || 'https://crypto-cashier-production.up.railway.app'
+
 const Login = () => {
   const router = useRouter()
   const [showPassword, setShowPassword] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState('')
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -18,10 +22,13 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError('')
 
     try {
-      // Mock API call - replace with actual API
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/auth/login`, {
+      console.log('Intentando login con:', formData.email)
+      console.log('API Base:', API_BASE)
+      
+      const response = await fetch(`${API_BASE}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -29,19 +36,32 @@ const Login = () => {
         body: JSON.stringify(formData),
       })
 
+      console.log('Response status:', response.status)
+      console.log('Response headers:', response.headers)
+
       if (response.ok) {
         const data = await response.json()
-        // Store token and redirect
+        console.log('Login exitoso:', data)
+        
+        // Store token and user data
         localStorage.setItem('token', data.access_token)
-        router.push(process.env.NEXT_PUBLIC_DASHBOARD_URL || '/dashboard')
+        localStorage.setItem('user', JSON.stringify({
+          email: formData.email,
+          role: data.role || 'USER'
+        }))
+        
+        console.log('Redirigiendo al dashboard...')
+        
+        // Redirect to dashboard (frontend page, not external)
+        router.push('/dashboard')
       } else {
-        const error = await response.json()
-        console.error('Login failed:', error)
-        // Handle error (show toast, etc.)
+        const errorData = await response.json().catch(() => ({ error: 'Error desconocido' }))
+        console.error('Login failed:', errorData)
+        setError(errorData.detail || errorData.error || 'Error al iniciar sesión')
       }
     } catch (error) {
       console.error('Login error:', error)
-      // Handle error
+      setError('Error de conexión. Verifica tu conexión a internet.')
     } finally {
       setIsSubmitting(false)
     }
@@ -84,6 +104,12 @@ const Login = () => {
           className="card p-8"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
+            {error && (
+              <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-md">
+                {error}
+              </div>
+            )}
+            
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                 Email Address

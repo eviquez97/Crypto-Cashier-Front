@@ -8,6 +8,7 @@ import Pricing from '@/components/Pricing'
 import Footer from '@/components/Footer'
 
 export default function Home() {
+  console.log('FRONTEND REBUILT:', new Date().toISOString())
   return (
     <main id="main-content">
       <Header />

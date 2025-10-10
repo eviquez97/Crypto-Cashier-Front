@@ -1,6 +1,11 @@
 {
   "build": {
-    "builder": "NIXPACKS"
+    "builder": "DOCKERFILE",
+    "dockerfilePath": "Dockerfile",
+    "dockerBuildArgs": {
+      "BUILD_TIMESTAMP": "${{RAILWAY_DEPLOYMENT_ID}}",
+      "NEXT_PUBLIC_API_BASE": "https://crypto-cashier-production.up.railway.app"
+    }
   },
   "deploy": {
     "startCommand": "npm start",

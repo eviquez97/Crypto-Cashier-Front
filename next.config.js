@@ -5,9 +5,14 @@ const nextConfig = {
     formats: ['image/webp', 'image/avif'],
   },
   env: {
-    NEXT_PUBLIC_API_BASE: process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8000',
-    NEXT_PUBLIC_DASHBOARD_URL: process.env.NEXT_PUBLIC_DASHBOARD_URL || 'http://localhost:3000',
+    NEXT_PUBLIC_API_BASE: process.env.NEXT_PUBLIC_API_BASE || 'https://crypto-cashier-production.up.railway.app',
+    NEXT_PUBLIC_DASHBOARD_URL: process.env.NEXT_PUBLIC_DASHBOARD_URL || '/dashboard',
     NEXT_PUBLIC_ANALYTICS_ID: process.env.NEXT_PUBLIC_ANALYTICS_ID || '',
+    NEXT_PUBLIC_BUILD_TIME: process.env.NEXT_PUBLIC_BUILD_TIME || '',
+  },
+  // Force rebuild on every deploy
+  generateBuildId: async () => {
+    return process.env.RAILWAY_DEPLOYMENT_ID || `build-${Date.now()}`
   },
 }
 

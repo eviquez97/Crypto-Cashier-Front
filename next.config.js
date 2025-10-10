@@ -10,9 +10,9 @@ const nextConfig = {
     NEXT_PUBLIC_ANALYTICS_ID: process.env.NEXT_PUBLIC_ANALYTICS_ID || '',
     NEXT_PUBLIC_BUILD_TIME: process.env.NEXT_PUBLIC_BUILD_TIME || '',
   },
-  // Force rebuild on every deploy
+  // Force rebuild on every deploy - PREMIUM UI/UX v2.0
   generateBuildId: async () => {
-    return process.env.RAILWAY_DEPLOYMENT_ID || `build-${Date.now()}`
+    return process.env.RAILWAY_DEPLOYMENT_ID || `premium-ui-${Date.now()}`
   },
 }
 

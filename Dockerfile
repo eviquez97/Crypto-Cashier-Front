@@ -1,7 +1,7 @@
 # Use the official Node.js runtime as the base image - Force cache invalidation
 FROM node:18-alpine3.19
 # Add unique comment to force cache invalidation
-# CACHE_BUSTER: 2025-01-10-FORCE-REBUILD-COMPLETE
+# CACHE_BUSTER: 2025-10-10-PREMIUM-UI-UX-V2-DEPLOY
 
 # Build arguments
 ARG BUILD_TIMESTAMP

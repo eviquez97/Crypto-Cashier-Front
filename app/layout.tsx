@@ -69,7 +69,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#6C4BFF" />
+        <meta name="theme-color" content="#7D53FF" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {process.env.NEXT_PUBLIC_ANALYTICS_ID && (
           <>

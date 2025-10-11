@@ -31,11 +31,11 @@ export default function Dashboard() {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="w-64 bg-[#1A434D] flex flex-col p-6 sticky top-0 h-screen overflow-y-auto"
+        className="w-64 bg-[#134338] flex flex-col p-6 sticky top-0 h-screen overflow-y-auto"
       >
         {/* Branding */}
         <div className="flex items-center space-x-3 mb-8">
-          <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-[#16F98A] rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-lg">P</span>
           </div>
           <h1 className="text-xl font-bold text-white">Pharmly</h1>
@@ -62,8 +62,8 @@ export default function Dashboard() {
                 onClick={() => setActiveTab(item.id)}
                 className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-all duration-200 ${
                   item.active 
-                    ? 'bg-[#90EE90] text-gray-900' 
-                    : 'text-white hover:bg-[#2A5C68]'
+                    ? 'bg-[#16F98A] text-[#05220B]' 
+                    : 'text-white hover:bg-[#05220B]'
                 }`}
               >
                 <item.icon className="w-5 h-5" />
@@ -74,7 +74,7 @@ export default function Dashboard() {
         </div>
 
         {/* Upgrade Pro Section */}
-        <div className="bg-[#2A5C68] rounded-lg p-4 mb-6">
+        <div className="bg-[#05220B] rounded-lg p-4 mb-6">
           <div className="flex items-center justify-center mb-3">
             <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
               <Package className="w-4 h-4 text-gray-600" />
@@ -82,13 +82,13 @@ export default function Dashboard() {
           </div>
           <h3 className="text-white font-bold text-center mb-2">Upgrade Pro</h3>
           <p className="text-white text-sm text-center mb-4">Master your pharmacy with detailed analytics and clear graphs.</p>
-          <button className="w-full bg-[#90EE90] text-gray-900 font-medium py-2 px-4 rounded-lg hover:bg-green-300 transition-colors">
+          <button className="w-full bg-[#16F98A] text-[#05220B] font-medium py-2 px-4 rounded-lg hover:bg-[#16F98A]/90 transition-colors">
             Upgrade Now
           </button>
         </div>
 
         {/* Logout */}
-        <button className="flex items-center space-x-3 text-white hover:bg-[#2A5C68] px-4 py-3 rounded-lg transition-colors">
+        <button className="flex items-center space-x-3 text-white hover:bg-[#05220B] px-4 py-3 rounded-lg transition-colors">
           <LogOut className="w-5 h-5" />
           <span className="font-medium">Logout</span>
         </button>
@@ -149,17 +149,17 @@ export default function Dashboard() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-[#2E8B57] rounded-xl p-6 text-white relative"
+              className="bg-[#05220B] rounded-xl p-6 text-white relative"
             >
               <div className="flex items-center justify-between mb-4">
-                <Users className="w-8 h-8 text-green-200" />
+                <Users className="w-8 h-8 text-[#16F98A]" />
                 <MoreVertical className="w-5 h-5 text-white/80" />
               </div>
               <h3 className="text-white/90 text-sm font-medium mb-2">Total Customer</h3>
               <h2 className="text-3xl font-bold text-white mb-2">$12,500</h2>
               <div className="flex items-center space-x-2">
-                <div className="w-4 h-4 bg-green-300 rounded-full flex items-center justify-center">
-                  <span className="text-xs text-green-600">↗</span>
+                <div className="w-4 h-4 bg-[#16F98A] rounded-full flex items-center justify-center">
+                  <span className="text-xs text-[#05220B]">↗</span>
                 </div>
                 <span className="text-white/90 text-sm">+8% Since last week</span>
               </div>
@@ -181,8 +181,8 @@ export default function Dashboard() {
               <h3 className="text-gray-600 text-sm font-medium mb-2">New Customers</h3>
               <h2 className="text-3xl font-bold text-gray-900 mb-2">120</h2>
               <div className="flex items-center space-x-2">
-                <div className="w-4 h-4 bg-green-100 rounded-full flex items-center justify-center">
-                  <span className="text-xs text-green-600">↗</span>
+                <div className="w-4 h-4 bg-[#16F98A]/20 rounded-full flex items-center justify-center">
+                  <span className="text-xs text-[#16F98A]">↗</span>
                 </div>
                 <span className="text-gray-600 text-sm">+5.4% Since last week</span>
               </div>
@@ -204,8 +204,8 @@ export default function Dashboard() {
               <h3 className="text-gray-600 text-sm font-medium mb-2">Returning Customers</h3>
               <h2 className="text-3xl font-bold text-gray-900 mb-2">65%</h2>
               <div className="flex items-center space-x-2">
-                <div className="w-4 h-4 bg-green-100 rounded-full flex items-center justify-center">
-                  <span className="text-xs text-green-600">↗</span>
+                <div className="w-4 h-4 bg-[#16F98A]/20 rounded-full flex items-center justify-center">
+                  <span className="text-xs text-[#16F98A]">↗</span>
                 </div>
                 <span className="text-gray-600 text-sm">+2.4% Since last week</span>
               </div>
@@ -215,7 +215,7 @@ export default function Dashboard() {
           {/* Action Bar */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-4">
-              <button className="bg-[#90EE90] text-gray-900 font-medium py-2 px-4 rounded-lg hover:bg-green-300 transition-colors flex items-center space-x-2">
+              <button className="bg-[#16F98A] text-[#05220B] font-medium py-2 px-4 rounded-lg hover:bg-[#16F98A]/90 transition-colors flex items-center space-x-2">
                 <Plus className="w-4 h-4" />
                 <span>Add New Customer</span>
               </button>
@@ -255,7 +255,7 @@ export default function Dashboard() {
                   />
                 </div>
                 <div className="flex items-center space-x-2">
-                  <button className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                  <button className="w-8 h-8 bg-[#16F98A] rounded-full flex items-center justify-center hover:bg-[#16F98A]/90 transition-colors">
                     <Plus className="w-4 h-4 text-white" />
                   </button>
                   <button className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors">
@@ -268,7 +268,7 @@ export default function Dashboard() {
             {/* Table */}
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-gray-800 text-white">
+                <thead className="bg-[#134338] text-white">
                   <tr>
                     <th className="px-6 py-4 text-left text-sm font-medium">Customer ID</th>
                     <th className="px-6 py-4 text-left text-sm font-medium">Customer Name</th>
@@ -317,9 +317,9 @@ export default function Dashboard() {
                   <button
                     key={index}
                     onClick={() => setCurrentPage(typeof page === 'number' ? page : currentPage)}
-                    className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
+                        className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
                       page === 1
-                        ? 'bg-[#1A434D] text-white'
+                        ? 'bg-[#134338] text-white'
                         : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
                     }`}
                   >

@@ -3,10 +3,12 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Newsletter = () => {
   const [email, setEmail] = useState('')
   const [isSubscribed, setIsSubscribed] = useState(false)
+  const { t } = useTranslation()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -44,7 +46,7 @@ const Newsletter = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="text-h2-mobile lg:text-h2 font-display font-semibold text-brand-light mb-4"
           >
-            Subscribe Newsletter
+            {t('newsletter.title')}
           </motion.h2>
           
           <motion.p
@@ -54,7 +56,7 @@ const Newsletter = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="text-body-lg text-brand-light/70 mb-8 max-w-md mx-auto"
           >
-            Financial transactions, emails, mobile updates. Stay informed with the latest crypto payment trends.
+            {t('newsletter.subtitle')}
           </motion.p>
 
           <motion.form
@@ -70,7 +72,7 @@ const Newsletter = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
+                placeholder={t('newsletter.emailPlaceholder')}
                 className="w-full px-6 py-4 bg-brand-teal/20 border border-brand-primary/30 rounded-xl text-brand-light placeholder-brand-light/50 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200"
                 required
               />
@@ -89,11 +91,11 @@ const Newsletter = () => {
             >
               {isSubscribed ? (
                 <>
-                  ✓ Subscribed!
+                  {t('newsletter.subscribed')}
                 </>
               ) : (
                 <>
-                  Subscribe
+                  {t('newsletter.subscribe')}
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </>
               )}

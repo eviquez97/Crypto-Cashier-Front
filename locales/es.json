@@ -9,7 +9,212 @@
   },
   "hero": {
     "badge": "Infraestructura de Nivel Empresarial",
-    "title": "Infraestructura Empresarial de Pagos Cripto para Operadores de Gaming"
+    "title": "Infraestructura Empresarial de Pagos Cripto para Operadores de Gaming",
+    "subtitle": "Caja registradora cripto de marca blanca construida para casas de apuestas y casinos. Procesa depósitos y retiros con seguridad empresarial, liquidaciones instantáneas y precios transparentes.",
+    "benefits": {
+      "security": "Seguridad de Nivel Bancario",
+      "securityDesc": "Certificado SOC 2 Tipo II",
+      "instant": "Liquidaciones Instantáneas",
+      "instantDesc": "Procesamiento en sub-segundos",
+      "global": "50+ Criptomonedas",
+      "globalDesc": "Todas las cadenas principales soportadas"
+    },
+    "ctaPrimary": "Prueba Gratuita",
+    "ctaSecondary": "Solicitar Demo Empresarial",
+    "trust": {
+      "clients": "Clientes Activos",
+      "compliant": "Cumple con SOC 2"
+    },
+    "trustedBy": "Confiado por operadores de juegos líderes"
+  },
+  "kpi": {
+    "transactions": "Transacciones/Día",
+    "uptime": "Tiempo de Actividad",
+    "clients": "Clientes Empresariales",
+    "volume": "Volumen Procesado"
+  },
+  "whyChoose": {
+    "title": "Por qué Elegir Coinfixi",
+    "subtitle": "Construido para operadores de juegos que exigen confiabilidad, seguridad y transparencia en sus pagos cripto.",
+    "features": {
+      "settlements": {
+        "title": "Liquidaciones Instantáneas",
+        "desc": "Procesamiento de transacciones en sub-segundos con conciliación automatizada. Sin retrasos, sin intervención manual requerida."
+      },
+      "security": {
+        "title": "Seguridad Empresarial",
+        "desc": "Cifrado de nivel bancario, billeteras multi-firma y cumplimiento SOC 2 Tipo II. Tus fondos siempre están protegidos."
+      },
+      "whiteLabel": {
+        "title": "Infraestructura de Marca Blanca",
+        "desc": "Checkout completamente personalizable que coincide con tu marca. Control completo sobre la experiencia del usuario."
+      },
+      "support": {
+        "title": "Soporte Experto 24/7",
+        "desc": "Gerente de cuenta dedicado y equipo de soporte técnico disponible las 24 horas para tus operaciones."
+      }
+    }
+  },
+  "promoLeft": {
+    "title": "Coinfixi para el Futuro",
+    "features": {
+      "security": {
+        "title": "Seguridad Empresarial",
+        "desc": "Cifrado de nivel bancario y cumplimiento"
+      },
+      "fast": {
+        "title": "Súper Rápido",
+        "desc": "Procesamiento de transacciones en sub-segundos"
+      },
+      "global": {
+        "title": "Alcance Global",
+        "desc": "Soporte para 50+ criptomonedas"
+      }
+    },
+    "viewDocs": "Ver Documentación API",
+    "learnMore": "Aprender Más"
+  },
+  "promoRight": {
+    "title": "Checkout de Marca Blanca",
+    "subtitle": "Experiencia de pago completamente personalizable que coincide con tu marca. Integra perfectamente con tus sistemas existentes mientras mantienes control completo sobre la experiencia del usuario.",
+    "features": {
+      "branding": "Marca Personalizada",
+      "controls": "Controles de Riesgo",
+      "webhooks": "Webhooks en Tiempo Real"
+    },
+    "getStarted": "Comenzar",
+    "viewDemo": "Ver Demo"
+  },
+  "trustIndicators": {
+    "title": "Confiado por",
+    "titleHighlight": "Líderes Empresariales",
+    "subtitle": "Únete a la infraestructura de pagos cripto más confiable del mundo. Construida para seguridad, cumplimiento y confiabilidad de nivel empresarial.",
+    "certifications": "Certificaciones de la Industria y Cumplimiento",
+    "certificationsDesc": "Cumpliendo los más altos estándares de seguridad y cumplimiento regulatorio"
+  },
+  "testimonials": {
+    "badge": "Historias de Clientes Verificadas",
+    "title": "Confiado por",
+    "titleHighlight": "Líderes de la Industria",
+    "subtitle": "Ve cómo las empresas líderes están transformando su infraestructura de pagos con las soluciones de nivel empresarial de Coinfixi.",
+    "stats": {
+      "clients": "Clientes Empresariales",
+      "uptime": "SLA de Tiempo de Actividad",
+      "volume": "Volumen Procesado",
+      "support": "Soporte Experto"
+    }
+  },
+  "interactiveDemo": {
+    "badge": "API Centrada en Desarrolladores",
+    "title": "Integra en",
+    "titleHighlight": "Minutos",
+    "titleEnd": ", No Meses",
+    "subtitle": "API limpia y moderna diseñada para desarrolladores. Endpoints RESTful, documentación completa y SDKs para todos los lenguajes principales.",
+    "tabs": {
+      "deposit": "Depósito",
+      "withdrawal": "Retiro",
+      "webhook": "Webhook"
+    },
+    "copy": "Copiar",
+    "run": "Ejecutar",
+    "running": "Ejecutando...",
+    "benefits": {
+      "webhooks": {
+        "title": "Webhooks en Tiempo Real",
+        "desc": "Notificaciones instantáneas para depósitos, retiros y confirmaciones. Nunca más hagas polling para actualizaciones."
+      },
+      "multiChain": {
+        "title": "Soporte Multi-Cadena",
+        "desc": "Una sola API para Bitcoin, Ethereum, Tron, BSC y 50+ otras cadenas. Experiencia de desarrollador unificada."
+      },
+      "sandbox": {
+        "title": "Entorno Sandbox",
+        "desc": "Entorno de prueba completo con monedas de prueba. Desarrolla y prueba sin riesgo."
+      }
+    },
+    "stats": {
+      "integration": "Integración Promedio",
+      "endpoints": "Endpoints API",
+      "uptime": "Tiempo de Actividad API"
+    }
+  },
+  "liveTransactions": {
+    "badge": "Actividad en Vivo",
+    "title": "Procesando",
+    "titleHighlight": "Millones",
+    "titleEnd": "Diariamente",
+    "subtitle": "Feed de transacciones en tiempo real de nuestra red global. Cada segundo, miles de transacciones se procesan de forma segura en 50+ criptomonedas.",
+    "deposit": "Depósito",
+    "withdrawal": "Retiro",
+    "completed": "Completado",
+    "pending": "Pendiente",
+    "processing": "Procesando",
+    "description": "Procesando millones de transacciones para más de 500 clientes empresariales en todo el mundo",
+    "cta": "Comenzar Procesamiento Hoy"
+  },
+  "bigCta": {
+    "badge": "Comienza Hoy",
+    "title": "¿Listo para Transformar tu",
+    "titleHighlight": "Infraestructura de Pagos",
+    "subtitle": "Únete a más de 500 clientes empresariales que confían en Coinfixi para su procesamiento de pagos cripto. Comienza en 48 horas con cero tarifas de configuración.",
+    "benefits": {
+      "security": "Seguridad de nivel empresarial",
+      "implementation": "Implementación instantánea",
+      "support": "Equipo de soporte dedicado",
+      "certifications": "Certificaciones de la industria"
+    },
+    "urgency": {
+      "implementation": "Tiempo de Implementación",
+      "uptime": "SLA de Tiempo de Actividad",
+      "support": "Tiempo de Respuesta"
+    },
+    "emailPlaceholder": "Ingresa tu email de trabajo",
+    "submit": "Prueba Gratuita",
+    "submitted": "¡Solicitud Enviada!",
+    "trust": {
+      "compliant": "Cumple con SOC 2",
+      "processed": "Procesado",
+      "clients": "Clientes"
+    },
+    "needHelp": "¿Necesitas asistencia inmediata?",
+    "scheduleDemo": "Programar Demo Empresarial"
+  },
+  "newsletter": {
+    "title": "Suscribirse al Boletín",
+    "subtitle": "Transacciones financieras, emails, actualizaciones móviles. Mantente informado con las últimas tendencias de pagos cripto.",
+    "emailPlaceholder": "Ingresa tu email",
+    "subscribe": "Suscribirse",
+    "subscribed": "✓ ¡Suscrito!",
+    "disclaimer": "Al suscribirte, aceptas nuestros Términos de Servicio y Política de Privacidad."
+  },
+  "footer": {
+    "description": "Caja registradora cripto premium para casas de apuestas y casinos. Seguridad de nivel empresarial con precios transparentes.",
+    "product": {
+      "title": "Producto",
+      "features": "Características",
+      "docs": "Documentación API",
+      "integrations": "Integraciones",
+      "changelog": "Registro de Cambios"
+    },
+    "company": {
+      "title": "Empresa",
+      "about": "Acerca de Nosotros",
+      "blog": "Blog",
+      "careers": "Carreras",
+      "contact": "Contacto"
+    },
+    "resources": {
+      "title": "Recursos",
+      "support": "Soporte",
+      "guides": "Guías",
+      "status": "Estado del Sistema",
+      "partners": "Socios"
+    },
+    "legal": {
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio",
+      "security": "Seguridad"
+    },
+    "copyright": "Todos los derechos reservados."
   }
 }
-

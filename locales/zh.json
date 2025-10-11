@@ -9,7 +9,212 @@
   },
   "hero": {
     "badge": "企业级基础设施",
-    "title": "面向游戏运营商的企业级加密支付基础设施"
+    "title": "面向游戏运营商的企业级加密支付基础设施",
+    "subtitle": "为体育博彩和赌场构建的白标加密收银台。通过企业级安全、即时结算和透明定价处理存款和提款。",
+    "benefits": {
+      "security": "银行级安全",
+      "securityDesc": "SOC 2 Type II 认证",
+      "instant": "即时结算",
+      "instantDesc": "亚秒级处理",
+      "global": "50+ 加密货币",
+      "globalDesc": "支持所有主要链"
+    },
+    "ctaPrimary": "免费试用",
+    "ctaSecondary": "请求企业演示",
+    "trust": {
+      "clients": "活跃客户",
+      "compliant": "符合 SOC 2"
+    },
+    "trustedBy": "受领先游戏运营商信赖"
+  },
+  "kpi": {
+    "transactions": "交易/天",
+    "uptime": "运行时间",
+    "clients": "企业客户",
+    "volume": "处理量"
+  },
+  "whyChoose": {
+    "title": "为什么选择 Coinfixi",
+    "subtitle": "为要求加密支付可靠性、安全性和透明度的游戏运营商构建。",
+    "features": {
+      "settlements": {
+        "title": "即时结算",
+        "desc": "亚秒级交易处理，自动对账。无延迟，无需手动干预。"
+      },
+      "security": {
+        "title": "企业安全",
+        "desc": "银行级加密、多重签名钱包和 SOC 2 Type II 合规。您的资金始终受到保护。"
+      },
+      "whiteLabel": {
+        "title": "白标基础设施",
+        "desc": "完全可定制的结账界面，匹配您的品牌。完全控制用户体验。"
+      },
+      "support": {
+        "title": "24/7 专家支持",
+        "desc": "专门的客户经理和技术支持团队全天候为您的运营提供服务。"
+      }
+    }
+  },
+  "promoLeft": {
+    "title": "面向未来的 Coinfixi",
+    "features": {
+      "security": {
+        "title": "企业安全",
+        "desc": "银行级加密和合规"
+      },
+      "fast": {
+        "title": "极速处理",
+        "desc": "亚秒级交易处理"
+      },
+      "global": {
+        "title": "全球覆盖",
+        "desc": "支持 50+ 加密货币"
+      }
+    },
+    "viewDocs": "查看 API 文档",
+    "learnMore": "了解更多"
+  },
+  "promoRight": {
+    "title": "白标结账",
+    "subtitle": "完全可定制的支付体验，匹配您的品牌。与现有系统无缝集成，同时保持对用户体验的完全控制。",
+    "features": {
+      "branding": "自定义品牌",
+      "controls": "风险控制",
+      "webhooks": "实时 Webhook"
+    },
+    "getStarted": "开始使用",
+    "viewDemo": "查看演示"
+  },
+  "trustIndicators": {
+    "title": "受信赖于",
+    "titleHighlight": "企业领导者",
+    "subtitle": "加入世界上最值得信赖的加密支付基础设施。为企业级安全、合规性和可靠性而构建。",
+    "certifications": "行业认证和合规",
+    "certificationsDesc": "满足最高的安全和监管合规标准"
+  },
+  "testimonials": {
+    "badge": "验证客户故事",
+    "title": "受信赖于",
+    "titleHighlight": "行业领导者",
+    "subtitle": "了解领先企业如何通过 Coinfixi 的企业级解决方案改变其支付基础设施。",
+    "stats": {
+      "clients": "企业客户",
+      "uptime": "运行时间 SLA",
+      "volume": "处理量",
+      "support": "专家支持"
+    }
+  },
+  "interactiveDemo": {
+    "badge": "开发者优先的 API",
+    "title": "在",
+    "titleHighlight": "分钟内集成",
+    "titleEnd": "，而非月",
+    "subtitle": "为开发者设计的清洁、现代 API。RESTful 端点、全面的文档和所有主要语言的 SDK。",
+    "tabs": {
+      "deposit": "存款",
+      "withdrawal": "提款",
+      "webhook": "Webhook"
+    },
+    "copy": "复制",
+    "run": "运行",
+    "running": "运行中...",
+    "benefits": {
+      "webhooks": {
+        "title": "实时 Webhook",
+        "desc": "存款、提款和确认的即时通知。不再需要轮询更新。"
+      },
+      "multiChain": {
+        "title": "多链支持",
+        "desc": "一个 API 支持比特币、以太坊、波场、BSC 和 50+ 其他链。统一的开发者体验。"
+      },
+      "sandbox": {
+        "title": "沙盒环境",
+        "desc": "带有测试币的完整功能测试环境。无风险地开发和测试。"
+      }
+    },
+    "stats": {
+      "integration": "平均集成时间",
+      "endpoints": "API 端点",
+      "uptime": "API 运行时间"
+    }
+  },
+  "liveTransactions": {
+    "badge": "实时活动",
+    "title": "处理",
+    "titleHighlight": "数百万",
+    "titleEnd": "每日",
+    "subtitle": "来自我们全球网络的实时交易流。每秒，数千笔交易在 50+ 加密货币上安全处理。",
+    "deposit": "存款",
+    "withdrawal": "提款",
+    "completed": "已完成",
+    "pending": "待处理",
+    "processing": "处理中",
+    "description": "为全球 500+ 企业客户处理数百万笔交易",
+    "cta": "今天开始处理"
+  },
+  "bigCta": {
+    "badge": "今天开始",
+    "title": "准备好转变您的",
+    "titleHighlight": "支付基础设施",
+    "subtitle": "加入 500+ 企业客户，他们信任 Coinfixi 进行加密支付处理。48 小时内开始，零设置费用。",
+    "benefits": {
+      "security": "企业级安全",
+      "implementation": "即时实施",
+      "support": "专门支持团队",
+      "certifications": "行业认证"
+    },
+    "urgency": {
+      "implementation": "实施时间",
+      "uptime": "运行时间 SLA",
+      "support": "响应时间"
+    },
+    "emailPlaceholder": "输入您的工作邮箱",
+    "submit": "免费试用",
+    "submitted": "请求已发送！",
+    "trust": {
+      "compliant": "符合 SOC 2",
+      "processed": "已处理",
+      "clients": "客户"
+    },
+    "needHelp": "需要立即协助？",
+    "scheduleDemo": "安排企业演示"
+  },
+  "newsletter": {
+    "title": "订阅通讯",
+    "subtitle": "金融交易、电子邮件、移动更新。了解最新的加密支付趋势。",
+    "emailPlaceholder": "输入您的邮箱",
+    "subscribe": "订阅",
+    "subscribed": "✓ 已订阅！",
+    "disclaimer": "订阅即表示您同意我们的服务条款和隐私政策。"
+  },
+  "footer": {
+    "description": "面向体育博彩和赌场的优质加密收银台。企业级安全，透明定价。",
+    "product": {
+      "title": "产品",
+      "features": "功能",
+      "docs": "API 文档",
+      "integrations": "集成",
+      "changelog": "更新日志"
+    },
+    "company": {
+      "title": "公司",
+      "about": "关于我们",
+      "blog": "博客",
+      "careers": "招聘",
+      "contact": "联系我们"
+    },
+    "resources": {
+      "title": "资源",
+      "support": "支持",
+      "guides": "指南",
+      "status": "系统状态",
+      "partners": "合作伙伴"
+    },
+    "legal": {
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "security": "安全"
+    },
+    "copyright": "版权所有。"
   }
 }
-

@@ -3,10 +3,12 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { ArrowRight, CheckCircle, Shield, Zap, Users, Award, Clock, TrendingUp } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const BigCta = () => {
   const [email, setEmail] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const { t } = useTranslation()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -28,16 +30,16 @@ const BigCta = () => {
   }
 
   const benefits = [
-    { icon: Shield, text: "Enterprise-grade security" },
-    { icon: Zap, text: "Instant implementation" },
-    { icon: Users, text: "Dedicated support team" },
-    { icon: Award, text: "Industry certifications" }
+    { icon: Shield, text: t('bigCta.benefits.security') },
+    { icon: Zap, text: t('bigCta.benefits.implementation') },
+    { icon: Users, text: t('bigCta.benefits.support') },
+    { icon: Award, text: t('bigCta.benefits.certifications') }
   ]
 
   const urgencyStats = [
-    { value: "48hr", label: "Implementation Time" },
-    { value: "99.9%", label: "Uptime SLA" },
-    { value: "24/7", label: "Expert Support" }
+    { value: "48hr", label: t('bigCta.urgency.implementation') },
+    { value: "99.9%", label: t('bigCta.urgency.uptime') },
+    { value: "24/7", label: t('bigCta.urgency.support') }
   ]
 
   return (
@@ -106,7 +108,7 @@ const BigCta = () => {
             className="inline-flex items-center space-x-2 bg-brand-neon/10 border border-brand-neon/20 rounded-full px-6 py-3 mb-8"
           >
             <Clock className="w-5 h-5 text-brand-neon" />
-            <span className="text-sm font-semibold text-base-light">Limited Time: Free Enterprise Setup</span>
+            <span className="text-sm font-semibold text-base-light">{t('bigCta.badge')}</span>
           </motion.div>
 
           {/* Main Headline */}
@@ -117,10 +119,10 @@ const BigCta = () => {
             viewport={{ once: true }}
             className="text-5xl lg:text-7xl font-display font-bold mb-8"
           >
-            <span className="text-base-light">Ready to Transform Your</span>
+            <span className="text-base-light">{t('bigCta.title')}</span>
             <br />
             <span className="bg-gradient-to-r from-brand-neon to-accent-bright bg-clip-text text-transparent">
-              Payment Infrastructure?
+              {t('bigCta.titleHighlight')}?
             </span>
           </motion.h2>
 
@@ -132,9 +134,7 @@ const BigCta = () => {
             viewport={{ once: true }}
             className="text-xl lg:text-2xl text-base-light/80 mb-12 leading-relaxed"
           >
-            <span className="text-brand-primary font-semibold">Join 500+ enterprise clients who trust Coinfixi for their crypto payment processing.</span> 
-            <br />
-            <span className="text-brand-primary font-semibold">Get started in 48 hours with zero setup fees.</span>
+            <span className="text-brand-primary font-semibold">{t('bigCta.subtitle')}</span>
           </motion.p>
 
           {/* Benefits Grid */}
@@ -191,7 +191,7 @@ const BigCta = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your business email"
+                  placeholder={t('bigCta.emailPlaceholder')}
                   className="w-full px-6 py-4 bg-base-light/10 border border-accent-medium/30 text-base-light rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-neon focus:border-transparent transition-all duration-300 placeholder:text-base-light/50 backdrop-blur-sm"
                   required
                 />
@@ -209,11 +209,11 @@ const BigCta = () => {
                   {isSubmitted ? (
                     <>
                       <CheckCircle className="w-5 h-5 mr-2" />
-                      Request Sent!
+                      {t('bigCta.submitted')}
                     </>
                   ) : (
                     <>
-                      Start Free Trial
+                      {t('bigCta.submit')}
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </>
                   )}

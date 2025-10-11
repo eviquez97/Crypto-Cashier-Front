@@ -2,340 +2,385 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { Search, Bell, User, TrendingUp, TrendingDown, ArrowUpRight, ArrowDownRight, Filter, Download, MoreHorizontal, Calendar } from 'lucide-react'
+import { 
+  TrendingUp, 
+  DollarSign, 
+  Users, 
+  Shield, 
+  Settings, 
+  Bell, 
+  LogOut,
+  ArrowUpRight,
+  ArrowDownLeft,
+  Activity,
+  Clock,
+  CheckCircle,
+  AlertCircle
+} from 'lucide-react'
+import Link from 'next/link'
+import { useTranslation } from 'react-i18next'
 
-const Dashboard = () => {
+const DashboardPage = () => {
   const [activeTab, setActiveTab] = useState('overview')
+  const { t } = useTranslation()
 
   const stats = [
-    { label: 'Deposits', value: '$2,847,392', change: '+12.5%', trend: 'up' },
-    { label: 'Withdrawals', value: '$1,923,847', change: '+8.2%', trend: 'up' },
-    { label: 'Net Balance', value: '$923,545', change: '+15.3%', trend: 'up' },
-    { label: 'Fees', value: '$28,473', change: '-2.1%', trend: 'down' }
+    {
+      title: 'Total Volume',
+      value: '$2,847,392',
+      change: '+12.5%',
+      trend: 'up',
+      icon: DollarSign
+    },
+    {
+      title: 'Active Users',
+      value: '1,247',
+      change: '+8.2%',
+      trend: 'up',
+      icon: Users
+    },
+    {
+      title: 'Success Rate',
+      value: '99.7%',
+      change: '+0.3%',
+      trend: 'up',
+      icon: Shield
+    },
+    {
+      title: 'Avg. Response',
+      value: '0.8s',
+      change: '-15%',
+      trend: 'up',
+      icon: Activity
+    }
   ]
 
   const recentTransactions = [
-    { id: 'TXN-001', type: 'Deposit', amount: '2,500 USDT', status: 'Confirmed', time: '2 min ago', hash: '0x1234...5678' },
-    { id: 'TXN-002', type: 'Withdrawal', amount: '1,000 BTC', status: 'Pending', time: '5 min ago', hash: '0x2345...6789' },
-    { id: 'TXN-003', type: 'Deposit', amount: '5,000 ETH', status: 'Confirmed', time: '12 min ago', hash: '0x3456...7890' },
-    { id: 'TXN-004', type: 'Withdrawal', amount: '500 USDC', status: 'Failed', time: '18 min ago', hash: '0x4567...8901' },
-    { id: 'TXN-005', type: 'Deposit', amount: '3,200 TRX', status: 'Confirmed', time: '25 min ago', hash: '0x5678...9012' }
+    {
+      id: 'TXN-001',
+      type: 'deposit',
+      amount: '$12,450.00',
+      currency: 'USDT',
+      status: 'completed',
+      time: '2 min ago',
+      user: 'user_123'
+    },
+    {
+      id: 'TXN-002',
+      type: 'withdrawal',
+      amount: '$8,900.00',
+      currency: 'BTC',
+      status: 'processing',
+      time: '5 min ago',
+      user: 'user_456'
+    },
+    {
+      id: 'TXN-003',
+      type: 'deposit',
+      amount: '$25,600.00',
+      currency: 'ETH',
+      status: 'completed',
+      time: '8 min ago',
+      user: 'user_789'
+    },
+    {
+      id: 'TXN-004',
+      type: 'withdrawal',
+      amount: '$3,200.00',
+      currency: 'USDC',
+      status: 'pending',
+      time: '12 min ago',
+      user: 'user_321'
+    }
   ]
 
-  const getStatusBadge = (status: string) => {
+  const getStatusIcon = (status: string) => {
     switch (status) {
-      case 'Confirmed':
-        return 'bg-brand-neon text-base-dark'
-      case 'Pending':
-        return 'bg-yellow-500 text-white animate-pulse'
-      case 'Failed':
-        return 'bg-state-error text-white'
+      case 'completed':
+        return <CheckCircle className="w-4 h-4 text-green-500" />
+      case 'processing':
+        return <Clock className="w-4 h-4 text-yellow-500" />
+      case 'pending':
+        return <AlertCircle className="w-4 h-4 text-orange-500" />
       default:
-        return 'bg-gray-500 text-white'
+        return null
+    }
+  }
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'completed':
+        return 'text-green-500 bg-green-500/10 border-green-500/20'
+      case 'processing':
+        return 'text-yellow-500 bg-yellow-500/10 border-yellow-500/20'
+      case 'pending':
+        return 'text-orange-500 bg-orange-500/10 border-orange-500/20'
+      default:
+        return 'text-gray-500 bg-gray-500/10 border-gray-500/20'
     }
   }
 
   return (
-    <div className="min-h-screen bg-base-dark">
-      {/* Header base.mid con buscador, notifs, avatar */}
-      <header className="bg-base-mid border-b border-gray-700">
-        <div className="container">
-          <div className="flex items-center justify-between h-16">
+    <div className="min-h-screen bg-gradient-to-br from-brand-dark via-base-dark to-brand-teal">
+      {/* Header */}
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-brand-teal/10 backdrop-blur-xl border-b border-brand-primary/20 sticky top-0 z-50"
+      >
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-brand-neon rounded-full flex items-center justify-center">
-                <span className="text-base-dark font-bold text-sm">CF</span>
+              <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center">
+                <span className="text-brand-dark font-bold text-lg">CF</span>
               </div>
-              <span className="text-white font-display font-bold text-xl">Coinfixi Dashboard</span>
-            </div>
-
-            {/* Search */}
-            <div className="flex-1 max-w-md mx-8">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder="Search transactions, addresses..."
-                  className="w-full pl-10 pr-4 py-2 bg-base-dark border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-neon focus:border-transparent transition-all duration-200"
-                />
+              <div>
+                <h1 className="text-xl font-display font-bold text-brand-light">Coinfixi Dashboard</h1>
+                <p className="text-sm text-brand-light/70">Enterprise Payment Infrastructure</p>
               </div>
             </div>
 
-            {/* Right Side */}
+            {/* Navigation */}
+            <nav className="hidden md:flex items-center space-x-8">
+              <button
+                onClick={() => setActiveTab('overview')}
+                className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+                  activeTab === 'overview'
+                    ? 'bg-brand-primary text-brand-dark'
+                    : 'text-brand-light/70 hover:text-brand-light hover:bg-brand-primary/10'
+                }`}
+              >
+                Overview
+              </button>
+              <button
+                onClick={() => setActiveTab('transactions')}
+                className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+                  activeTab === 'transactions'
+                    ? 'bg-brand-primary text-brand-dark'
+                    : 'text-brand-light/70 hover:text-brand-light hover:bg-brand-primary/10'
+                }`}
+              >
+                Transactions
+              </button>
+              <button
+                onClick={() => setActiveTab('analytics')}
+                className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+                  activeTab === 'analytics'
+                    ? 'bg-brand-primary text-brand-dark'
+                    : 'text-brand-light/70 hover:text-brand-light hover:bg-brand-primary/10'
+                }`}
+              >
+                Analytics
+              </button>
+            </nav>
+
+            {/* Actions */}
             <div className="flex items-center space-x-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="relative p-2 text-gray-400 hover:text-white transition-colors"
-              >
-                <Bell className="w-6 h-6" />
-                <span className="absolute -top-1 -right-1 w-3 h-3 bg-brand-neon rounded-full" />
-              </motion.button>
-              
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center space-x-2 cursor-pointer"
-              >
-                <div className="w-8 h-8 bg-brand-purple rounded-full flex items-center justify-center">
-                  <User className="w-4 h-4 text-white" />
-                </div>
-                <span className="text-white font-medium">John Doe</span>
-              </motion.div>
+              <button className="p-2 text-brand-light/70 hover:text-brand-light hover:bg-brand-primary/10 rounded-lg transition-all duration-200">
+                <Bell className="w-5 h-5" />
+              </button>
+              <button className="p-2 text-brand-light/70 hover:text-brand-light hover:bg-brand-primary/10 rounded-lg transition-all duration-200">
+                <Settings className="w-5 h-5" />
+              </button>
+              <Link href="/" className="flex items-center space-x-2 px-4 py-2 text-brand-light/70 hover:text-brand-light hover:bg-brand-primary/10 rounded-lg transition-all duration-200">
+                <LogOut className="w-4 h-4" />
+                <span className="hidden sm:inline">Logout</span>
+              </Link>
             </div>
           </div>
         </div>
-      </header>
+      </motion.header>
 
-      <div className="container py-8">
-        {/* Sección "Today's Activity" con filtro Fecha */}
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-6 py-8">
+        {/* Welcome Section */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'cubic-bezier(.22,.61,.36,1)' }}
-          className="flex items-center justify-between mb-8"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-8"
         >
-          <div>
-            <h1 className="text-2xl font-display font-semibold text-white mb-2">Today's Activity</h1>
-            <p className="text-gray-400">Monitor your crypto payment transactions in real-time</p>
-          </div>
-          
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex items-center space-x-2 px-4 py-2 bg-base-mid border border-gray-600 rounded-xl text-gray-300 hover:text-white transition-colors"
-          >
-            <Calendar className="w-4 h-4" />
-            <span>Today</span>
-          </motion.button>
+          <h2 className="text-3xl font-display font-bold text-brand-light mb-2">
+            Welcome back, Enterprise User
+          </h2>
+          <p className="text-brand-light/70">
+            Here's what's happening with your payment infrastructure today.
+          </p>
         </motion.div>
 
-        {/* 4 KPI Cards con sparklines */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        {/* Stats Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
+        >
           {stats.map((stat, index) => (
             <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 16 }}
+              key={stat.title}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: 'cubic-bezier(.22,.61,.36,1)' }}
-              className="bg-base-mid rounded-2xl p-6 shadow-fintech hover:shadow-fintech-hover transition-all duration-300"
+              transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+              className="bg-brand-teal/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300"
             >
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-gray-400 text-sm font-medium">{stat.label}</h3>
-                <div className={`flex items-center space-x-1 text-sm ${
+                <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center">
+                  <stat.icon className="w-6 h-6 text-brand-primary" />
+                </div>
+                <div className={`flex items-center space-x-1 text-sm font-medium ${
                   stat.trend === 'up' ? 'text-green-500' : 'text-red-500'
                 }`}>
-                  {stat.trend === 'up' ? (
-                    <TrendingUp className="w-4 h-4" />
-                  ) : (
-                    <TrendingDown className="w-4 h-4" />
-                  )}
+                  <TrendingUp className={`w-4 h-4 ${stat.trend === 'down' ? 'rotate-180' : ''}`} />
                   <span>{stat.change}</span>
                 </div>
               </div>
-              <p className="text-2xl font-bold text-white mb-3">{stat.value}</p>
-              {/* Sparkline placeholder */}
-              <div className="flex items-end space-x-1 h-8">
-                {[40, 60, 45, 70, 55, 80, 65].map((height, i) => (
-                  <motion.div
-                    key={i}
-                    animate={{ height: [`${height}%`, `${height + 10}%`, `${height}%`] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: i * 0.1 }}
-                    className="w-2 bg-brand-neon rounded-t"
-                    style={{ height: `${height}%` }}
-                  />
-                ))}
-              </div>
+              <h3 className="text-2xl font-bold text-brand-light mb-1">{stat.value}</h3>
+              <p className="text-brand-light/70 text-sm">{stat.title}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Main Content */}
+        {/* Content Area */}
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Tabla de transacciones */}
-          <div className="lg:col-span-2">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4, ease: 'cubic-bezier(.22,.61,.36,1)' }}
-              className="bg-base-mid rounded-2xl shadow-fintech"
-            >
-              {/* Table Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-700">
-                <h2 className="text-xl font-display font-semibold text-white">Recent Transactions</h2>
-                <div className="flex items-center space-x-3">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center space-x-2 px-4 py-2 bg-base-dark border border-gray-600 rounded-xl text-gray-300 hover:text-white transition-colors"
-                  >
-                    <Filter className="w-4 h-4" />
-                    <span>Filter</span>
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center space-x-2 px-4 py-2 bg-brand-neon rounded-xl text-base-dark hover:shadow-fintech-hover transition-all duration-200"
-                  >
-                    <Download className="w-4 h-4" />
-                    <span>Export</span>
-                  </motion.button>
-                </div>
-              </div>
-
-              {/* Table */}
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead className="bg-base-dark">
-                    <tr>
-                      <th className="text-left p-4 text-gray-400 font-medium">ID</th>
-                      <th className="text-left p-4 text-gray-400 font-medium">Type</th>
-                      <th className="text-left p-4 text-gray-400 font-medium">Amount</th>
-                      <th className="text-left p-4 text-gray-400 font-medium">Status</th>
-                      <th className="text-left p-4 text-gray-400 font-medium">Time</th>
-                      <th className="text-left p-4 text-gray-400 font-medium">Hash</th>
-                      <th className="text-left p-4 text-gray-400 font-medium"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {recentTransactions.map((tx, index) => (
-                      <motion.tr
-                        key={tx.id}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4, delay: 0.5 + index * 0.05 }}
-                        className="border-b border-gray-700 last:border-b-0 hover:bg-base-dark/50 transition-colors duration-200"
-                      >
-                        <td className="p-4 text-white font-medium">{tx.id}</td>
-                        <td className="p-4">
-                          <span className={`flex items-center space-x-2 ${
-                            tx.type === 'Deposit' ? 'text-green-400' : 'text-blue-400'
-                          }`}>
-                            {tx.type === 'Deposit' ? (
-                              <ArrowUpRight className="w-4 h-4" />
-                            ) : (
-                              <ArrowDownRight className="w-4 h-4" />
-                            )}
-                            <span>{tx.type}</span>
-                          </span>
-                        </td>
-                        <td className="p-4 text-white font-medium">{tx.amount}</td>
-                        <td className="p-4">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusBadge(tx.status)}`}>
-                            {tx.status}
-                          </span>
-                        </td>
-                        <td className="p-4 text-gray-400">{tx.time}</td>
-                        <td className="p-4 text-gray-400 font-mono text-sm">{tx.hash}</td>
-                        <td className="p-4">
-                          <motion.button
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="text-gray-400 hover:text-white transition-colors"
-                          >
-                            <MoreHorizontal className="w-4 h-4" />
-                          </motion.button>
-                        </td>
-                      </motion.tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Quick Actions */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6, ease: 'cubic-bezier(.22,.61,.36,1)' }}
-              className="bg-base-mid rounded-2xl p-6 shadow-fintech"
-            >
-              <h3 className="text-lg font-display font-semibold text-white mb-4">Quick Actions</h3>
-              <div className="space-y-3">
-                <motion.button
-                  whileHover={{ scale: 1.02, y: -1 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full flex items-center space-x-3 p-3 bg-brand-neon rounded-xl text-base-dark font-medium hover:shadow-fintech-hover transition-all duration-200"
+          {/* Recent Transactions */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="lg:col-span-2 bg-brand-teal/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-xl font-display font-bold text-brand-light">Recent Transactions</h3>
+              <button className="text-brand-primary hover:text-brand-light transition-colors text-sm font-medium">
+                View All
+              </button>
+            </div>
+            
+            <div className="space-y-4">
+              {recentTransactions.map((txn, index) => (
+                <motion.div
+                  key={txn.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                  className="flex items-center justify-between p-4 bg-brand-dark/30 rounded-xl border border-brand-primary/10 hover:border-brand-primary/30 transition-all duration-200"
                 >
-                  <ArrowUpRight className="w-5 h-5" />
-                  <span>New Deposit</span>
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.02, y: -1 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full flex items-center space-x-3 p-3 bg-base-dark border border-gray-600 rounded-xl text-white font-medium hover:bg-gray-700 transition-all duration-200"
-                >
-                  <ArrowDownRight className="w-5 h-5" />
-                  <span>New Withdrawal</span>
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.02, y: -1 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full flex items-center space-x-3 p-3 border-2 border-brand-purple rounded-xl text-brand-purple font-medium hover:bg-brand-purple hover:text-white transition-all duration-200"
-                >
-                  <Download className="w-5 h-5" />
-                  <span>Generate Report</span>
-                </motion.button>
-              </div>
-            </motion.div>
+                  <div className="flex items-center space-x-4">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                      txn.type === 'deposit' ? 'bg-green-500/20' : 'bg-blue-500/20'
+                    }`}>
+                      {txn.type === 'deposit' ? (
+                        <ArrowDownLeft className="w-5 h-5 text-green-500" />
+                      ) : (
+                        <ArrowUpRight className="w-5 h-5 text-blue-500" />
+                      )}
+                    </div>
+                    <div>
+                      <p className="font-semibold text-brand-light">{txn.id}</p>
+                      <p className="text-sm text-brand-light/70 capitalize">{txn.type}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="text-right">
+                    <p className="font-semibold text-brand-light">{txn.amount}</p>
+                    <p className="text-sm text-brand-light/70">{txn.currency}</p>
+                  </div>
+                  
+                  <div className="flex items-center space-x-3">
+                    <div className={`px-3 py-1 rounded-full border text-xs font-medium ${getStatusColor(txn.status)}`}>
+                      <div className="flex items-center space-x-1">
+                        {getStatusIcon(txn.status)}
+                        <span className="capitalize">{txn.status}</span>
+                      </div>
+                    </div>
+                    <div className="text-sm text-brand-light/70">
+                      {txn.time}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
-            {/* Activity Feed */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8, ease: 'cubic-bezier(.22,.61,.36,1)' }}
-              className="bg-base-mid rounded-2xl p-6 shadow-fintech"
-            >
-              <h3 className="text-lg font-display font-semibold text-white mb-4">Activity Feed</h3>
+          {/* Quick Actions */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="space-y-6"
+          >
+            {/* Quick Actions Card */}
+            <div className="bg-brand-teal/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20">
+              <h3 className="text-xl font-display font-bold text-brand-light mb-6">Quick Actions</h3>
+              
               <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2" />
-                  <div>
-                    <p className="text-sm text-white">New deposit confirmed</p>
-                    <p className="text-xs text-gray-400">2,500 USDT from User #1234</p>
-                    <p className="text-xs text-gray-500">2 minutes ago</p>
+                <button className="w-full flex items-center space-x-3 p-4 bg-brand-primary/10 hover:bg-brand-primary/20 rounded-xl border border-brand-primary/20 transition-all duration-200">
+                  <ArrowDownLeft className="w-5 h-5 text-brand-primary" />
+                  <span className="font-medium text-brand-light">Create Deposit</span>
+                </button>
+                
+                <button className="w-full flex items-center space-x-3 p-4 bg-brand-primary/10 hover:bg-brand-primary/20 rounded-xl border border-brand-primary/20 transition-all duration-200">
+                  <ArrowUpRight className="w-5 h-5 text-brand-primary" />
+                  <span className="font-medium text-brand-light">Process Withdrawal</span>
+                </button>
+                
+                <button className="w-full flex items-center space-x-3 p-4 bg-brand-primary/10 hover:bg-brand-primary/20 rounded-xl border border-brand-primary/20 transition-all duration-200">
+                  <Settings className="w-5 h-5 text-brand-primary" />
+                  <span className="font-medium text-brand-light">API Settings</span>
+                </button>
+                
+                <button className="w-full flex items-center space-x-3 p-4 bg-brand-primary/10 hover:bg-brand-primary/20 rounded-xl border border-brand-primary/20 transition-all duration-200">
+                  <Shield className="w-5 h-5 text-brand-primary" />
+                  <span className="font-medium text-brand-light">Security Center</span>
+                </button>
+              </div>
+            </div>
+
+            {/* System Status */}
+            <div className="bg-brand-teal/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20">
+              <h3 className="text-xl font-display font-bold text-brand-light mb-6">System Status</h3>
+              
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-brand-light/80">API Status</span>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-green-500 text-sm font-medium">Operational</span>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 animate-pulse" />
-                  <div>
-                    <p className="text-sm text-white">Withdrawal pending approval</p>
-                    <p className="text-xs text-gray-400">1,000 BTC to Wallet ABC</p>
-                    <p className="text-xs text-gray-500">5 minutes ago</p>
+                
+                <div className="flex items-center justify-between">
+                  <span className="text-brand-light/80">Payment Processing</span>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-green-500 text-sm font-medium">Active</span>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2" />
-                  <div>
-                    <p className="text-sm text-white">API key updated</p>
-                    <p className="text-xs text-gray-400">New permissions granted</p>
-                    <p className="text-xs text-gray-500">1 hour ago</p>
+                
+                <div className="flex items-center justify-between">
+                  <span className="text-brand-light/80">Security Monitoring</span>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-green-500 text-sm font-medium">Secure</span>
+                  </div>
+                </div>
+                
+                <div className="flex items-center justify-between">
+                  <span className="text-brand-light/80">Database</span>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-green-500 text-sm font-medium">Healthy</span>
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
-      </div>
-
-      {/* Toast en esquina superior derecha al simular un depósito (auto-dismiss 4s) */}
-      <motion.div
-        initial={{ opacity: 0, y: -6 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -6 }}
-        transition={{ duration: 0.25 }}
-        className="fixed top-20 right-6 z-50 bg-brand-neon text-base-dark px-6 py-4 rounded-xl shadow-fintech flex items-center space-x-3"
-      >
-        <div className="w-2 h-2 bg-base-dark rounded-full animate-pulse" />
-        <div>
-          <p className="font-semibold">New deposit confirmed!</p>
-          <p className="text-sm">2,500 USDT received</p>
-        </div>
-      </motion.div>
+      </main>
     </div>
   )
 }
 
-export default Dashboard
+export default DashboardPage

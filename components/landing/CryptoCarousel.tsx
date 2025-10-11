@@ -30,7 +30,7 @@ const CryptoCarousel = () => {
   }, [])
 
   return (
-    <section className="section bg-gradient-to-b from-base-light to-base-light overflow-hidden">
+    <section className="section bg-brand-dark overflow-hidden">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -40,10 +40,10 @@ const CryptoCarousel = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-display font-bold text-text-primary mb-6">
-            Support for <span className="bg-gradient-to-r from-brand-neon to-accent-bright bg-clip-text text-transparent">50+ Cryptocurrencies</span>
+          <h2 className="text-4xl lg:text-5xl font-display font-bold text-brand-light mb-6">
+            Support for <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">50+ Cryptocurrencies</span>
           </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-brand-light/70 max-w-3xl mx-auto">
             Real-time pricing, instant settlements, and enterprise-grade security for all major digital assets.
           </p>
         </motion.div>
@@ -75,22 +75,22 @@ const CryptoCarousel = () => {
                 <motion.div
                   key={`${crypto.symbol}-${index}`}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="flex-shrink-0 w-72 bg-gradient-to-br from-base-light/80 to-base-light backdrop-blur-xl rounded-3xl p-6 border border-accent-medium/20 shadow-2xl"
+                  className="flex-shrink-0 w-72 bg-brand-teal/20 backdrop-blur-xl rounded-3xl p-6 border border-brand-primary/30 shadow-2xl"
                   style={{
                     backdropFilter: 'blur(20px)',
-                    background: 'linear-gradient(135deg, rgba(229,249,248,0.9) 0%, rgba(229,249,248,0.7) 100%)',
+                    background: 'linear-gradient(135deg, rgba(19,67,56,0.3) 0%, rgba(19,67,56,0.2) 100%)',
                   }}
                 >
                   {/* Header */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center space-x-4">
                       {/* Logo Circle */}
-                      <div className="w-14 h-14 bg-gradient-to-br from-brand-neon to-accent-bright rounded-2xl flex items-center justify-center shadow-lg text-2xl text-base-light font-bold">
+                      <div className="w-14 h-14 bg-brand-primary rounded-2xl flex items-center justify-center shadow-lg text-2xl text-brand-dark font-bold">
                         {crypto.logo}
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-text-primary">{crypto.symbol}</h3>
-                        <p className="text-sm text-text-secondary">{crypto.name}</p>
+                        <h3 className="text-xl font-bold text-brand-light">{crypto.symbol}</h3>
+                        <p className="text-sm text-brand-light/70">{crypto.name}</p>
                       </div>
                     </div>
                   </div>
@@ -102,13 +102,13 @@ const CryptoCarousel = () => {
                       initial={{ scale: 1.05 }}
                       animate={{ scale: 1 }}
                       transition={{ duration: 0.3 }}
-                      className="text-3xl font-bold text-text-primary mb-2"
+                      className="text-3xl font-bold text-brand-light mb-2"
                     >
                       ${crypto.price.toFixed(2)}
                     </motion.div>
                     
                     {/* Change */}
-                    <div className={`flex items-center space-x-2 ${crypto.change >= 0 ? 'text-brand-neon' : 'text-red-500'}`}>
+                    <div className={`flex items-center space-x-2 ${crypto.change >= 0 ? 'text-brand-primary' : 'text-red-400'}`}>
                       {crypto.change >= 0 ? (
                         <TrendingUp className="w-4 h-4" />
                       ) : (
@@ -117,7 +117,7 @@ const CryptoCarousel = () => {
                       <span className="text-sm font-semibold">
                         {crypto.change >= 0 ? '+' : ''}{crypto.change.toFixed(2)}%
                       </span>
-                      <span className="text-xs text-text-secondary">24h</span>
+                      <span className="text-xs text-brand-light/60">24h</span>
                     </div>
                   </div>
 
@@ -131,7 +131,7 @@ const CryptoCarousel = () => {
                            L 150,${20 + Math.sin(index + 3) * 15} 
                            L 200,${30 + Math.sin(index + 4) * 10}`}
                         fill="none"
-                        stroke={crypto.change >= 0 ? '#12B2C1' : '#EF4444'}
+                        stroke={crypto.change >= 0 ? '#16F98A' : '#EF4444'}
                         strokeWidth="2"
                         initial={{ pathLength: 0 }}
                         animate={{ pathLength: 1 }}
@@ -140,8 +140,8 @@ const CryptoCarousel = () => {
                       {/* Gradient Fill */}
                       <defs>
                         <linearGradient id={`gradient-${index}`} x1="0%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" stopColor={crypto.change >= 0 ? '#12B2C1' : '#EF4444'} stopOpacity="0.2" />
-                          <stop offset="100%" stopColor={crypto.change >= 0 ? '#12B2C1' : '#EF4444'} stopOpacity="0" />
+                          <stop offset="0%" stopColor={crypto.change >= 0 ? '#16F98A' : '#EF4444'} stopOpacity="0.2" />
+                          <stop offset="100%" stopColor={crypto.change >= 0 ? '#16F98A' : '#EF4444'} stopOpacity="0" />
                         </linearGradient>
                       </defs>
                       <motion.path
@@ -160,9 +160,9 @@ const CryptoCarousel = () => {
                   </div>
 
                   {/* Supported Badge */}
-                  <div className="mt-4 pt-4 border-t border-accent-medium/20">
-                    <div className="flex items-center justify-center space-x-2 text-brand-neon text-sm font-medium">
-                      <div className="w-2 h-2 bg-brand-neon rounded-full animate-pulse" />
+                  <div className="mt-4 pt-4 border-t border-brand-primary/20">
+                    <div className="flex items-center justify-center space-x-2 text-brand-primary text-sm font-medium">
+                      <div className="w-2 h-2 bg-brand-primary rounded-full animate-pulse" />
                       <span>Supported</span>
                     </div>
                   </div>
@@ -180,20 +180,20 @@ const CryptoCarousel = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center space-x-8 bg-gradient-to-r from-base-mid to-base-dark rounded-2xl px-12 py-6">
+          <div className="inline-flex items-center space-x-8 bg-brand-teal/20 rounded-2xl px-12 py-6 border border-brand-primary/30">
             <div>
-              <div className="text-3xl font-bold text-brand-neon mb-1">50+</div>
-              <div className="text-base-light/70 text-sm">Cryptocurrencies</div>
+              <div className="text-3xl font-bold text-brand-primary mb-1">50+</div>
+              <div className="text-brand-light/70 text-sm">Cryptocurrencies</div>
             </div>
-            <div className="w-px h-12 bg-accent-medium/30" />
+            <div className="w-px h-12 bg-brand-primary/30" />
             <div>
-              <div className="text-3xl font-bold text-brand-neon mb-1">6</div>
-              <div className="text-base-light/70 text-sm">Blockchain Networks</div>
+              <div className="text-3xl font-bold text-brand-primary mb-1">6</div>
+              <div className="text-brand-light/70 text-sm">Blockchain Networks</div>
             </div>
-            <div className="w-px h-12 bg-accent-medium/30" />
+            <div className="w-px h-12 bg-brand-primary/30" />
             <div>
-              <div className="text-3xl font-bold text-brand-neon mb-1">24/7</div>
-              <div className="text-base-light/70 text-sm">Real-time Pricing</div>
+              <div className="text-3xl font-bold text-brand-primary mb-1">24/7</div>
+              <div className="text-brand-light/70 text-sm">Real-time Pricing</div>
             </div>
           </div>
         </motion.div>

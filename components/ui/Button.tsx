@@ -20,11 +20,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 ease-out transform focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
     
         const variants = {
-          primary: 'bg-brand-primary text-brand-light shadow-lg hover:shadow-xl focus:ring-brand-primary/50',
-          secondary: 'bg-transparent text-brand-teal border-2 border-brand-teal hover:bg-brand-teal hover:text-brand-light focus:ring-brand-teal/50',
-          neon: 'bg-brand-primary text-brand-light shadow-lg hover:shadow-xl focus:ring-brand-primary/50',
-          outline: 'bg-transparent text-text-primary border-2 border-brand-teal hover:bg-brand-teal hover:text-brand-light focus:ring-brand-teal/50',
-          ghost: 'bg-transparent text-text-primary hover:bg-brand-teal/10 focus:ring-brand-teal/50'
+          primary: 'bg-brand-primary text-brand-dark shadow-lg hover:shadow-xl focus:ring-brand-primary/50',
+          secondary: 'bg-transparent text-brand-light border-2 border-brand-primary hover:bg-brand-primary hover:text-brand-dark focus:ring-brand-primary/50',
+          neon: 'bg-brand-primary text-brand-dark shadow-lg hover:shadow-xl focus:ring-brand-primary/50',
+          outline: 'bg-transparent text-brand-light border-2 border-brand-primary hover:bg-brand-primary hover:text-brand-dark focus:ring-brand-primary/50',
+          ghost: 'bg-transparent text-brand-light hover:bg-brand-primary/10 focus:ring-brand-primary/50'
         }
     
     const sizes = {

@@ -51,7 +51,7 @@ const TrustIndicators = () => {
   ]
 
   return (
-    <section className="section bg-gradient-to-b from-base-light to-base-light/50">
+    <section className="section bg-brand-dark">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -61,10 +61,10 @@ const TrustIndicators = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-display font-bold text-text-primary mb-6">
-            Trusted by <span className="bg-gradient-to-r from-brand-neon to-accent-bright bg-clip-text text-transparent">Enterprise Leaders</span>
+          <h2 className="text-4xl lg:text-5xl font-display font-bold text-brand-light mb-6">
+            Trusted by <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">Enterprise Leaders</span>
           </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-brand-light/70 max-w-3xl mx-auto">
             Join the world's most trusted crypto payment infrastructure. 
             Built for enterprise-grade security, compliance, and reliability.
           </p>
@@ -82,21 +82,21 @@ const TrustIndicators = () => {
               whileHover={{ y: -4, scale: 1.02 }}
               className="group relative"
             >
-              <div className="bg-base-light rounded-2xl p-8 shadow-fintech hover:shadow-fintech-hover border border-accent-medium/20 transition-all duration-300 h-full">
+              <div className="bg-brand-teal/10 rounded-2xl p-8 shadow-lg hover:shadow-xl border border-brand-primary/20 transition-all duration-300 h-full">
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-14 h-14 bg-gradient-to-br from-brand-neon to-accent-bright rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                      <item.icon className="w-7 h-7 text-base-light" />
+                    <div className="w-14 h-14 bg-brand-primary rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                      <item.icon className="w-7 h-7 text-brand-dark" />
                     </div>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center space-x-2 mb-2">
-                      <h3 className="text-lg font-semibold text-text-primary">{item.title}</h3>
-                      <span className="px-2 py-1 bg-brand-neon/10 text-brand-neon text-xs font-medium rounded-full border border-brand-neon/20">
+                      <h3 className="text-lg font-semibold text-brand-light">{item.title}</h3>
+                      <span className="px-2 py-1 bg-brand-primary/10 text-brand-primary text-xs font-medium rounded-full border border-brand-primary/20">
                         {item.badge}
                       </span>
                     </div>
-                    <p className="text-text-secondary text-sm leading-relaxed">
+                    <p className="text-brand-light/70 text-sm leading-relaxed">
                       {item.description}
                     </p>
                   </div>

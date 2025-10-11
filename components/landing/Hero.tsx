@@ -178,7 +178,7 @@ const Hero = () => {
                   Start Free Trial
                   <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </span>
-                <div className="absolute inset-0 bg-brand-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-brand-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
               
               {/* DRAMATIC Secondary CTA */}
@@ -190,7 +190,7 @@ const Hero = () => {
                   boxShadow: "0 20px 40px rgba(22,249,138,0.3)"
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 border-2 border-brand-primary text-brand-primary rounded-2xl font-bold text-xl hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 shadow-lg"
+                className="px-10 py-5 border-2 border-brand-primary text-brand-light rounded-2xl font-bold text-xl hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 shadow-lg"
               >
                 Request Enterprise Demo
               </motion.button>

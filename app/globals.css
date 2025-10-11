@@ -4,17 +4,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @layer base {
   * {
-    @apply border-gray-200;
+    @apply border-gray-light;
+  }
+  
+  html {
+    scroll-behavior: smooth;
   }
   
   body {
-    @apply bg-light-gray text-gray-900 font-sans antialiased;
+    @apply bg-secondary-bg text-primary-text font-sans antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-semibold;
+    @apply font-display font-semibold text-primary-text;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    @apply text-5xl lg:text-6xl font-bold;
+  }
+  
+  h2 {
+    @apply text-3xl lg:text-4xl font-bold;
+  }
+  
+  h3 {
+    @apply text-2xl lg:text-3xl font-semibold;
   }
 }
 

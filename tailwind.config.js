@@ -8,37 +8,33 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Base oscura
+        // Coinfixi Brand Colors - Based on Atomos Template
+        primary: {
+          dark: '#0F1115',
+          text: '#242834',
+        },
+        secondary: {
+          bg: '#F7F8FA',
+        },
+        accent: {
+          neon: '#B6FF00',
+          purple: '#7D53FF',
+        },
+        gray: {
+          light: '#E9EDF2',
+          medium: '#9AA3B2',
+          dark: '#444B57',
+        },
+        // Legacy colors for compatibility
         'dark-base': '#242834',
-        'dark-900': '#1a1d26',
-        'dark-800': '#2d3142',
-        
-        // Acento morado premium
+        'dark-900': '#0F1115',
         'purple-primary': '#7D53FF',
-        'purple-600': '#6B46C1',
-        'purple-700': '#553C9A',
-        'purple-800': '#44337A',
-        
-        // Verde neón vibrante (solo CTAs y estados positivos)
         'neon-green': '#B6FF00',
-        'neon-green-dark': '#9DE000',
-        
-        // Gris claro para balance
-        'light-gray': '#F5F6FA',
-        'gray-100': '#f1f5f9',
-        'gray-200': '#e2e8f0',
-        'gray-300': '#cbd5e1',
-        'gray-400': '#94a3b8',
-        'gray-500': '#64748b',
-        'gray-600': '#475569',
-        'gray-700': '#334155',
-        'gray-800': '#1e293b',
-        'gray-900': '#0f172a',
-        
-        // Estados
-        'success': '#10b981',
-        'warning': '#f59e0b',
-        'error': '#ef4444',
+        'light-gray': '#F7F8FA',
+        // Status colors
+        success: '#10b981',
+        warning: '#f59e0b',
+        error: '#ef4444',
       },
       fontFamily: {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
@@ -68,21 +64,38 @@ module.exports = {
         '3xl': '1.5rem',
       },
       boxShadow: {
+        fintech: '0 10px 30px rgba(0,0,0,0.08)',
+        'fintech-hover': '0 20px 40px rgba(0,0,0,0.12)',
+        'neon-glow': '0 0 20px rgba(182, 255, 0, 0.3)',
+        'purple-glow': '0 0 20px rgba(125, 83, 255, 0.3)',
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-        'glow-purple': '0 0 20px rgba(125, 83, 255, 0.3)',
-        'glow-neon': '0 0 20px rgba(182, 255, 0, 0.4)',
-        'button': '0 4px 14px 0 rgba(125, 83, 255, 0.3)',
-        'button-hover': '0 8px 25px 0 rgba(125, 83, 255, 0.4)',
       },
       animation: {
+        'fade-up': 'fade-up 0.6s ease-out forwards',
+        'count-up': 'count-up 0.8s ease-out forwards',
+        'parallax': 'parallax 20s ease-in-out infinite alternate',
+        'hover-lift': 'hover-lift 0.3s ease-out forwards',
         'float': 'float 6s ease-in-out infinite',
         'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-        'fade-in': 'fade-in 0.5s ease-out',
-        'slide-up': 'slide-up 0.5s ease-out',
-        'count-up': 'count-up 2s ease-out',
       },
       keyframes: {
+        'fade-up': {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'count-up': {
+          from: { opacity: '0', transform: 'translateY(10px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'parallax': {
+          '0%': { transform: 'translateY(0px)' },
+          '100%': { transform: 'translateY(-20px)' },
+        },
+        'hover-lift': {
+          '0%': { transform: 'translateY(0px)' },
+          '100%': { transform: 'translateY(-4px)' },
+        },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
@@ -90,18 +103,6 @@ module.exports = {
         'pulse-glow': {
           '0%, 100%': { boxShadow: '0 0 20px rgba(125, 83, 255, 0.3)' },
           '50%': { boxShadow: '0 0 40px rgba(125, 83, 255, 0.6)' },
-        },
-        'fade-in': {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        'slide-up': {
-          '0%': { opacity: '0', transform: 'translateY(30px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        'count-up': {
-          '0%': { opacity: '0', transform: 'scale(0.5)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
         },
       },
       backgroundImage: {

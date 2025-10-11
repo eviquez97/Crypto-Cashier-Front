@@ -8,8 +8,6 @@ import PromoLeft from '@/components/landing/PromoLeft'
 import PromoRight from '@/components/landing/PromoRight'
 import Testimonials from '@/components/landing/Testimonials'
 import BigCta from '@/components/landing/BigCta'
-import Pricing from '@/components/landing/Pricing'
-import CompareTable from '@/components/landing/CompareTable'
 import Newsletter from '@/components/landing/Newsletter'
 import Footer from '@/components/layout/Footer'
 
@@ -24,8 +22,6 @@ export default function Home() {
       <PromoRight />
       <Testimonials />
       <BigCta />
-      <Pricing />
-      <CompareTable />
       <Newsletter />
       <Footer />
     </div>

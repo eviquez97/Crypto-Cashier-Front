@@ -238,11 +238,11 @@ const BigCta = () => {
             viewport={{ once: true }}
             className="mt-12"
           >
-            <p className="text-base-light/70 mb-4">Need immediate assistance?</p>
+            <p className="text-brand-light mb-4">Need immediate assistance?</p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              className="px-8 py-3 border-2 border-accent-medium text-accent-medium rounded-2xl font-semibold hover:bg-accent-medium hover:text-base-light transition-all duration-300"
+              className="px-8 py-3 border-2 border-brand-primary text-brand-light rounded-2xl font-semibold hover:bg-brand-primary hover:text-brand-dark transition-all duration-300"
             >
               Schedule Enterprise Demo
             </motion.button>

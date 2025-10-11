@@ -39,7 +39,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-base-darker text-text-primary border-t border-gray-800">
+    <footer className="bg-brand-dark text-brand-light border-t border-brand-primary/20">
       <div className="container py-16">
         {/* Top Section */}
         <div className="grid lg:grid-cols-4 gap-8 mb-12">
@@ -52,12 +52,12 @@ const Footer = () => {
             className="lg:col-span-1"
           >
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-brand-neon rounded-full flex items-center justify-center">
-                <span className="text-base-dark font-bold text-lg">CF</span>
+              <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center">
+                <span className="text-brand-dark font-bold text-lg">CF</span>
               </div>
-              <span className="text-xl font-display font-bold">Coinfixi</span>
+              <span className="text-xl font-display font-bold text-brand-light">Coinfixi</span>
             </div>
-            <p className="text-text-secondary leading-relaxed mb-6">
+            <p className="text-brand-light/70 leading-relaxed mb-6">
               Premium crypto cashier for sportbooks and casinos. Enterprise-grade security with transparent pricing.
             </p>
             
@@ -72,7 +72,7 @@ const Footer = () => {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 bg-base-mid rounded-xl flex items-center justify-center hover:bg-brand-neon hover:text-base-dark transition-all duration-200 text-text-secondary"
+                  className="w-10 h-10 bg-brand-teal/20 rounded-xl flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-200 text-brand-light/70"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -88,7 +88,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-display font-semibold mb-4">Product</h3>
+            <h3 className="font-display font-semibold mb-4 text-brand-light">Product</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link, index) => (
                 <motion.li
@@ -100,7 +100,7 @@ const Footer = () => {
                 >
                   <a
                     href={link.href}
-                    className="text-text-secondary hover:text-brand-neon transition-colors duration-200"
+                    className="text-brand-light/70 hover:text-brand-primary transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -116,7 +116,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-display font-semibold mb-4">Company</h3>
+            <h3 className="font-display font-semibold mb-4 text-brand-light">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <motion.li
@@ -128,7 +128,7 @@ const Footer = () => {
                 >
                   <a
                     href={link.href}
-                    className="text-text-secondary hover:text-brand-neon transition-colors duration-200"
+                    className="text-brand-light/70 hover:text-brand-primary transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -144,7 +144,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-display font-semibold mb-4">Resources</h3>
+            <h3 className="font-display font-semibold mb-4 text-brand-light">Resources</h3>
             <ul className="space-y-3">
               {footerLinks.resources.map((link, index) => (
                 <motion.li
@@ -156,7 +156,7 @@ const Footer = () => {
                 >
                   <a
                     href={link.href}
-                    className="text-text-secondary hover:text-brand-neon transition-colors duration-200"
+                    className="text-brand-light/70 hover:text-brand-primary transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -172,10 +172,10 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="border-t border-gray-700 pt-8"
+          className="border-t border-brand-primary/20 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-text-muted text-sm mb-4 md:mb-0">
+            <p className="text-brand-light/60 text-sm mb-4 md:mb-0">
               © {currentYear} Coinfixi. All rights reserved.
             </p>
             
@@ -188,7 +188,7 @@ const Footer = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.5 + index * 0.05 }}
                   viewport={{ once: true }}
-                  className="text-text-muted hover:text-brand-neon transition-colors duration-200 text-sm"
+                  className="text-brand-light/60 hover:text-brand-primary transition-colors duration-200 text-sm"
                 >
                   {link.name}
                 </motion.a>

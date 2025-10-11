@@ -6,12 +6,25 @@ import { useState } from 'react'
 
 const Newsletter = () => {
   const [email, setEmail] = useState('')
+  const [isSubscribed, setIsSubscribed] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle newsletter subscription
-    console.log('Newsletter subscription:', email)
-    setEmail('')
+    if (email && email.includes('@')) {
+      // Simulate newsletter subscription
+      setIsSubscribed(true)
+      console.log('Newsletter subscription:', email)
+      
+      // Send email to marketing team
+      const subject = 'Newsletter Subscription Request'
+      const body = `New newsletter subscription:\n\nEmail: ${email}\n\nSource: Landing Page Newsletter Section`
+      window.open(`mailto:marketing@coinfixi.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank')
+      
+      setEmail('')
+      setTimeout(() => setIsSubscribed(false), 3000)
+    } else {
+      alert('Please enter a valid email address')
+    }
   }
 
   return (
@@ -64,13 +77,26 @@ const Newsletter = () => {
             </div>
             
             <motion.button
-              whileHover={{ scale: 1.05, y: -1 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: isSubscribed ? 1 : 1.05, y: isSubscribed ? 0 : -1 }}
+              whileTap={{ scale: isSubscribed ? 1 : 0.95 }}
               type="submit"
-              className="px-8 py-4 bg-brand-primary text-brand-dark rounded-xl font-semibold flex items-center justify-center group hover:shadow-xl transition-all duration-200 whitespace-nowrap"
+              disabled={isSubscribed}
+              className={`px-8 py-4 rounded-xl font-semibold flex items-center justify-center group transition-all duration-200 whitespace-nowrap ${
+                isSubscribed 
+                  ? 'bg-brand-primary/20 text-brand-primary cursor-not-allowed' 
+                  : 'bg-brand-primary text-brand-dark hover:shadow-xl'
+              }`}
             >
-              Subscribe
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              {isSubscribed ? (
+                <>
+                  ✓ Subscribed!
+                </>
+              ) : (
+                <>
+                  Subscribe
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </>
+              )}
             </motion.button>
           </motion.form>
 

@@ -10,11 +10,20 @@ const BigCta = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (email) {
+    if (email && email.includes('@')) {
+      // Simulate API call
       setIsSubmitted(true)
       console.log('Email submitted:', email)
+      
+      // Send email to sales team
+      const subject = 'Enterprise Demo Request from Landing Page'
+      const body = `Hi Coinfixi Team,\n\nI would like to request an enterprise demo.\n\nEmail: ${email}\n\nBest regards`
+      window.open(`mailto:sales@coinfixi.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank')
+      
       setEmail('')
-      setTimeout(() => setIsSubmitted(false), 3000)
+      setTimeout(() => setIsSubmitted(false), 5000)
+    } else {
+      alert('Please enter a valid email address')
     }
   }
 

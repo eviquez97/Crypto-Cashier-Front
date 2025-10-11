@@ -39,7 +39,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   return (
-    <motion.button
+    <motion.div
       whileHover={{ scale: disabled || loading ? 1 : 1.02 }}
       whileTap={{ scale: disabled || loading ? 1 : 0.98 }}
       disabled={disabled || loading}
@@ -59,7 +59,8 @@ export default function Button({
       {loading && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
       {!loading && icon && <span className="mr-2">{icon}</span>}
       {children}
-    </motion.button>
+    </button></motion.div>
   )
 }
+
 

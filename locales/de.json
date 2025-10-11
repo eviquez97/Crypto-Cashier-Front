@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "features": "Funktionen",
+    "docs": "Dokumentation",
+    "resources": "Ressourcen",
+    "signIn": "Anmelden",
+    "getStarted": "Loslegen"
+  },
+  "hero": {
+    "badge": "Enterprise-Infrastruktur",
+    "title": "Enterprise Krypto-Zahlungsinfrastruktur für Gaming-Betreiber"
+  }
+}
+

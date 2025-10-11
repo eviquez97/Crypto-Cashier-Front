@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "home": "首页",
+    "features": "功能",
+    "docs": "文档",
+    "resources": "资源",
+    "signIn": "登录",
+    "getStarted": "开始使用"
+  },
+  "hero": {
+    "badge": "企业级基础设施",
+    "title": "面向游戏运营商的企业级加密支付基础设施"
+  }
+}
+

@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "home": "Início",
+    "features": "Recursos",
+    "docs": "Documentação",
+    "resources": "Recursos",
+    "signIn": "Entrar",
+    "getStarted": "Começar"
+  },
+  "hero": {
+    "badge": "Infraestrutura de Nível Empresarial",
+    "title": "Infraestrutura Empresarial de Pagamentos Cripto para Operadores de Jogos"
+  }
+}
+

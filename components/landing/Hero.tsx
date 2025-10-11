@@ -113,15 +113,15 @@ const Hero = () => {
               className="text-6xl lg:text-8xl font-display font-bold leading-[0.8]"
             >
               <span className="bg-gradient-to-r from-brand-primary via-brand-primary to-brand-light bg-clip-text text-transparent drop-shadow-lg">
-                Premium Crypto
+                {t('hero.title').split(' ').slice(0, 2).join(' ')}
               </span>
               <br />
               <span className="text-brand-light drop-shadow-lg">
-                Payments
+                {t('hero.title').split(' ').slice(2, 4).join(' ')}
               </span>
               <br />
               <span className="text-5xl lg:text-6xl text-brand-teal font-medium">
-                for the Digital Era
+                {t('hero.title').split(' ').slice(4).join(' ')}
               </span>
             </motion.h1>
 
@@ -189,7 +189,7 @@ const Hero = () => {
                 className="relative group bg-brand-primary text-brand-dark px-10 py-5 rounded-2xl font-bold text-xl shadow-2xl shadow-brand-primary/50 overflow-hidden cursor-pointer"
               >
                 <span className="relative z-10 flex items-center justify-center">
-                  Start Free Trial
+                  {t('hero.ctaPrimary')}
                   <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-brand-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -207,7 +207,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-5 border-2 border-brand-primary text-brand-light rounded-2xl font-bold text-xl hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 shadow-lg cursor-pointer"
               >
-                Request Enterprise Demo
+                {t('hero.ctaSecondary')}
               </motion.button>
             </motion.div>
 
@@ -220,11 +220,11 @@ const Hero = () => {
             >
               <div className="flex items-center space-x-2">
                 <Users className="w-5 h-5 text-brand-primary" />
-                <span className="text-sm font-medium text-brand-light">500+ Active Clients</span>
+                <span className="text-sm font-medium text-brand-light">500+ {t('hero.trust.clients')}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Lock className="w-5 h-5 text-brand-primary" />
-                <span className="text-sm font-medium text-brand-light">SOC 2 Compliant</span>
+                <span className="text-sm font-medium text-brand-light">{t('hero.trust.compliant')}</span>
               </div>
             </motion.div>
 
@@ -235,7 +235,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.8, ease: 'cubic-bezier(.22,.61,.36,1)' }}
               className="pt-8"
             >
-              <p className="text-brand-light/70 text-sm mb-4 font-medium">Trusted by leading gaming operators</p>
+              <p className="text-brand-light/70 text-sm mb-4 font-medium">{t('hero.trustedBy')}</p>
               <div className="flex items-center justify-center space-x-6 opacity-60">
                 {/* Logos de partners - nombres genéricos para evitar problemas legales */}
                 <div className="text-brand-light/70 text-sm font-semibold">GamingCorp</div>

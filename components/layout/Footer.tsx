@@ -2,33 +2,34 @@
 
 import { motion } from 'framer-motion'
 import { Twitter, Linkedin, Github } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const { t } = useTranslation()
 
   const footerLinks = {
     product: [
-      { name: 'Features', href: '#features' },
-      { name: 'Documentation', href: '#docs' },
-      { name: 'API Reference', href: '#api' }
+      { name: t('footer.product.features'), href: '#features' },
+      { name: t('footer.product.docs'), href: '#docs' },
+      { name: t('footer.product.integrations'), href: '#api' }
     ],
     company: [
-      { name: 'About', href: '#about' },
-      { name: 'Blog', href: '#blog' },
-      { name: 'Careers', href: '#careers' },
-      { name: 'Contact', href: '#contact' }
+      { name: t('footer.company.about'), href: '#about' },
+      { name: t('footer.company.blog'), href: '#blog' },
+      { name: t('footer.company.careers'), href: '#careers' },
+      { name: t('footer.company.contact'), href: '#contact' }
     ],
     resources: [
-      { name: 'Help Center', href: '#help' },
-      { name: 'Community', href: '#community' },
-      { name: 'Status', href: '#status' },
-      { name: 'Security', href: '#security' }
+      { name: t('footer.resources.support'), href: '#help' },
+      { name: t('footer.resources.guides'), href: '#community' },
+      { name: t('footer.resources.status'), href: '#status' },
+      { name: t('footer.legal.security'), href: '#security' }
     ],
     legal: [
-      { name: 'Privacy Policy', href: '#privacy' },
-      { name: 'Terms of Service', href: '#terms' },
-      { name: 'Cookie Policy', href: '#cookies' },
-      { name: 'GDPR', href: '#gdpr' }
+      { name: t('footer.legal.privacy'), href: '#privacy' },
+      { name: t('footer.legal.terms'), href: '#terms' },
+      { name: t('footer.legal.security'), href: '#cookies' }
     ]
   }
 
@@ -58,7 +59,7 @@ const Footer = () => {
               <span className="text-xl font-display font-bold text-brand-light">Coinfixi</span>
             </div>
             <p className="text-brand-light/70 leading-relaxed mb-6">
-              Premium crypto cashier for sportbooks and casinos. Enterprise-grade security with transparent pricing.
+              {t('footer.description')}
             </p>
             
             {/* Social Links */}
@@ -88,7 +89,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-display font-semibold mb-4 text-brand-light">Product</h3>
+            <h3 className="font-display font-semibold mb-4 text-brand-light">{t('footer.product.title')}</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link, index) => (
                 <motion.li
@@ -116,7 +117,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-display font-semibold mb-4 text-brand-light">Company</h3>
+            <h3 className="font-display font-semibold mb-4 text-brand-light">{t('footer.company.title')}</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <motion.li
@@ -144,7 +145,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-display font-semibold mb-4 text-brand-light">Resources</h3>
+            <h3 className="font-display font-semibold mb-4 text-brand-light">{t('footer.resources.title')}</h3>
             <ul className="space-y-3">
               {footerLinks.resources.map((link, index) => (
                 <motion.li
@@ -176,7 +177,7 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-brand-light/60 text-sm mb-4 md:mb-0">
-              © {currentYear} Coinfixi. All rights reserved.
+              © {currentYear} Coinfixi. {t('footer.copyright')}
             </p>
             
             <div className="flex flex-wrap justify-center md:justify-end space-x-6">

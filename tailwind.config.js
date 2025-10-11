@@ -7,108 +7,95 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // Design System Tokens - Exact HEX values
       colors: {
-        // Coinfixi Brand Colors - Based on Atomos Template
-        primary: {
-          dark: '#0F1115',
-          text: '#242834',
+        base: {
+          dark: '#0F1115',    // Fondos oscuros, banda KPIs, footer
+          mid: '#1A1E23',     // Cards oscuras, header dashboard
+          light: '#F7F8FA',   // Fondos claros
         },
-        secondary: {
-          bg: '#F7F8FA',
+        text: {
+          main: '#242834',    // Texto principal
         },
-        accent: {
-          neon: '#B6FF00',
-          purple: '#7D53FF',
+        brand: {
+          neon: '#B6FF00',    // SOLO CTAs, checks, highlights
+          purple: '#7D53FF',  // Acento secundario, links
         },
         gray: {
-          light: '#E9EDF2',
-          medium: '#9AA3B2',
-          dark: '#444B57',
+          300: '#E9EDF2',
+          500: '#9AA3B2',
+          700: '#444B57',
         },
-        // Legacy colors for compatibility
-        'dark-base': '#242834',
-        'dark-900': '#0F1115',
-        'purple-primary': '#7D53FF',
-        'neon-green': '#B6FF00',
-        'light-gray': '#F7F8FA',
-        // Status colors
-        success: '#10b981',
-        warning: '#f59e0b',
-        error: '#ef4444',
+        state: {
+          success: '#16A34A',
+          warn: '#F59E0B',
+          error: '#EF4444',
+        },
       },
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'display': ['Satoshi', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Plus Jakarta Sans', 'Satoshi', 'Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'xs': '0.75rem',
-        'sm': '0.875rem',
-        'base': '1rem',
-        'lg': '1.125rem',
-        'xl': '1.25rem',
-        '2xl': '1.5rem',
-        '3xl': '1.875rem',
-        '4xl': '2.25rem',
-        '5xl': '3rem',
-        '6xl': '3.75rem',
-        '7xl': '4.5rem',
-      },
-      spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
-        '128': '32rem',
+        // Tipografía - Escala exacta
+        'h1': ['64px', { lineHeight: '1.05', fontWeight: '600' }],
+        'h1-mobile': ['40px', { lineHeight: '1.05', fontWeight: '600' }],
+        'h2': ['40px', { lineHeight: '1.1', fontWeight: '600' }],
+        'h2-mobile': ['28px', { lineHeight: '1.1', fontWeight: '600' }],
+        'h3': ['24px', { lineHeight: '1.2', fontWeight: '500' }],
+        'body-lg': ['18px', { lineHeight: '1.6' }],
+        'body': ['16px', { lineHeight: '1.6' }],
       },
       borderRadius: {
-        'xl': '0.75rem',
-        '2xl': '1rem',
-        '3xl': '1.5rem',
+        '2xl': '22px',  // Cards
+        'xl': '14px',   // Inputs
       },
       boxShadow: {
-        fintech: '0 10px 30px rgba(0,0,0,0.08)',
-        'fintech-hover': '0 20px 40px rgba(0,0,0,0.12)',
-        'neon-glow': '0 0 20px rgba(182, 255, 0, 0.3)',
-        'purple-glow': '0 0 20px rgba(125, 83, 255, 0.3)',
-        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        fintech: '0 10px 30px rgba(0,0,0,.08)',
+        'fintech-hover': '0 14px 40px rgba(0,0,0,.12)',
+      },
+      maxWidth: {
+        'container': '1200px',
+      },
+      spacing: {
+        'gutter': '24px',
+        'section': '96px', // py-24
+        'hero': '112px',   // py-28
+      },
+      backgroundImage: {
+        // Gradientes exactos
+        'hero': 'linear-gradient(180deg, #0F1115 0%, #141821 60%, #1A1E23 100%)',
+        'hero-radial': 'radial-gradient(600px circle at 70% 20%, rgba(182,255,0,.12), transparent 60%)',
+        'cta': 'linear-gradient(180deg, #111318 0%, #0F1115 100%)',
       },
       animation: {
-        'fade-up': 'fade-up 0.6s ease-out forwards',
-        'count-up': 'count-up 0.8s ease-out forwards',
-        'parallax': 'parallax 20s ease-in-out infinite alternate',
-        'hover-lift': 'hover-lift 0.3s ease-out forwards',
-        'float': 'float 6s ease-in-out infinite',
-        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+        'count-up': 'count-up 1.2s ease-out forwards',
+        'fade-up': 'fade-up 0.6s cubic-bezier(.22,.61,.36,1) forwards',
+        'parallax': 'parallax 0.6s ease-out forwards',
+        'toast-enter': 'toast-enter 0.25s ease-out forwards',
+        'toast-exit': 'toast-exit 0.25s ease-out forwards',
       },
       keyframes: {
-        'fade-up': {
-          '0%': { opacity: '0', transform: 'translateY(30px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
         'count-up': {
           from: { opacity: '0', transform: 'translateY(10px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
         },
+        'fade-up': {
+          from: { opacity: '0', transform: 'translateY(16px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
         'parallax': {
-          '0%': { transform: 'translateY(0px)' },
-          '100%': { transform: 'translateY(-20px)' },
+          from: { transform: 'translateY(0) scale(1)' },
+          to: { transform: 'translateY(-18px) scale(1.02)' },
         },
-        'hover-lift': {
-          '0%': { transform: 'translateY(0px)' },
-          '100%': { transform: 'translateY(-4px)' },
+        'toast-enter': {
+          from: { opacity: '0', transform: 'translateY(-6px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
         },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
+        'toast-exit': {
+          from: { opacity: '1', transform: 'translateY(0)' },
+          to: { opacity: '0', transform: 'translateY(-6px)' },
         },
-        'pulse-glow': {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(125, 83, 255, 0.3)' },
-          '50%': { boxShadow: '0 0 40px rgba(125, 83, 255, 0.6)' },
-        },
-      },
-      backgroundImage: {
-        'gradient-purple': 'linear-gradient(135deg, #7D53FF 0%, #6B46C1 100%)',
-        'gradient-hero': 'linear-gradient(135deg, #242834 0%, #7D53FF 50%, #6B46C1 100%)',
-        'gradient-dark': 'linear-gradient(135deg, #1a1d26 0%, #242834 100%)',
       },
     },
   },

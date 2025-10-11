@@ -1,13 +1,16 @@
 'use client'
 
 import Navbar from '@/components/layout/Navbar'
-import Hero from '@/components/sections/Hero'
-import KPIBand from '@/components/sections/KPIBand'
-import WhyChoose from '@/components/sections/WhyChoose'
-import AlternatingSection from '@/components/sections/AlternatingSection'
-import Testimonials from '@/components/sections/Testimonials'
-import BigCTA from '@/components/sections/BigCTA'
-import Newsletter from '@/components/sections/Newsletter'
+import Hero from '@/components/landing/Hero'
+import KpiBand from '@/components/landing/KpiBand'
+import WhyChoose from '@/components/landing/WhyChoose'
+import PromoLeft from '@/components/landing/PromoLeft'
+import PromoRight from '@/components/landing/PromoRight'
+import Testimonials from '@/components/landing/Testimonials'
+import BigCta from '@/components/landing/BigCta'
+import Pricing from '@/components/landing/Pricing'
+import CompareTable from '@/components/landing/CompareTable'
+import Newsletter from '@/components/landing/Newsletter'
 import Footer from '@/components/layout/Footer'
 
 export default function Home() {
@@ -15,30 +18,14 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <KPIBand />
+      <KpiBand />
       <WhyChoose />
-      
-      <AlternatingSection
-        title="Coinfixi for the Future"
-        subtitle="Next-Generation Infrastructure"
-        description="Built on cutting-edge blockchain technology with real-time processing capabilities. Our infrastructure scales with your business, ensuring seamless performance even during peak traffic."
-        primaryButton="View API Docs"
-        secondaryButton="Learn More"
-        imageSide="right"
-      />
-      
-      <AlternatingSection
-        title="White-Label Checkout"
-        subtitle="Complete Customization"
-        description="Fully customizable payment experience that matches your brand. Integrate seamlessly with your existing systems while maintaining complete control over the user experience."
-        primaryButton="Get Started"
-        secondaryButton="View Demo"
-        imageSide="left"
-        features={['Custom Branding', 'Risk Controls', 'Real-time Webhooks']}
-      />
-      
+      <PromoLeft />
+      <PromoRight />
       <Testimonials />
-      <BigCTA />
+      <BigCta />
+      <Pricing />
+      <CompareTable />
       <Newsletter />
       <Footer />
     </div>

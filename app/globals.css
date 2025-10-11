@@ -1,139 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 @layer base {
-  * {
-    @apply border-gray-light;
-  }
-  
   html {
     scroll-behavior: smooth;
   }
   
   body {
-    @apply bg-secondary-bg text-primary-text font-sans antialiased;
+    @apply bg-base-light text-text-main font-sans antialiased;
     font-feature-settings: 'rlig' 1, 'calt' 1;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-semibold text-primary-text;
-    line-height: 1.2;
+    @apply font-display text-text-main;
   }
   
+  /* Tipografía exacta según especificación */
   h1 {
-    @apply text-5xl lg:text-6xl font-bold;
+    @apply text-h1-mobile lg:text-h1;
   }
   
   h2 {
-    @apply text-3xl lg:text-4xl font-bold;
+    @apply text-h2-mobile lg:text-h2;
   }
   
   h3 {
-    @apply text-2xl lg:text-3xl font-semibold;
+    @apply text-h3;
+  }
+  
+  p {
+    @apply text-body;
+  }
+  
+  .text-body-lg {
+    @apply text-body-lg;
   }
 }
 
 @layer components {
-  /* Botones Premium */
+  /* Botones con estilos exactos */
   .btn-primary {
-    @apply bg-gradient-purple text-white font-semibold px-6 py-3 rounded-xl shadow-button hover:shadow-button-hover hover:scale-105 transition-all duration-300 ease-out;
+    @apply px-6 py-3 bg-brand-neon text-base-dark font-semibold rounded-xl shadow-fintech hover:shadow-fintech-hover hover:-translate-y-px transition-all duration-200;
   }
   
   .btn-secondary {
-    @apply bg-transparent text-purple-primary border-2 border-purple-primary font-semibold px-6 py-3 rounded-xl hover:bg-purple-primary hover:text-white hover:scale-105 transition-all duration-300 ease-out;
+    @apply px-6 py-3 border-2 border-text-main text-text-main font-semibold rounded-xl hover:bg-text-main hover:text-base-light transition-all duration-200;
   }
   
-  .btn-neon {
-    @apply bg-neon-green text-dark-base font-semibold px-6 py-3 rounded-xl shadow-glow-neon hover:shadow-lg hover:scale-105 transition-all duration-300 ease-out;
+  .btn-ghost {
+    @apply px-6 py-3 text-text-main font-semibold rounded-xl hover:bg-gray-300 transition-all duration-200;
   }
   
-  .btn-outline {
-    @apply bg-transparent text-white border-2 border-white font-semibold px-6 py-3 rounded-xl hover:bg-white hover:text-dark-base hover:scale-105 transition-all duration-300 ease-out;
-  }
-  
-  /* Cards Premium */
+  /* Cards con sombras fintech */
   .card {
-    @apply bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 ease-out;
+    @apply bg-white rounded-2xl shadow-fintech hover:shadow-fintech-hover transition-all duration-300;
   }
   
   .card-dark {
-    @apply bg-dark-base rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 ease-out;
+    @apply bg-base-mid rounded-2xl shadow-fintech hover:shadow-fintech-hover transition-all duration-300;
   }
   
-  /* Inputs Premium */
-  .input-field {
-    @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl font-medium text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-primary focus:ring-4 focus:ring-purple-primary/10 transition-all duration-200;
+  /* Inputs */
+  .input {
+    @apply w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-neon focus:border-transparent transition-all duration-200;
   }
   
-  /* Gradientes Personalizados */
-  .gradient-hero {
-    @apply bg-gradient-hero;
+  /* Contenedor principal */
+  .container {
+    @apply max-w-container mx-auto px-6;
   }
   
-  .gradient-purple {
-    @apply bg-gradient-purple;
+  /* Secciones */
+  .section {
+    @apply py-section;
   }
   
-  .gradient-dark {
-    @apply bg-gradient-dark;
-  }
-  
-  /* Animaciones Personalizadas */
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
-  }
-  
-  .animate-fade-in {
-    animation: fade-in 0.5s ease-out;
-  }
-  
-  .animate-slide-up {
-    animation: slide-up 0.5s ease-out;
-  }
-  
-  /* Efectos de Glow */
-  .glow-purple {
-    box-shadow: 0 0 20px rgba(125, 83, 255, 0.3);
-  }
-  
-  .glow-neon {
-    box-shadow: 0 0 20px rgba(182, 255, 0, 0.4);
-  }
-  
-  /* Estados de Transacción */
-  .status-pending {
-    @apply bg-warning/10 text-warning border border-warning/20 rounded-lg px-3 py-1 text-sm font-medium;
-  }
-  
-  .status-confirmed {
-    @apply bg-neon-green/10 text-neon-green-dark border border-neon-green/20 rounded-lg px-3 py-1 text-sm font-medium;
-  }
-  
-  .status-failed {
-    @apply bg-error/10 text-error border border-error/20 rounded-lg px-3 py-1 text-sm font-medium;
-  }
-}
-
-@layer utilities {
-  .text-gradient {
-    @apply bg-gradient-purple bg-clip-text text-transparent;
-  }
-  
-  .text-neon {
-    @apply text-neon-green;
-  }
-  
-  .bg-pattern {
-    background-image: radial-gradient(circle at 1px 1px, rgba(125, 83, 255, 0.1) 1px, transparent 0);
-    background-size: 20px 20px;
+  .hero-section {
+    @apply py-hero;
   }
 }

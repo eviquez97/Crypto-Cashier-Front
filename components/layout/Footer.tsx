@@ -9,6 +9,7 @@ const Footer = () => {
   const footerLinks = {
     product: [
       { name: 'Features', href: '#features' },
+      { name: 'Pricing', href: '#pricing' },
       { name: 'Documentation', href: '#docs' },
       { name: 'API Reference', href: '#api' }
     ],
@@ -39,8 +40,8 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-primary-dark text-white">
-      <div className="max-w-[1200px] mx-auto px-6 py-16">
+    <footer className="bg-base-dark text-white">
+      <div className="container py-16">
         {/* Top Section */}
         <div className="grid lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Section */}
@@ -52,13 +53,13 @@ const Footer = () => {
             className="lg:col-span-1"
           >
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-8 h-8 bg-accent-neon rounded-full flex items-center justify-center">
-                <span className="text-primary-dark font-bold text-sm">CF</span>
+              <div className="w-10 h-10 bg-brand-neon rounded-full flex items-center justify-center">
+                <span className="text-base-dark font-bold text-lg">CF</span>
               </div>
-              <span className="text-xl font-bold">Coinfixi</span>
+              <span className="text-xl font-display font-bold">Coinfixi</span>
             </div>
-            <p className="text-gray-medium leading-relaxed mb-6">
-              Premium crypto cashier for sportbooks and casinos. Banking-grade security with transparent pricing.
+            <p className="text-gray-500 leading-relaxed mb-6">
+              Premium crypto cashier for sportbooks and casinos. Enterprise-grade security with transparent pricing.
             </p>
             
             {/* Social Links */}
@@ -72,7 +73,7 @@ const Footer = () => {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-neon hover:text-primary-dark transition-all duration-200"
+                  className="w-10 h-10 bg-base-mid rounded-xl flex items-center justify-center hover:bg-brand-neon hover:text-base-dark transition-all duration-200"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -81,14 +82,14 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
+          {/* Product */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-semibold mb-4">Quick Links</h3>
+            <h3 className="font-display font-semibold mb-4">Product</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link, index) => (
                 <motion.li
@@ -100,7 +101,7 @@ const Footer = () => {
                 >
                   <a
                     href={link.href}
-                    className="text-gray-medium hover:text-accent-neon transition-colors duration-200"
+                    className="text-gray-500 hover:text-brand-neon transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -116,7 +117,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-semibold mb-4">Company</h3>
+            <h3 className="font-display font-semibold mb-4">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <motion.li
@@ -128,7 +129,7 @@ const Footer = () => {
                 >
                   <a
                     href={link.href}
-                    className="text-gray-medium hover:text-accent-neon transition-colors duration-200"
+                    className="text-gray-500 hover:text-brand-neon transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -144,7 +145,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-semibold mb-4">Resources</h3>
+            <h3 className="font-display font-semibold mb-4">Resources</h3>
             <ul className="space-y-3">
               {footerLinks.resources.map((link, index) => (
                 <motion.li
@@ -156,7 +157,7 @@ const Footer = () => {
                 >
                   <a
                     href={link.href}
-                    className="text-gray-medium hover:text-accent-neon transition-colors duration-200"
+                    className="text-gray-500 hover:text-brand-neon transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -172,10 +173,10 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="border-t border-gray-dark pt-8"
+          className="border-t border-gray-700 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-medium text-sm mb-4 md:mb-0">
+            <p className="text-gray-500 text-sm mb-4 md:mb-0">
               © {currentYear} Coinfixi. All rights reserved.
             </p>
             
@@ -188,7 +189,7 @@ const Footer = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.5 + index * 0.05 }}
                   viewport={{ once: true }}
-                  className="text-gray-medium hover:text-accent-neon transition-colors duration-200 text-sm"
+                  className="text-gray-500 hover:text-brand-neon transition-colors duration-200 text-sm"
                 >
                   {link.name}
                 </motion.a>

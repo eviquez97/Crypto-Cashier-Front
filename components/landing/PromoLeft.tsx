@@ -23,7 +23,7 @@ const PromoLeft = () => {
   ]
 
   return (
-    <section className="section bg-base-dark">
+    <section className="section bg-brand-dark">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Texto */}
@@ -35,7 +35,7 @@ const PromoLeft = () => {
             className="space-y-8"
           >
             {/* H2: "Coinfixi for the Future" */}
-            <h2 className="text-h2-mobile lg:text-h2 font-display font-semibold text-text-primary">
+            <h2 className="text-h2-mobile lg:text-h2 font-display font-semibold text-brand-light">
               Coinfixi for the Future
             </h2>
             
@@ -54,14 +54,14 @@ const PromoLeft = () => {
                   viewport={{ once: true, amount: 0.3 }}
                   className="flex items-start space-x-4"
                 >
-                  <div className="flex-shrink-0 w-10 h-10 bg-brand-neon rounded-xl flex items-center justify-center">
-                    <feature.icon className="w-5 h-5 text-base-dark" />
+                  <div className="flex-shrink-0 w-10 h-10 bg-brand-primary rounded-xl flex items-center justify-center">
+                    <feature.icon className="w-5 h-5 text-brand-dark" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-text-primary mb-1">
+                    <h3 className="text-lg font-semibold text-brand-light mb-1">
                       {feature.title}
                     </h3>
-                    <p className="text-body text-text-secondary">
+                    <p className="text-body text-brand-light/70">
                       {feature.description}
                     </p>
                   </div>
@@ -80,7 +80,7 @@ const PromoLeft = () => {
               <motion.button
                 whileHover={{ scale: 1.05, y: -1 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-secondary flex items-center justify-center group"
+                className="px-6 py-3 border-2 border-brand-primary text-brand-light rounded-xl font-semibold hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 flex items-center justify-center group"
               >
                 View API Docs
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -89,7 +89,7 @@ const PromoLeft = () => {
               <motion.button
                 whileHover={{ scale: 1.05, y: -1 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-ghost"
+                className="px-6 py-3 bg-transparent text-brand-light hover:bg-brand-primary/10 rounded-xl font-semibold transition-all duration-300"
               >
                 Learn More
               </motion.button>
@@ -118,27 +118,27 @@ const PromoLeft = () => {
               className="relative"
             >
               {/* Card principal */}
-              <div className="bg-base-mid rounded-2xl p-6 shadow-fintech relative z-10 border border-gray-800">
+              <div className="bg-brand-teal/20 rounded-2xl p-6 shadow-fintech relative z-10 border border-brand-primary/30">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-brand-neon rounded-full flex items-center justify-center">
-                        <span className="text-base-dark font-bold text-sm">CF</span>
+                      <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center">
+                        <span className="text-brand-dark font-bold text-sm">CF</span>
                       </div>
-                      <span className="font-semibold text-text-primary">API Dashboard</span>
+                      <span className="font-semibold text-brand-light">API Dashboard</span>
                     </div>
-                    <div className="w-2 h-2 bg-brand-neon rounded-full animate-pulse" />
+                    <div className="w-2 h-2 bg-brand-primary rounded-full animate-pulse" />
                   </div>
                   
                   <div className="space-y-3">
-                    <div className="h-3 bg-gray-700 rounded w-3/4"></div>
-                    <div className="h-3 bg-gray-700 rounded w-1/2"></div>
-                    <div className="h-3 bg-brand-neon rounded w-2/3"></div>
+                    <div className="h-3 bg-brand-light/20 rounded w-3/4"></div>
+                    <div className="h-3 bg-brand-light/20 rounded w-1/2"></div>
+                    <div className="h-3 bg-brand-primary rounded w-2/3"></div>
                   </div>
                   
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-base-darker rounded-lg h-16 border border-gray-800"></div>
-                    <div className="bg-base-darker rounded-lg h-16 border border-gray-800"></div>
+                    <div className="bg-brand-dark/50 rounded-lg h-16 border border-brand-primary/20"></div>
+                    <div className="bg-brand-dark/50 rounded-lg h-16 border border-brand-primary/20"></div>
                   </div>
                 </div>
               </div>
@@ -155,11 +155,11 @@ const PromoLeft = () => {
                   ease: 'easeInOut',
                   delay: 1
                 }}
-                className="absolute -bottom-4 -right-4 bg-base-darker rounded-2xl p-4 shadow-fintech w-32 h-20 opacity-80 border border-gray-800"
+                className="absolute -bottom-4 -right-4 bg-brand-dark/50 rounded-2xl p-4 shadow-fintech w-32 h-20 opacity-80 border border-brand-primary/20"
               >
                 <div className="space-y-2">
-                  <div className="h-2 bg-gray-700 rounded w-3/4"></div>
-                  <div className="h-2 bg-gray-700 rounded w-1/2"></div>
+                  <div className="h-2 bg-brand-light/20 rounded w-3/4"></div>
+                  <div className="h-2 bg-brand-light/20 rounded w-1/2"></div>
                 </div>
               </motion.div>
             </motion.div>
@@ -168,7 +168,7 @@ const PromoLeft = () => {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              className="absolute -top-4 -right-4 w-12 h-12 bg-brand-neon/20 rounded-full"
+              className="absolute -top-4 -right-4 w-12 h-12 bg-brand-primary/20 rounded-full"
             />
           </motion.div>
         </div>

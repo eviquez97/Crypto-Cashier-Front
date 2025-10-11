@@ -6,7 +6,7 @@ import {
   BarChart3, Search, Settings, Bell, TrendingUp, TrendingDown,
   Users, Shield, Plus, ArrowUpRight, Filter, MoreVertical,
   MapPin, Factory, Recycle, Zap, Activity, DollarSign,
-  ChevronDown, Circle, User
+  ChevronDown, Circle, User, HelpCircle
 } from 'lucide-react'
 
 export default function Dashboard() {
@@ -67,11 +67,13 @@ export default function Dashboard() {
                 }`}
               >
                 <div className="flex items-center space-x-3">
-                  <item.icon className="w-5 h-5" />
+                  <div className="w-6 h-6 bg-gray-700 rounded-full flex items-center justify-center">
+                    <item.icon className="w-3 h-3" />
+                  </div>
                   <span className="font-medium">{item.label}</span>
                 </div>
                 {item.badge && (
-                  <span className="bg-brand-primary text-gray-900 text-xs px-2 py-1 rounded-full font-bold">
+                  <span className={`${item.badge === 'New' ? 'bg-brand-primary text-gray-900' : 'bg-brand-primary text-gray-900'} text-xs px-2 py-1 rounded-full font-bold`}>
                     {item.badge}
                   </span>
                 )}
@@ -83,8 +85,8 @@ export default function Dashboard() {
         {/* User Profile */}
         <div className="border-t border-gray-800 pt-6">
           <div className="flex items-center space-x-3 mb-4">
-            <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
-              <User className="w-4 h-4 text-gray-300" />
+            <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center">
+              <span className="text-gray-900 font-bold text-sm">EU</span>
             </div>
             <div>
               <p className="text-white font-medium text-sm">Enterprise User</p>
@@ -100,24 +102,28 @@ export default function Dashboard() {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        {/* Header */}
+        {/* Header with Environmental Quality Index */}
         <motion.header
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-gray-900 border-b border-gray-800 px-8 py-6"
+          className="bg-gray-900 px-8 py-6"
         >
           <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-white">Dashboard</h1>
-            <div className="flex items-center space-x-4">
-              <button className="relative p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-200">
-                <Bell className="w-5 h-5" />
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-brand-primary rounded-full flex items-center justify-center">
-                  <span className="text-xs font-bold text-gray-900">3</span>
-                </div>
-              </button>
-              <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
-                <span className="text-gray-900 font-bold text-sm">EU</span>
+            <h1 className="text-4xl font-bold text-white">Dashboard</h1>
+            
+            {/* Environmental Quality Index Card */}
+            <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-gray-400 text-sm">Transaction Success Index</h3>
+                <BarChart3 className="w-5 h-5 text-red-400" />
+              </div>
+              <div className="mb-2">
+                <span className="text-3xl font-bold text-white">75.50/100%</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <TrendingDown className="w-4 h-4 text-red-400" />
+                <span className="text-red-400 text-sm">1.4% than last month</span>
               </div>
             </div>
           </div>
@@ -143,8 +149,8 @@ export default function Dashboard() {
                 <span className="text-3xl font-bold text-white">99.7%</span>
               </div>
               <div className="flex items-center space-x-2">
-                <TrendingDown className="w-4 h-4 text-red-400" />
-                <span className="text-red-400 text-sm">0.2% than last month</span>
+                <TrendingUp className="w-4 h-4 text-brand-primary" />
+                <span className="text-brand-primary text-sm">2.3% than last month</span>
               </div>
             </motion.div>
 
@@ -156,7 +162,7 @@ export default function Dashboard() {
               className="bg-white rounded-2xl p-6 border border-gray-200"
             >
               <h3 className="text-gray-700 text-sm font-medium mb-4">Monthly Volume</h3>
-              <div className="h-32 flex items-end space-x-2">
+              <div className="h-32 flex items-end space-x-2 mb-2">
                 {[40, 60, 45, 80, 65, 90, 75, 85].map((height, index) => (
                   <div
                     key={index}
@@ -165,7 +171,7 @@ export default function Dashboard() {
                   />
                 ))}
               </div>
-              <div className="flex justify-between text-xs text-gray-500 mt-2">
+              <div className="flex justify-between text-xs text-gray-500">
                 <span>W1</span>
                 <span>W2</span>
                 <span>W3</span>
@@ -212,23 +218,30 @@ export default function Dashboard() {
           {/* Bottom Row */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             
-            {/* Investment Metrics */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="lg:col-span-4"
-            >
-              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700 mb-6">
+            {/* Left Column - Two Cards */}
+            <div className="lg:col-span-4 space-y-6">
+              {/* Total Processed */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="bg-gray-800 rounded-2xl p-6 border border-gray-700"
+              >
                 <h3 className="text-gray-400 text-sm mb-2">Total Processed</h3>
                 <span className="text-3xl font-bold text-white">$967,570</span>
                 <div className="flex items-center space-x-2 mt-2">
                   <TrendingUp className="w-4 h-4 text-brand-primary" />
                   <span className="text-brand-primary text-sm">5.3% than last month</span>
                 </div>
-              </div>
+              </motion.div>
               
-              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+              {/* Transaction Fees */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="bg-gray-800 rounded-2xl p-6 border border-gray-700"
+              >
                 <h3 className="text-gray-400 text-sm mb-2">Transaction Fees</h3>
                 <span className="text-3xl font-bold text-white">$99,681</span>
                 <p className="text-brand-primary text-sm mt-2">20% reduced fees</p>
@@ -242,14 +255,14 @@ export default function Dashboard() {
                     <span className="text-gray-400 text-sm">Withdrawal fees: 913</span>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
 
             {/* Transaction Volume */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
               className="lg:col-span-8"
             >
               <div className="bg-white rounded-2xl p-6 border border-gray-200">
@@ -274,8 +287,7 @@ export default function Dashboard() {
                   {[
                     { type: 'Deposits', value: '4,167,987', unit: 'transactions' },
                     { type: 'Withdrawals', value: '2,571,193', unit: 'transactions' },
-                    { type: 'Internal Transfers', value: '1,864,275', unit: 'transactions' },
-                    { type: 'API Calls', value: '8,643,742', unit: 'calls' }
+                    { type: 'Internal Transfers', value: '1,864,275', unit: 'transactions' }
                   ].map((item, index) => (
                     <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                       <div className="flex items-center space-x-4">

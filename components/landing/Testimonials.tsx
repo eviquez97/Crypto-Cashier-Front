@@ -72,7 +72,7 @@ const Testimonials = () => {
   }
 
   return (
-    <section className="section bg-gradient-to-b from-base-light to-base-light/80 relative overflow-hidden">
+    <section className="section bg-brand-dark relative overflow-hidden">
       {/* Premium Background */}
       <div className="absolute inset-0">
         <div 
@@ -106,15 +106,15 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-brand-neon/10 border border-brand-neon/20 rounded-full px-4 py-2 mb-6">
-            <Award className="w-4 h-4 text-brand-neon" />
-            <span className="text-sm font-semibold text-text-primary">Verified Customer Stories</span>
+          <div className="inline-flex items-center space-x-2 bg-brand-primary/10 border border-brand-primary/20 rounded-full px-4 py-2 mb-6">
+            <Award className="w-4 h-4 text-brand-primary" />
+            <span className="text-sm font-semibold text-brand-light">Verified Customer Stories</span>
           </div>
           
-          <h2 className="text-4xl lg:text-5xl font-display font-bold text-text-primary mb-6">
-            Trusted by <span className="bg-gradient-to-r from-brand-neon to-accent-bright bg-clip-text text-transparent">Industry Leaders</span>
+          <h2 className="text-4xl lg:text-5xl font-display font-bold text-brand-light mb-6">
+            Trusted by <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">Industry Leaders</span>
           </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-brand-light/70 max-w-3xl mx-auto">
             See how leading companies are transforming their payment infrastructure 
             with Coinfixi's enterprise-grade solutions.
           </p>
@@ -130,7 +130,7 @@ const Testimonials = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.6, ease: 'easeInOut' }}
-                className="bg-gradient-to-br from-base-light via-base-light to-accent-medium/5 rounded-3xl p-12 lg:p-16 shadow-2xl border border-accent-medium/20 backdrop-blur-sm relative overflow-hidden"
+                className="bg-brand-teal/10 rounded-3xl p-12 lg:p-16 shadow-2xl border border-brand-primary/20 backdrop-blur-sm relative overflow-hidden"
               >
                 {/* Background Pattern */}
                 <div 
@@ -146,9 +146,9 @@ const Testimonials = () => {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="w-16 h-16 bg-gradient-to-br from-brand-neon to-accent-bright rounded-2xl flex items-center justify-center mb-8 shadow-lg"
+                    className="w-16 h-16 bg-brand-primary rounded-2xl flex items-center justify-center mb-8 shadow-lg"
                   >
-                    <Quote className="w-8 h-8 text-base-light" />
+                    <Quote className="w-8 h-8 text-brand-dark" />
                   </motion.div>
 
                   {/* Quote */}
@@ -156,7 +156,7 @@ const Testimonials = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="text-2xl lg:text-3xl font-display font-semibold text-text-primary leading-relaxed mb-8"
+                    className="text-2xl lg:text-3xl font-display font-semibold text-brand-light leading-relaxed mb-8"
                   >
                     "{testimonials[currentTestimonial].quote}"
                   </motion.blockquote>
@@ -171,14 +171,14 @@ const Testimonials = () => {
                     <div className="flex items-center space-x-6">
                       {/* Avatar */}
                       <div className="relative">
-                        <div className="w-16 h-16 bg-gradient-to-br from-brand-neon to-accent-bright rounded-2xl flex items-center justify-center shadow-lg">
-                          <span className="text-base-light font-bold text-lg">
+                        <div className="w-16 h-16 bg-brand-primary rounded-2xl flex items-center justify-center shadow-lg">
+                          <span className="text-brand-dark font-bold text-lg">
                             {testimonials[currentTestimonial].avatar}
                           </span>
                         </div>
                         {testimonials[currentTestimonial].verified && (
-                          <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-brand-neon rounded-full flex items-center justify-center">
-                            <Shield className="w-3 h-3 text-base-light" />
+                          <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-brand-primary rounded-full flex items-center justify-center">
+                            <Shield className="w-3 h-3 text-brand-dark" />
                           </div>
                         )}
                       </div>
@@ -186,19 +186,19 @@ const Testimonials = () => {
                       {/* Author Details */}
                       <div>
                         <div className="flex items-center space-x-2 mb-1">
-                          <h4 className="text-xl font-bold text-text-primary">
+                          <h4 className="text-xl font-bold text-brand-light">
                             {testimonials[currentTestimonial].author}
                           </h4>
                           {testimonials[currentTestimonial].verified && (
-                            <div className="w-5 h-5 bg-brand-neon rounded-full flex items-center justify-center">
-                              <Shield className="w-3 h-3 text-base-light" />
+                            <div className="w-5 h-5 bg-brand-primary rounded-full flex items-center justify-center">
+                              <Shield className="w-3 h-3 text-brand-dark" />
                             </div>
                           )}
                         </div>
-                        <p className="text-text-secondary font-medium">
+                        <p className="text-brand-light/70 font-medium">
                           {testimonials[currentTestimonial].role}
                         </p>
-                        <p className="text-accent-medium font-semibold">
+                        <p className="text-brand-primary font-semibold">
                           {testimonials[currentTestimonial].company}
                         </p>
                       </div>
@@ -206,8 +206,8 @@ const Testimonials = () => {
 
                     {/* Industry Badge */}
                     <div className="hidden lg:block">
-                      <div className="bg-accent-medium/10 border border-accent-medium/20 rounded-xl px-4 py-2">
-                        <p className="text-accent-medium text-sm font-medium">
+                      <div className="bg-brand-primary/10 border border-brand-primary/20 rounded-xl px-4 py-2">
+                        <p className="text-brand-primary text-sm font-medium">
                           {testimonials[currentTestimonial].industry}
                         </p>
                       </div>
@@ -219,21 +219,21 @@ const Testimonials = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
-                    className="mt-8 pt-8 border-t border-accent-medium/20"
+                    className="mt-8 pt-8 border-t border-brand-primary/20"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
                         <div className="flex items-center space-x-1">
                           {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 text-brand-neon fill-current" />
+                            <Star key={i} className="w-5 h-5 text-brand-primary fill-current" />
                           ))}
                         </div>
-                        <span className="text-text-secondary font-medium">5.0 Rating</span>
+                        <span className="text-brand-light/70 font-medium">5.0 Rating</span>
                       </div>
                       
-                      <div className="flex items-center space-x-2 bg-brand-neon/10 border border-brand-neon/20 rounded-xl px-4 py-2">
-                        <TrendingUp className="w-4 h-4 text-brand-neon" />
-                        <span className="text-brand-neon font-semibold text-sm">
+                      <div className="flex items-center space-x-2 bg-brand-primary/10 border border-brand-primary/20 rounded-xl px-4 py-2">
+                        <TrendingUp className="w-4 h-4 text-brand-primary" />
+                        <span className="text-brand-primary font-semibold text-sm">
                           {testimonials[currentTestimonial].metric}
                         </span>
                       </div>
@@ -249,7 +249,7 @@ const Testimonials = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={prevTestimonial}
-                className="w-12 h-12 bg-base-light border border-accent-medium/20 rounded-xl flex items-center justify-center hover:bg-accent-medium hover:text-base-light transition-all duration-300 shadow-lg"
+                className="w-12 h-12 bg-brand-teal/20 border border-brand-primary/20 rounded-xl flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 shadow-lg text-brand-light"
               >
                 <ChevronLeft className="w-5 h-5" />
               </motion.button>
@@ -261,8 +261,8 @@ const Testimonials = () => {
                     onClick={() => setCurrentTestimonial(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === currentTestimonial
-                        ? 'bg-brand-neon scale-125'
-                        : 'bg-accent-medium/30 hover:bg-accent-medium/60'
+                        ? 'bg-brand-primary scale-125'
+                        : 'bg-brand-primary/30 hover:bg-brand-primary/60'
                     }`}
                   />
                 ))}
@@ -272,7 +272,7 @@ const Testimonials = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={nextTestimonial}
-                className="w-12 h-12 bg-base-light border border-accent-medium/20 rounded-xl flex items-center justify-center hover:bg-accent-medium hover:text-base-light transition-all duration-300 shadow-lg"
+                className="w-12 h-12 bg-brand-teal/20 border border-brand-primary/20 rounded-xl flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 shadow-lg text-brand-light"
               >
                 <ChevronRight className="w-5 h-5" />
               </motion.button>
@@ -288,23 +288,23 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="mt-20"
         >
-          <div className="bg-gradient-to-r from-base-mid to-base-dark rounded-2xl p-8">
+          <div className="bg-brand-teal/20 rounded-2xl p-8 border border-brand-primary/20">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-3xl font-bold text-brand-neon mb-2">500+</div>
-                <div className="text-base-light/70 text-sm">Enterprise Clients</div>
+                <div className="text-3xl font-bold text-brand-primary mb-2">500+</div>
+                <div className="text-brand-light/70 text-sm">Enterprise Clients</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-brand-neon mb-2">99.99%</div>
-                <div className="text-base-light/70 text-sm">Uptime SLA</div>
+                <div className="text-3xl font-bold text-brand-primary mb-2">99.99%</div>
+                <div className="text-brand-light/70 text-sm">Uptime SLA</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-brand-neon mb-2">$10B+</div>
-                <div className="text-base-light/70 text-sm">Volume Processed</div>
+                <div className="text-3xl font-bold text-brand-primary mb-2">$10B+</div>
+                <div className="text-brand-light/70 text-sm">Volume Processed</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-brand-neon mb-2">24/7</div>
-                <div className="text-base-light/70 text-sm">Expert Support</div>
+                <div className="text-3xl font-bold text-brand-primary mb-2">24/7</div>
+                <div className="text-brand-light/70 text-sm">Expert Support</div>
               </div>
             </div>
           </div>

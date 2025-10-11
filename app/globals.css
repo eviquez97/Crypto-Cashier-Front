@@ -55,37 +55,37 @@
       
       /* Cards con psicología de estabilidad */
       .card {
-        @apply bg-background rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border-light;
+        @apply bg-surface-primary rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-surface-border;
         /* Blanco = Transparencia, claridad */
       }
       
       .card-dark {
-        @apply bg-surface rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border-light;
+        @apply bg-surface-secondary rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-surface-border;
         /* Teal = Tecnología, profesionalismo */
       }
       
       .card-premium {
-        @apply bg-surfaceDark rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 border border-brand-primary/20;
+        @apply bg-surface-tertiary rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 border border-brand-primary/20;
         /* Verde oscuro = Estabilidad, seguridad premium */
       }
       
       /* Inputs con enfoque en claridad */
       .input {
-        @apply w-full px-4 py-3 bg-background border border-border-light text-text-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 placeholder:text-text-muted;
+        @apply w-full px-4 py-3 bg-surface-secondary border border-surface-border text-text-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 placeholder:text-text-muted;
       }
       
       /* Contenedor principal */
       .container {
-        @apply max-w-container mx-auto px-6;
+        @apply max-w-7xl mx-auto px-6;
       }
       
       /* Secciones */
       .section {
-        @apply py-section;
+        @apply py-16 lg:py-24;
       }
       
       .hero-section {
-        @apply py-hero;
+        @apply py-20 lg:py-32;
       }
       
       /* Gradientes estratégicos */

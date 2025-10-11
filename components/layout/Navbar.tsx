@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import LanguageSelector from '../LanguageSelector'
+import LanguageSelector from '@/components/LanguageSelector'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)

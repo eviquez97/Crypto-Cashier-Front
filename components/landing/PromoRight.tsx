@@ -10,6 +10,17 @@ const PromoRight = () => {
     'Real-time Webhooks'
   ]
 
+  // Button handlers
+  const handleGetStarted = () => {
+    // Redirect to dashboard
+    window.open('/dashboard', '_blank')
+  }
+
+  const handleViewDemo = () => {
+    // Redirect to demo booking
+    window.open('mailto:sales@coinfixi.com?subject=Demo Request&body=Hi, I would like to see a demo of Coinfixi.', '_blank')
+  }
+
   return (
     <section className="section bg-brand-dark">
       <div className="container">
@@ -138,18 +149,20 @@ const PromoRight = () => {
               className="flex flex-col sm:flex-row gap-4"
             >
               <motion.button
+                onClick={handleGetStarted}
                 whileHover={{ scale: 1.05, y: -1 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-brand-primary text-brand-dark px-6 py-3 rounded-xl font-semibold hover:bg-brand-primary/90 transition-all duration-300 flex items-center justify-center group"
+                className="bg-brand-primary text-brand-dark px-6 py-3 rounded-xl font-semibold hover:bg-brand-primary/90 transition-all duration-300 flex items-center justify-center group cursor-pointer"
               >
                 Get Started
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </motion.button>
               
               <motion.button
+                onClick={handleViewDemo}
                 whileHover={{ scale: 1.05, y: -1 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 border-2 border-brand-primary text-brand-light rounded-xl font-semibold hover:bg-brand-primary hover:text-brand-dark transition-all duration-300"
+                className="px-6 py-3 border-2 border-brand-primary text-brand-light rounded-xl font-semibold hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 cursor-pointer"
               >
                 View Demo
               </motion.button>

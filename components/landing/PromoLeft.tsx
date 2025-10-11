@@ -22,6 +22,20 @@ const PromoLeft = () => {
     }
   ]
 
+  // Button handlers
+  const handleViewApiDocs = () => {
+    // Redirect to API documentation
+    window.open('https://docs.coinfixi.com', '_blank')
+  }
+
+  const handleLearnMore = () => {
+    // Scroll to features section
+    const featuresSection = document.getElementById('features')
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <section className="section bg-brand-dark">
       <div className="container">
@@ -78,18 +92,20 @@ const PromoLeft = () => {
               className="flex flex-col sm:flex-row gap-4"
             >
               <motion.button
+                onClick={handleViewApiDocs}
                 whileHover={{ scale: 1.05, y: -1 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 border-2 border-brand-primary text-brand-light rounded-xl font-semibold hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 flex items-center justify-center group"
+                className="px-6 py-3 border-2 border-brand-primary text-brand-light rounded-xl font-semibold hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 flex items-center justify-center group cursor-pointer"
               >
                 View API Docs
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </motion.button>
               
               <motion.button
+                onClick={handleLearnMore}
                 whileHover={{ scale: 1.05, y: -1 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-transparent text-brand-light hover:bg-brand-primary/10 rounded-xl font-semibold transition-all duration-300"
+                className="px-6 py-3 bg-transparent text-brand-light hover:bg-brand-primary/10 rounded-xl font-semibold transition-all duration-300 cursor-pointer"
               >
                 Learn More
               </motion.button>

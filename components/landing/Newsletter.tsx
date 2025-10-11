@@ -29,7 +29,7 @@ const Newsletter = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: 'cubic-bezier(.22,.61,.36,1)' }}
             viewport={{ once: true, amount: 0.3 }}
-            className="text-h2-mobile lg:text-h2 font-display font-semibold text-white mb-4"
+            className="text-h2-mobile lg:text-h2 font-display font-semibold text-text-primary mb-4"
           >
             Subscribe Newsletter
           </motion.h2>
@@ -39,7 +39,7 @@ const Newsletter = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: 'cubic-bezier(.22,.61,.36,1)' }}
             viewport={{ once: true, amount: 0.3 }}
-            className="text-body-lg text-gray-500 mb-8 max-w-md mx-auto"
+            className="text-body-lg text-text-secondary mb-8 max-w-md mx-auto"
           >
             Financial transactions, emails, mobile updates. Stay informed with the latest crypto payment trends.
           </motion.p>
@@ -58,7 +58,7 @@ const Newsletter = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-neon focus:border-transparent transition-all duration-200"
+                className="w-full px-6 py-4 bg-base-mid border border-gray-800 rounded-xl text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand-neon focus:border-transparent transition-all duration-200"
                 required
               />
             </div>
@@ -79,7 +79,7 @@ const Newsletter = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true, amount: 0.3 }}
-            className="text-gray-400 text-sm mt-4"
+            className="text-text-muted text-sm mt-4"
           >
             By subscribing, you agree to our Terms of Service and Privacy Policy.
           </motion.p>

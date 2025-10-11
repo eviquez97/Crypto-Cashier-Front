@@ -67,14 +67,14 @@ const Testimonials = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4, ease: 'easeInOut' }}
-                className="bg-white rounded-2xl p-8 lg:p-12 shadow-fintech relative"
+                className="bg-base-mid rounded-2xl p-8 lg:p-12 shadow-fintech relative border border-gray-800"
               >
                 {/* Quote */}
                 <motion.blockquote
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="text-2xl lg:text-3xl font-display font-semibold text-text-main leading-relaxed mb-8"
+                  className="text-2xl lg:text-3xl font-display font-semibold text-text-primary leading-relaxed mb-8"
                 >
                   "{testimonials[currentTestimonial].quote}"
                 </motion.blockquote>
@@ -94,10 +94,10 @@ const Testimonials = () => {
                   </div>
                   
                   <div className="text-left">
-                    <p className="font-semibold text-text-main">
+                    <p className="font-semibold text-text-primary">
                       {testimonials[currentTestimonial].author}
                     </p>
-                    <p className="text-gray-500 text-sm">
+                    <p className="text-text-secondary text-sm">
                       {testimonials[currentTestimonial].role}
                     </p>
                   </div>
@@ -120,7 +120,7 @@ const Testimonials = () => {
                       <Star className="w-5 h-5 fill-brand-neon text-brand-neon" />
                     </motion.div>
                   ))}
-                  <span className="ml-2 text-gray-500 text-sm">
+                  <span className="ml-2 text-text-secondary text-sm">
                     {testimonials[currentTestimonial].rating}.0 rating
                   </span>
                 </motion.div>
@@ -142,7 +142,7 @@ const Testimonials = () => {
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentTestimonial 
                       ? 'bg-brand-neon scale-125' 
-                      : 'bg-gray-500 hover:bg-gray-400'
+                      : 'bg-gray-700 hover:bg-gray-600'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />

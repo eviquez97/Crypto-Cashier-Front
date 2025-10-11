@@ -28,7 +28,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: 'cubic-bezier(.22,.61,.36,1)' }}
-              className="text-h1-mobile lg:text-h1 font-display font-semibold text-white leading-tight"
+              className="text-h1-mobile lg:text-h1 font-display font-semibold text-text-primary leading-tight"
             >
               Premium Crypto Payments for the Digital Era
             </motion.h1>
@@ -38,7 +38,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: 'cubic-bezier(.22,.61,.36,1)' }}
-              className="text-body-lg text-gray-500 leading-relaxed"
+              className="text-body-lg text-text-secondary leading-relaxed"
               style={{ marginTop: '20px' }}
             >
               Process crypto deposits and withdrawals in seconds with enterprise-grade security and transparent pricing.
@@ -79,11 +79,11 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.8, ease: 'cubic-bezier(.22,.61,.36,1)' }}
               className="pt-8"
             >
-              <p className="text-gray-500 text-sm mb-4">Trusted by leading gaming operators</p>
-              <div className="flex items-center space-x-8 opacity-60">
+              <p className="text-text-muted text-sm mb-4">Trusted by leading gaming operators</p>
+              <div className="flex items-center space-x-8 opacity-40">
                 {/* 5 logos placeholder en gris */}
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <div key={i} className="w-20 h-8 bg-gray-500 rounded" />
+                  <div key={i} className="w-20 h-8 bg-gray-700 rounded" />
                 ))}
               </div>
             </motion.div>
@@ -116,7 +116,7 @@ const Hero = () => {
                     <div className="w-8 h-8 bg-brand-neon rounded-full flex items-center justify-center">
                       <span className="text-base-dark font-bold text-sm">CF</span>
                     </div>
-                    <span className="text-white font-semibold">Coinfixi Dashboard</span>
+                    <span className="text-text-primary font-semibold">Coinfixi Dashboard</span>
                   </div>
                   <div className="w-2 h-2 bg-brand-neon rounded-full animate-pulse" />
                 </div>
@@ -124,27 +124,27 @@ const Hero = () => {
                 {/* Métricas */}
                 <div className="space-y-4">
                   <div>
-                    <p className="text-gray-500 text-sm">Today's Activity</p>
-                    <p className="text-3xl font-bold text-white">$284,590</p>
+                    <p className="text-text-secondary text-sm">Today's Activity</p>
+                    <p className="text-3xl font-bold text-text-primary">$284,590</p>
                   </div>
                   
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-white/5 rounded-xl p-3">
-                      <p className="text-xs text-gray-500">Deposits</p>
-                      <p className="text-lg font-semibold text-white">142</p>
+                    <div className="bg-base-darker rounded-xl p-3 border border-gray-800">
+                      <p className="text-xs text-text-muted">Deposits</p>
+                      <p className="text-lg font-semibold text-text-primary">142</p>
                       <p className="text-xs text-brand-neon">↗ 12%</p>
                     </div>
-                    <div className="bg-white/5 rounded-xl p-3">
-                      <p className="text-xs text-gray-500">Withdrawals</p>
-                      <p className="text-lg font-semibold text-white">89</p>
-                      <p className="text-xs text-gray-500">→ Stable</p>
+                    <div className="bg-base-darker rounded-xl p-3 border border-gray-800">
+                      <p className="text-xs text-text-muted">Withdrawals</p>
+                      <p className="text-lg font-semibold text-text-primary">89</p>
+                      <p className="text-xs text-text-secondary">→ Stable</p>
                     </div>
                   </div>
                   
                   {/* Toast "New deposit confirmed" (verde) */}
                   <div className="bg-brand-neon/10 border border-brand-neon/30 rounded-xl p-3">
                     <p className="text-brand-neon text-sm font-medium">• New deposit confirmed</p>
-                    <p className="text-white text-sm">1,250 USDT • TRON</p>
+                    <p className="text-text-primary text-sm">1,250 USDT • TRON</p>
                   </div>
                 </div>
               </div>
@@ -154,12 +154,12 @@ const Hero = () => {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              className="absolute -top-4 -right-4 w-16 h-16 bg-brand-neon/20 rounded-full"
+              className="absolute -top-4 -right-4 w-16 h-16 bg-brand-neon/20 rounded-full blur-xl"
             />
             <motion.div
               animate={{ rotate: -360 }}
               transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-              className="absolute -bottom-4 -left-8 w-12 h-12 bg-brand-purple/20 rounded-full"
+              className="absolute -bottom-4 -left-8 w-12 h-12 bg-brand-neon/10 rounded-full blur-xl"
             />
           </motion.div>
         </div>

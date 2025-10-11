@@ -60,19 +60,19 @@ const KpiBand = () => {
                   delay: index * 0.1 + 0.2,
                   ease: 'ease-out'
                 }}
-                className="text-4xl lg:text-5xl font-semibold text-white mb-2"
+                className="text-4xl lg:text-5xl font-semibold text-text-primary mb-2"
               >
                 {kpi.value}
               </motion.div>
               
-              {/* Label 14/gray.500 */}
-              <div className="text-sm text-gray-500">
+              {/* Label 14/gray secondary */}
+              <div className="text-sm text-text-secondary">
                 {kpi.label}
               </div>
               
-              {/* Separadores verticales (rgba(255,255,255,.08)) */}
+              {/* Separadores verticales */}
               {index < kpis.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 w-px h-12 bg-white/8 transform -translate-y-1/2" />
+                <div className="hidden lg:block absolute top-1/2 -right-4 w-px h-12 bg-gray-800 transform -translate-y-1/2" />
               )}
             </motion.div>
           ))}

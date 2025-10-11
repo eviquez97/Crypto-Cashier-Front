@@ -8,7 +8,7 @@ interface ButtonProps extends Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>, 
   'onAnimationStart' | 'onAnimationEnd' | 'onDragStart' | 'onDragEnd' | 'onDrag'
 > {
-  variant?: 'primary' | 'secondary' | 'neon' | 'outline'
+  variant?: 'primary' | 'secondary' | 'neon' | 'outline' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
   children: React.ReactNode
   className?: string
@@ -20,10 +20,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 ease-out transform focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
     
     const variants = {
-      primary: 'bg-gradient-purple text-white shadow-button hover:shadow-button-hover focus:ring-purple-primary/50',
-      secondary: 'bg-transparent text-purple-primary border-2 border-purple-primary hover:bg-purple-primary hover:text-white focus:ring-purple-primary/50',
-      neon: 'bg-neon-green text-dark-base shadow-glow-neon hover:shadow-lg focus:ring-neon-green/50',
-      outline: 'bg-transparent text-white border-2 border-white hover:bg-white hover:text-dark-base focus:ring-white/50'
+      primary: 'bg-brand-neon text-base-dark shadow-fintech hover:shadow-fintech-hover focus:ring-brand-neon/50',
+      secondary: 'bg-transparent text-text-primary border-2 border-gray-700 hover:bg-gray-800 hover:border-gray-600 focus:ring-gray-700/50',
+      neon: 'bg-brand-neon text-base-dark shadow-fintech hover:shadow-fintech-hover focus:ring-brand-neon/50',
+      outline: 'bg-transparent text-text-primary border-2 border-gray-700 hover:bg-gray-800 focus:ring-gray-700/50',
+      ghost: 'bg-transparent text-text-primary hover:bg-gray-800 focus:ring-gray-800/50'
     }
     
     const sizes = {

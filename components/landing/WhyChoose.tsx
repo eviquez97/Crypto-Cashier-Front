@@ -28,7 +28,7 @@ const WhyChoose = () => {
   ]
 
   return (
-    <section id="features" className="section bg-base-light">
+    <section id="features" className="section bg-base-mid">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -38,10 +38,10 @@ const WhyChoose = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16"
         >
-          <h2 className="text-h2-mobile lg:text-h2 font-display font-semibold text-text-main mb-6">
-            Why Choose <span className="text-brand-purple">Coinfixi</span>
+          <h2 className="text-h2-mobile lg:text-h2 font-display font-semibold text-text-primary mb-6">
+            Why Choose Coinfixi
           </h2>
-          <p className="text-body-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="text-body-lg text-text-secondary max-w-2xl mx-auto">
             Built for gaming operators who demand reliability, security, and transparency in their crypto payments.
           </p>
         </motion.div>
@@ -73,11 +73,11 @@ const WhyChoose = () => {
                 
                 <div className="flex-1">
                   {/* Título H3 */}
-                  <h3 className="text-h3 font-medium text-text-main mb-3 group-hover:text-brand-purple transition-colors">
+                  <h3 className="text-h3 font-medium text-text-primary mb-3 group-hover:text-brand-neon transition-colors">
                     {feature.title}
                   </h3>
                   {/* Texto 2–3 líneas */}
-                  <p className="text-body text-gray-500 leading-relaxed">
+                  <p className="text-body text-text-secondary leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

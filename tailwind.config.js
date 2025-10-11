@@ -7,27 +7,30 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // Design System Tokens - Exact HEX values
+      // Design System Tokens - Dark theme only, no white/purple
       colors: {
         base: {
-          dark: '#0F1115',    // Fondos oscuros, banda KPIs, footer
-          mid: '#1A1E23',     // Cards oscuras, header dashboard
-          light: '#F7F8FA',   // Fondos claros
+          dark: '#0F1115',    // Fondo principal oscuro
+          mid: '#1A1E23',     // Cards y secciones
+          darker: '#0A0C0F',  // Fondo más oscuro para contraste
         },
         text: {
-          main: '#242834',    // Texto principal
+          primary: '#FFFFFF',   // Texto principal blanco sobre fondos oscuros
+          secondary: '#9AA3B2', // Texto secundario gris
+          muted: '#6B7280',     // Texto atenuado
         },
         brand: {
-          neon: '#B6FF00',    // SOLO CTAs, checks, highlights
-          purple: '#7D53FF',  // Acento secundario, links
+          neon: '#B6FF00',      // ÚNICO acento - CTAs, checks, highlights
         },
         gray: {
-          300: '#E9EDF2',
-          500: '#9AA3B2',
-          700: '#444B57',
+          800: '#1F2937',  // Gris oscuro para borders
+          700: '#374151',  // Gris medio oscuro
+          600: '#4B5563',  // Gris medio
+          500: '#6B7280',  // Gris
+          400: '#9CA3AF',  // Gris claro
         },
         state: {
-          success: '#16A34A',
+          success: '#10B981',
           warn: '#F59E0B',
           error: '#EF4444',
         },

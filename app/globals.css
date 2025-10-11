@@ -11,12 +11,12 @@
   }
   
   body {
-    @apply bg-base-light text-text-main font-sans antialiased;
+    @apply bg-base-dark text-text-primary font-sans antialiased;
     font-feature-settings: 'rlig' 1, 'calt' 1;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display text-text-main;
+    @apply font-display text-text-primary;
   }
   
   /* Tipografía exacta según especificación */
@@ -33,36 +33,36 @@
   }
   
   p {
-    @apply text-body;
+    @apply text-body text-text-secondary;
   }
 }
 
 @layer components {
-  /* Botones con estilos exactos */
+  /* Botones con estilos exactos - DARK THEME */
   .btn-primary {
     @apply px-6 py-3 bg-brand-neon text-base-dark font-semibold rounded-xl shadow-fintech hover:shadow-fintech-hover hover:-translate-y-px transition-all duration-200;
   }
   
   .btn-secondary {
-    @apply px-6 py-3 border-2 border-text-main text-text-main font-semibold rounded-xl hover:bg-text-main hover:text-base-light transition-all duration-200;
+    @apply px-6 py-3 border-2 border-gray-700 text-text-primary font-semibold rounded-xl hover:bg-gray-800 hover:border-gray-600 transition-all duration-200;
   }
   
   .btn-ghost {
-    @apply px-6 py-3 text-text-main font-semibold rounded-xl hover:bg-gray-300 transition-all duration-200;
+    @apply px-6 py-3 text-text-primary font-semibold rounded-xl hover:bg-gray-800 transition-all duration-200;
   }
   
-  /* Cards con sombras fintech */
+  /* Cards con sombras fintech - DARK ONLY */
   .card {
-    @apply bg-white rounded-2xl shadow-fintech hover:shadow-fintech-hover transition-all duration-300;
-  }
-  
-  .card-dark {
     @apply bg-base-mid rounded-2xl shadow-fintech hover:shadow-fintech-hover transition-all duration-300;
   }
   
-  /* Inputs */
+  .card-dark {
+    @apply bg-base-darker rounded-2xl shadow-fintech hover:shadow-fintech-hover transition-all duration-300 border border-gray-800;
+  }
+  
+  /* Inputs - DARK THEME */
   .input {
-    @apply w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-neon focus:border-transparent transition-all duration-200;
+    @apply w-full px-4 py-3 bg-base-mid border border-gray-800 text-text-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-neon focus:border-transparent transition-all duration-200 placeholder:text-text-muted;
   }
   
   /* Contenedor principal */

@@ -11,7 +11,7 @@ const PromoRight = () => {
   ]
 
   return (
-    <section className="section bg-white">
+    <section className="section bg-base-mid">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Mockup */}
@@ -42,7 +42,7 @@ const PromoRight = () => {
                     <div className="w-6 h-6 bg-brand-neon rounded-full flex items-center justify-center">
                       <span className="text-base-dark font-bold text-xs">CF</span>
                     </div>
-                    <span className="text-white text-sm font-semibold">Coinfixi</span>
+                    <span className="text-text-primary text-sm font-semibold">Coinfixi</span>
                   </div>
                   <div className="w-1.5 h-1.5 bg-brand-neon rounded-full animate-pulse" />
                 </div>
@@ -50,34 +50,34 @@ const PromoRight = () => {
                 {/* Phone content */}
                 <div className="space-y-3">
                   <div>
-                    <p className="text-gray-500 text-xs">Available Balance</p>
-                    <p className="text-xl font-bold text-white">$1,234,567</p>
+                    <p className="text-text-secondary text-xs">Available Balance</p>
+                    <p className="text-xl font-bold text-text-primary">$1,234,567</p>
                   </div>
                   
                   <div className="space-y-2">
-                    <div className="bg-white/10 rounded-lg p-2">
+                    <div className="bg-base-darker rounded-lg p-2 border border-gray-800">
                       <div className="flex justify-between items-center">
-                        <span className="text-xs text-gray-400">BTC</span>
-                        <span className="text-xs text-white font-semibold">0.0234</span>
+                        <span className="text-xs text-text-muted">BTC</span>
+                        <span className="text-xs text-text-primary font-semibold">0.0234</span>
                       </div>
                     </div>
-                    <div className="bg-white/10 rounded-lg p-2">
+                    <div className="bg-base-darker rounded-lg p-2 border border-gray-800">
                       <div className="flex justify-between items-center">
-                        <span className="text-xs text-gray-400">ETH</span>
-                        <span className="text-xs text-white font-semibold">12.45</span>
+                        <span className="text-xs text-text-muted">ETH</span>
+                        <span className="text-xs text-text-primary font-semibold">12.45</span>
                       </div>
                     </div>
-                    <div className="bg-white/10 rounded-lg p-2">
+                    <div className="bg-base-darker rounded-lg p-2 border border-gray-800">
                       <div className="flex justify-between items-center">
-                        <span className="text-xs text-gray-400">USDT</span>
-                        <span className="text-xs text-white font-semibold">5,678</span>
+                        <span className="text-xs text-text-muted">USDT</span>
+                        <span className="text-xs text-text-primary font-semibold">5,678</span>
                       </div>
                     </div>
                   </div>
                   
                   <div className="bg-brand-neon/10 rounded-lg p-2 border border-brand-neon/30">
                     <p className="text-brand-neon text-xs">• Payment processed</p>
-                    <p className="text-white text-xs">2,500 USDT → User #1234</p>
+                    <p className="text-text-primary text-xs">2,500 USDT → User #1234</p>
                   </div>
                 </div>
               </div>
@@ -87,7 +87,7 @@ const PromoRight = () => {
             <motion.div
               animate={{ rotate: -360 }}
               transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-              className="absolute -top-4 -left-4 w-12 h-12 bg-brand-purple/20 rounded-full"
+              className="absolute -top-4 -left-4 w-12 h-12 bg-brand-neon/10 rounded-full blur-xl"
             />
           </motion.div>
 
@@ -100,11 +100,11 @@ const PromoRight = () => {
             className="space-y-8 lg:order-2"
           >
             {/* H2: "White-Label Checkout" */}
-            <h2 className="text-h2-mobile lg:text-h2 font-display font-semibold text-text-main">
+            <h2 className="text-h2-mobile lg:text-h2 font-display font-semibold text-text-primary">
               White-Label Checkout
             </h2>
             
-            <p className="text-body-lg text-gray-500 leading-relaxed">
+            <p className="text-body-lg text-text-secondary leading-relaxed">
               Fully customizable payment experience that matches your brand. Integrate seamlessly with your existing systems while maintaining complete control over the user experience.
             </p>
             
@@ -124,7 +124,7 @@ const PromoRight = () => {
                   className="flex items-center space-x-3"
                 >
                   <div className="w-2 h-2 bg-brand-neon rounded-full" />
-                  <span className="text-body text-text-main font-medium">{feature}</span>
+                  <span className="text-body text-text-primary font-medium">{feature}</span>
                 </motion.div>
               ))}
             </div>

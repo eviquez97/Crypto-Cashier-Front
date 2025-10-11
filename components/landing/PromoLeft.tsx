@@ -23,7 +23,7 @@ const PromoLeft = () => {
   ]
 
   return (
-    <section className="section bg-base-light">
+    <section className="section bg-base-dark">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Texto */}
@@ -35,7 +35,7 @@ const PromoLeft = () => {
             className="space-y-8"
           >
             {/* H2: "Coinfixi for the Future" */}
-            <h2 className="text-h2-mobile lg:text-h2 font-display font-semibold text-text-main">
+            <h2 className="text-h2-mobile lg:text-h2 font-display font-semibold text-text-primary">
               Coinfixi for the Future
             </h2>
             
@@ -58,10 +58,10 @@ const PromoLeft = () => {
                     <feature.icon className="w-5 h-5 text-base-dark" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-text-main mb-1">
+                    <h3 className="text-lg font-semibold text-text-primary mb-1">
                       {feature.title}
                     </h3>
-                    <p className="text-body text-gray-500">
+                    <p className="text-body text-text-secondary">
                       {feature.description}
                     </p>
                   </div>
@@ -118,27 +118,27 @@ const PromoLeft = () => {
               className="relative"
             >
               {/* Card principal */}
-              <div className="bg-white rounded-2xl p-6 shadow-fintech relative z-10">
+              <div className="bg-base-mid rounded-2xl p-6 shadow-fintech relative z-10 border border-gray-800">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <div className="w-8 h-8 bg-brand-neon rounded-full flex items-center justify-center">
                         <span className="text-base-dark font-bold text-sm">CF</span>
                       </div>
-                      <span className="font-semibold text-text-main">API Dashboard</span>
+                      <span className="font-semibold text-text-primary">API Dashboard</span>
                     </div>
                     <div className="w-2 h-2 bg-brand-neon rounded-full animate-pulse" />
                   </div>
                   
                   <div className="space-y-3">
-                    <div className="h-3 bg-gray-300 rounded w-3/4"></div>
-                    <div className="h-3 bg-gray-300 rounded w-1/2"></div>
+                    <div className="h-3 bg-gray-700 rounded w-3/4"></div>
+                    <div className="h-3 bg-gray-700 rounded w-1/2"></div>
                     <div className="h-3 bg-brand-neon rounded w-2/3"></div>
                   </div>
                   
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-gray-300 rounded-lg h-16"></div>
-                    <div className="bg-gray-300 rounded-lg h-16"></div>
+                    <div className="bg-base-darker rounded-lg h-16 border border-gray-800"></div>
+                    <div className="bg-base-darker rounded-lg h-16 border border-gray-800"></div>
                   </div>
                 </div>
               </div>
@@ -155,11 +155,11 @@ const PromoLeft = () => {
                   ease: 'easeInOut',
                   delay: 1
                 }}
-                className="absolute -bottom-4 -right-4 bg-base-mid rounded-2xl p-4 shadow-fintech w-32 h-20 opacity-80"
+                className="absolute -bottom-4 -right-4 bg-base-darker rounded-2xl p-4 shadow-fintech w-32 h-20 opacity-80 border border-gray-800"
               >
                 <div className="space-y-2">
-                  <div className="h-2 bg-white/20 rounded w-3/4"></div>
-                  <div className="h-2 bg-white/20 rounded w-1/2"></div>
+                  <div className="h-2 bg-gray-700 rounded w-3/4"></div>
+                  <div className="h-2 bg-gray-700 rounded w-1/2"></div>
                 </div>
               </motion.div>
             </motion.div>

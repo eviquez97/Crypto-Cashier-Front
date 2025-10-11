@@ -18,16 +18,26 @@ import {
 } from 'lucide-react'
 
 // Componentes UI Premium
-const Button = ({ children, variant = 'primary', size = 'md', className = '', ...props }: any) => {
+type ButtonVariant = 'primary' | 'secondary' | 'outline'
+type ButtonSize = 'sm' | 'md' | 'lg'
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode
+  variant?: ButtonVariant
+  size?: ButtonSize
+  className?: string
+}
+
+const Button = ({ children, variant = 'primary', size = 'md', className = '', ...props }: ButtonProps) => {
   const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 ease-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2'
   
-  const variants = {
+  const variants: Record<ButtonVariant, string> = {
     primary: 'bg-brand-neon text-brand-dark hover:shadow-glow-neon focus:ring-brand-neon',
     secondary: 'border-2 border-brand-purple text-brand-purple hover:bg-brand-purple hover:text-white focus:ring-brand-purple',
     outline: 'border-2 border-white text-white hover:bg-white hover:text-brand-dark focus:ring-white'
   }
   
-  const sizes = {
+  const sizes: Record<ButtonSize, string> = {
     sm: 'px-4 py-2 text-sm',
     md: 'px-6 py-3 text-base',
     lg: 'px-8 py-4 text-lg'
@@ -43,7 +53,15 @@ const Button = ({ children, variant = 'primary', size = 'md', className = '', ..
   )
 }
 
-const MetricCard = ({ icon, value, label, trend, className = '' }: any) => (
+interface MetricCardProps {
+  icon: React.ReactNode
+  value: string
+  label: string
+  trend?: number
+  className?: string
+}
+
+const MetricCard = ({ icon, value, label, trend, className = '' }: MetricCardProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}

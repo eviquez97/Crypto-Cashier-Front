@@ -7,39 +7,41 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // Design System Tokens - EXACT COLOR PALETTE FROM IMAGE
-      colors: {
-        base: {
-          light: '#E5F9F8',    // Fondo principal claro (robot body)
-          dark: '#1F2B2D',     // Texto y elementos oscuros (visor/hands)
-          mid: '#23717B',      // Fondo secundario (carpet/background)
-        },
-        accent: {
-          medium: '#0D8A9E',   // Acento medio (glowing lines)
-          bright: '#12B2C1',   // Acento brillante (intense glow)
-        },
-        text: {
-          primary: '#1F2B2D',  // Texto principal (dark charcoal)
-          secondary: '#23717B', // Texto secundario (dark teal)
-          muted: '#0D8A9E',     // Texto atenuado (medium teal)
-        },
-        brand: {
-          neon: '#12B2C1',      // CTAs y highlights (bright cyan)
-          secondary: '#0D8A9E', // Acentos secundarios (medium teal)
-        },
-        gray: {
-          100: '#E5F9F8',  // Muy claro (robot body)
-          800: '#1F2B2D',  // Muy oscuro (visor)
-          700: '#23717B',  // Verde azulado oscuro
-          600: '#0D8A9E',  // Verde azulado medio
-          500: '#12B2C1',  // Cian brillante
-        },
-        state: {
-          success: '#12B2C1',
-          warn: '#0D8A9E',
-          error: '#1F2B2D',
-        },
-      },
+          // Design System Tokens - EXACT COLOR PALETTE FROM IMAGE
+          colors: {
+            // PALETA ESTRATÉGICA PARA FINTECH
+            brand: {
+              primary: '#16F98A',    // Verde brillante - CTAs, success, confianza
+              dark: '#05220B',       // Verde oscuro - Fondo principal, estabilidad
+              teal: '#134338',       // Teal oscuro - Fondos secundarios, tecnología
+              light: '#FFFFFF',      // Blanco - Texto, claridad, transparencia
+            },
+            // SEMÁNTICA INTELIGENTE
+            success: '#16F98A',      // Verde brillante - Éxito, confirmaciones
+            primary: '#16F98A',      // Verde brillante - CTAs principales
+            secondary: '#134338',    // Teal - Botones secundarios
+            background: '#FFFFFF',   // Blanco - Fondo principal
+            surface: '#134338',      // Teal - Cards, modales
+            surfaceDark: '#05220B',  // Verde oscuro - Fondos premium
+            text: {
+              primary: '#05220B',    // Verde oscuro - Texto principal
+              secondary: '#134338',  // Teal - Texto secundario
+              light: '#FFFFFF',      // Blanco - Texto en fondos oscuros
+              muted: '#134338',      // Teal - Texto atenuado
+            },
+            border: {
+              light: '#134338',      // Teal - Borders sutiles
+              medium: '#16F98A',     // Verde brillante - Borders activos
+              dark: '#05220B',       // Verde oscuro - Borders fuertes
+            },
+            // ESTADOS CON PSICOLOGÍA
+            state: {
+              success: '#16F98A',    // Verde - Confianza, dinero, éxito
+              warning: '#134338',    // Teal - Advertencias suaves
+              error: '#05220B',      // Verde oscuro - Errores (no agresivo)
+              info: '#16F98A',       // Verde - Información positiva
+            },
+          },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Plus Jakarta Sans', 'Satoshi', 'Inter', 'system-ui', 'sans-serif'],

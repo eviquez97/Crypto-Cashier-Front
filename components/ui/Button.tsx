@@ -19,13 +19,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant = 'primary', size = 'md', children, className, isLoading, ...props }, ref) => {
     const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 ease-out transform focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
     
-    const variants = {
-      primary: 'bg-brand-neon text-base-light shadow-fintech hover:shadow-fintech-hover focus:ring-brand-neon/50',
-      secondary: 'bg-transparent text-accent-medium border-2 border-accent-medium hover:bg-accent-medium hover:text-base-light focus:ring-accent-medium/50',
-      neon: 'bg-brand-neon text-base-light shadow-fintech hover:shadow-fintech-hover focus:ring-brand-neon/50',
-      outline: 'bg-transparent text-text-primary border-2 border-accent-medium hover:bg-accent-medium hover:text-base-light focus:ring-accent-medium/50',
-      ghost: 'bg-transparent text-text-primary hover:bg-gray-100 focus:ring-gray-100/50'
-    }
+        const variants = {
+          primary: 'bg-brand-primary text-brand-light shadow-lg hover:shadow-xl focus:ring-brand-primary/50',
+          secondary: 'bg-transparent text-brand-teal border-2 border-brand-teal hover:bg-brand-teal hover:text-brand-light focus:ring-brand-teal/50',
+          neon: 'bg-brand-primary text-brand-light shadow-lg hover:shadow-xl focus:ring-brand-primary/50',
+          outline: 'bg-transparent text-text-primary border-2 border-brand-teal hover:bg-brand-teal hover:text-brand-light focus:ring-brand-teal/50',
+          ghost: 'bg-transparent text-text-primary hover:bg-brand-teal/10 focus:ring-brand-teal/50'
+        }
     
     const sizes = {
       sm: 'px-4 py-2 text-sm',

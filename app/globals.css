@@ -5,77 +5,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    @apply bg-base-light text-text-primary font-sans antialiased;
-    font-feature-settings: 'rlig' 1, 'calt' 1;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display text-text-primary;
-  }
-  
-  /* Tipografía exacta según especificación */
-  h1 {
-    @apply text-h1-mobile lg:text-h1;
-  }
-  
-  h2 {
-    @apply text-h2-mobile lg:text-h2;
-  }
-  
-  h3 {
-    @apply text-h3;
-  }
-  
-  p {
-    @apply text-body text-text-secondary;
-  }
-}
+    @layer base {
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        @apply bg-background text-text-primary font-sans antialiased;
+        font-feature-settings: 'rlig' 1, 'calt' 1;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        @apply font-display text-text-primary;
+      }
+      
+      /* Tipografía exacta según especificación */
+      h1 {
+        @apply text-h1-mobile lg:text-h1;
+      }
+      
+      h2 {
+        @apply text-h2-mobile lg:text-h2;
+      }
+      
+      h3 {
+        @apply text-h3;
+      }
+      
+      p {
+        @apply text-body text-text-secondary;
+      }
+    }
 
 @layer components {
-  /* Botones con nueva paleta de colores */
-  .btn-primary {
-    @apply px-6 py-3 bg-brand-neon text-base-light font-semibold rounded-xl shadow-fintech hover:shadow-fintech-hover hover:-translate-y-px transition-all duration-200;
-  }
-  
-  .btn-secondary {
-    @apply px-6 py-3 border-2 border-accent-medium text-accent-medium font-semibold rounded-xl hover:bg-accent-medium hover:text-base-light transition-all duration-200;
-  }
-  
-  .btn-ghost {
-    @apply px-6 py-3 text-text-primary font-semibold rounded-xl hover:bg-gray-100 transition-all duration-200;
-  }
-  
-  /* Cards con nueva paleta */
-  .card {
-    @apply bg-base-light rounded-2xl shadow-fintech hover:shadow-fintech-hover transition-all duration-300 border border-gray-100;
-  }
-  
-  .card-dark {
-    @apply bg-base-mid rounded-2xl shadow-fintech hover:shadow-fintech-hover transition-all duration-300 border border-accent-medium;
-  }
-  
-  /* Inputs con nueva paleta */
-  .input {
-    @apply w-full px-4 py-3 bg-base-light border border-accent-medium text-text-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-neon focus:border-transparent transition-all duration-200 placeholder:text-text-muted;
-  }
-  
-  /* Contenedor principal */
-  .container {
-    @apply max-w-container mx-auto px-6;
-  }
-  
-  /* Secciones */
-  .section {
-    @apply py-section;
-  }
-  
-  .hero-section {
-    @apply py-hero;
-  }
-}
+      /* Botones con paleta estratégica y psicología */
+      .btn-primary {
+        @apply px-6 py-3 bg-brand-primary text-brand-light font-semibold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-px transition-all duration-300;
+        /* Verde brillante = Confianza, dinero, acción */
+      }
+      
+      .btn-secondary {
+        @apply px-6 py-3 border-2 border-brand-teal text-brand-teal font-semibold rounded-xl hover:bg-brand-teal hover:text-brand-light transition-all duration-300;
+        /* Teal = Tecnología, innovación, secundario */
+      }
+      
+      .btn-ghost {
+        @apply px-6 py-3 text-text-primary font-semibold rounded-xl hover:bg-brand-teal/10 transition-all duration-300;
+      }
+      
+      /* Cards con psicología de estabilidad */
+      .card {
+        @apply bg-background rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border-light;
+        /* Blanco = Transparencia, claridad */
+      }
+      
+      .card-dark {
+        @apply bg-surface rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border-light;
+        /* Teal = Tecnología, profesionalismo */
+      }
+      
+      .card-premium {
+        @apply bg-surfaceDark rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 border border-brand-primary/20;
+        /* Verde oscuro = Estabilidad, seguridad premium */
+      }
+      
+      /* Inputs con enfoque en claridad */
+      .input {
+        @apply w-full px-4 py-3 bg-background border border-border-light text-text-primary rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 placeholder:text-text-muted;
+      }
+      
+      /* Contenedor principal */
+      .container {
+        @apply max-w-container mx-auto px-6;
+      }
+      
+      /* Secciones */
+      .section {
+        @apply py-section;
+      }
+      
+      .hero-section {
+        @apply py-hero;
+      }
+      
+      /* Gradientes estratégicos */
+      .gradient-primary {
+        background: linear-gradient(135deg, #16F98A 0%, #134338 100%);
+      }
+      
+      .gradient-surface {
+        background: linear-gradient(135deg, #134338 0%, #05220B 100%);
+      }
+      
+      .gradient-hero {
+        background: linear-gradient(135deg, #FFFFFF 0%, #16F98A/5 50%, #134338/10 100%);
+      }
+    }

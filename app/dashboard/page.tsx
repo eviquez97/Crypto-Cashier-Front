@@ -254,47 +254,47 @@ const DashboardPage = () => {
   )
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-dark via-base-dark to-brand-teal flex">
+    <div className="min-h-screen bg-surface-primary flex">
       {/* Vertical Sidebar */}
       <motion.aside
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="w-20 lg:w-64 bg-brand-teal/5 backdrop-blur-xl border-r border-brand-primary/10 flex flex-col items-center lg:items-start p-4 lg:p-6 sticky top-0 h-screen overflow-y-auto"
+        className="w-20 lg:w-72 bg-surface-secondary border-r border-surface-border flex flex-col items-center lg:items-start p-4 lg:p-6 sticky top-0 h-screen overflow-y-auto"
       >
         {/* Logo */}
         <div className="flex items-center space-x-3 mb-8">
           <div className="relative">
-            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-primary to-brand-primary/80 rounded-2xl flex items-center justify-center shadow-lg shadow-brand-primary/25">
-              <span className="text-brand-dark font-bold text-lg lg:text-xl">CF</span>
+            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-brand-primary rounded-2xl flex items-center justify-center shadow-lg">
+              <span className="text-surface-primary font-bold text-lg lg:text-xl">CF</span>
             </div>
-            <div className="absolute -top-1 -right-1 w-3 h-3 lg:w-4 lg:h-4 bg-emerald-500 rounded-full border-2 border-brand-dark"></div>
+            <div className="absolute -top-1 -right-1 w-3 h-3 lg:w-4 lg:h-4 bg-success-500 rounded-full border-2 border-surface-secondary"></div>
           </div>
           <div className="hidden lg:block">
-            <h1 className="text-lg font-display font-bold text-brand-light">Coinfixi</h1>
+            <h1 className="text-lg font-display font-bold text-text-primary">Coinfixi</h1>
             <div className="flex items-center space-x-1">
-              <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></div>
-              <span className="text-xs text-emerald-500 font-medium">Live</span>
+              <div className="w-1.5 h-1.5 bg-success-500 rounded-full animate-pulse"></div>
+              <span className="text-xs text-success-500 font-medium">Live</span>
             </div>
           </div>
         </div>
 
         {/* Quick Actions */}
         <div className="flex-1 w-full">
-          <h3 className="hidden lg:block text-sm font-semibold text-brand-light/70 mb-4 uppercase tracking-wider">
+          <h3 className="hidden lg:block text-sm font-semibold text-text-secondary mb-4 uppercase tracking-wider">
             Quick Actions
           </h3>
           
-          <div className="space-y-2">
+          <div className="space-y-1">
             {[
-              { icon: Plus, label: 'Create Deposit', color: 'emerald', shortcut: '⌘D' },
-              { icon: ArrowUpRight, label: 'Process Withdrawal', color: 'blue', shortcut: '⌘W' },
-              { icon: Settings, label: 'API Settings', color: 'purple', shortcut: '⌘A' },
-              { icon: Shield, label: 'Security Center', color: 'red', shortcut: '⌘S' },
-              { icon: BarChart3, label: 'Analytics', color: 'yellow', shortcut: '⌘N' },
-              { icon: Download, label: 'Export Data', color: 'indigo', shortcut: '⌘E' },
-              { icon: Users, label: 'User Management', color: 'pink', shortcut: '⌘U' },
-              { icon: Database, label: 'Database', color: 'cyan', shortcut: '⌘B' }
+              { icon: Plus, label: 'Create Deposit', color: 'success', shortcut: '⌘D' },
+              { icon: ArrowUpRight, label: 'Process Withdrawal', color: 'info', shortcut: '⌘W' },
+              { icon: Settings, label: 'API Settings', color: 'warning', shortcut: '⌘A' },
+              { icon: Shield, label: 'Security Center', color: 'error', shortcut: '⌘S' },
+              { icon: BarChart3, label: 'Analytics', color: 'brand', shortcut: '⌘N' },
+              { icon: Download, label: 'Export Data', color: 'brand', shortcut: '⌘E' },
+              { icon: Users, label: 'User Management', color: 'info', shortcut: '⌘U' },
+              { icon: Database, label: 'Database', color: 'warning', shortcut: '⌘B' }
             ].map((action, index) => (
               <motion.button
                 key={action.label}
@@ -303,22 +303,22 @@ const DashboardPage = () => {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 whileHover={{ scale: 1.02, x: 4 }}
                 whileTap={{ scale: 0.98 }}
-                className={`w-full flex items-center space-x-3 p-3 lg:p-4 bg-brand-dark/20 hover:bg-brand-dark/40 rounded-xl border border-brand-primary/10 hover:border-${action.color}-500/30 transition-all duration-200 group relative`}
+                className="w-full flex items-center space-x-3 p-3 lg:p-4 bg-surface-tertiary/50 hover:bg-surface-tertiary rounded-xl border border-surface-border hover:border-brand-primary/30 transition-all duration-200 group relative"
               >
-                <div className={`w-8 h-8 lg:w-10 lg:h-10 bg-${action.color}-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                <div className={`w-8 h-8 lg:w-10 lg:h-10 bg-${action.color}-500/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
                   <action.icon className={`w-4 h-4 lg:w-5 lg:h-5 text-${action.color}-500`} />
                 </div>
                 <div className="hidden lg:block flex-1 text-left">
-                  <p className="text-sm font-medium text-brand-light group-hover:text-brand-primary transition-colors">
+                  <p className="text-sm font-medium text-text-primary group-hover:text-brand-primary transition-colors">
                     {action.label}
                   </p>
-                  <p className="text-xs text-brand-light/50 font-mono">
+                  <p className="text-xs text-text-muted font-mono">
                     {action.shortcut}
                   </p>
                 </div>
                 
                 {/* Tooltip for mobile */}
-                <div className="lg:hidden absolute left-full ml-2 px-2 py-1 bg-brand-dark/90 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
+                <div className="lg:hidden absolute left-full ml-2 px-2 py-1 bg-surface-primary/95 text-text-primary text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50 border border-surface-border">
                   {action.label}
                 </div>
               </motion.button>
@@ -327,21 +327,21 @@ const DashboardPage = () => {
         </div>
 
         {/* Bottom Actions */}
-        <div className="w-full space-y-2 mt-4">
+        <div className="w-full space-y-1 mt-4">
           {/* Profile */}
           <Link href="/" className="w-full flex items-center space-x-3 p-3 lg:p-4 bg-brand-primary/10 hover:bg-brand-primary/20 rounded-xl border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-200 group">
             <div className="w-8 h-8 lg:w-10 lg:h-10 bg-brand-primary rounded-xl flex items-center justify-center flex-shrink-0">
-              <span className="text-brand-dark font-bold text-sm lg:text-base">EU</span>
+              <span className="text-surface-primary font-bold text-sm lg:text-base">EU</span>
             </div>
             <div className="hidden lg:block flex-1 text-left">
-              <p className="text-sm font-medium text-brand-light">Enterprise User</p>
-              <p className="text-xs text-brand-light/70">Admin</p>
+              <p className="text-sm font-medium text-text-primary">Enterprise User</p>
+              <p className="text-xs text-text-secondary">Admin</p>
             </div>
-            <LogOut className="hidden lg:block w-4 h-4 text-brand-light/70 group-hover:text-brand-primary transition-colors" />
+            <LogOut className="hidden lg:block w-4 h-4 text-text-secondary group-hover:text-brand-primary transition-colors" />
           </Link>
 
           {/* Logout */}
-          <button className="lg:hidden w-full p-3 text-brand-light/70 hover:text-brand-light hover:bg-brand-primary/10 rounded-xl transition-all duration-200">
+          <button className="lg:hidden w-full p-3 text-text-secondary hover:text-text-primary hover:bg-surface-tertiary rounded-xl transition-all duration-200">
             <LogOut className="w-5 h-5 mx-auto" />
           </button>
         </div>
@@ -354,24 +354,24 @@ const DashboardPage = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-brand-teal/5 backdrop-blur-xl border-b border-brand-primary/10 sticky top-0 z-40"
+          className="bg-surface-secondary border-b border-surface-border sticky top-0 z-40"
         >
         <div className="px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Page Title */}
             <div>
-              <h1 className="text-2xl font-display font-bold text-brand-light">Dashboard</h1>
+              <h1 className="text-2xl font-display font-bold text-text-primary">Dashboard</h1>
               <div className="flex items-center space-x-2">
-                <p className="text-sm text-brand-light/70">Enterprise Payment Infrastructure</p>
+                <p className="text-sm text-text-secondary">Enterprise Payment Infrastructure</p>
                 <div className="flex items-center space-x-1">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                  <span className="text-xs text-emerald-500 font-medium">Live</span>
+                  <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
+                  <span className="text-xs text-success-500 font-medium">Live</span>
                 </div>
               </div>
             </div>
 
             {/* Advanced Navigation */}
-            <nav className="hidden lg:flex items-center space-x-2">
+            <nav className="hidden lg:flex items-center space-x-1">
               {[
                 { id: 'overview', label: 'Overview', icon: BarChart3 },
                 { id: 'transactions', label: 'Transactions', icon: Activity },
@@ -382,10 +382,10 @@ const DashboardPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-xl font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-lg font-medium transition-all duration-200 ${
                     activeTab === tab.id
-                      ? 'bg-brand-primary text-brand-dark shadow-lg shadow-brand-primary/25'
-                      : 'text-brand-light/70 hover:text-brand-light hover:bg-brand-primary/10'
+                      ? 'bg-brand-primary text-surface-primary shadow-lg'
+                      : 'text-text-secondary hover:text-text-primary hover:bg-surface-tertiary'
                   }`}
                 >
                   <tab.icon className="w-4 h-4" />
@@ -397,15 +397,15 @@ const DashboardPage = () => {
             {/* Advanced Actions */}
             <div className="flex items-center space-x-3">
               {/* Timeframe Selector */}
-              <div className="hidden md:flex items-center space-x-1 bg-brand-dark/50 rounded-xl p-1">
+              <div className="hidden md:flex items-center space-x-1 bg-surface-tertiary rounded-lg p-1">
                 {timeFrames.map((tf) => (
                   <button
                     key={tf.value}
                     onClick={() => setSelectedTimeframe(tf.value)}
-                    className={`px-3 py-1 rounded-lg text-xs font-medium transition-all duration-200 ${
+                    className={`px-3 py-1 rounded-md text-xs font-medium transition-all duration-200 ${
                       selectedTimeframe === tf.value
-                        ? 'bg-brand-primary text-brand-dark'
-                        : 'text-brand-light/70 hover:text-brand-light hover:bg-brand-primary/10'
+                        ? 'bg-brand-primary text-surface-primary'
+                        : 'text-text-secondary hover:text-text-primary hover:bg-surface-secondary'
                     }`}
                   >
                     {tf.label}

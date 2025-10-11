@@ -7,39 +7,66 @@ module.exports = {
   ],
   theme: {
     extend: {
-          // Design System Tokens - EXACT COLOR PALETTE FROM IMAGE
+          // PROFESSIONAL FINTECH COLOR SYSTEM
           colors: {
-            // PALETA ESTRATÉGICA PARA FINTECH
+            // PRIMARY BRAND COLORS
             brand: {
-              primary: '#16F98A',    // Verde brillante - CTAs, success, confianza
-              dark: '#05220B',       // Verde oscuro - Fondo principal, estabilidad
-              teal: '#134338',       // Teal oscuro - Fondos secundarios, tecnología
-              light: '#FFFFFF',      // Blanco - Texto, claridad, transparencia
+              primary: '#16F98A',      // Bright green - Primary actions, success
+              secondary: '#134338',    // Dark teal - Secondary elements
+              accent: '#0D8A9E',       // Blue teal - Accents, highlights
+              dark: '#05220B',         // Very dark green - Backgrounds
+              light: '#FFFFFF',        // White - Text on dark backgrounds
             },
-            // SEMÁNTICA INTELIGENTE
-            success: '#16F98A',      // Verde brillante - Éxito, confirmaciones
-            primary: '#16F98A',      // Verde brillante - CTAs principales
-            secondary: '#134338',    // Teal - Botones secundarios
-            background: '#FFFFFF',   // Blanco - Fondo principal
-            surface: '#134338',      // Teal - Cards, modales
-            surfaceDark: '#05220B',  // Verde oscuro - Fondos premium
+            
+            // NEUTRAL GRAYS
+            gray: {
+              50: '#F8FAFC',
+              100: '#F1F5F9',
+              200: '#E2E8F0',
+              300: '#CBD5E1',
+              400: '#94A3B8',
+              500: '#64748B',
+              600: '#475569',
+              700: '#334155',
+              800: '#1E293B',
+              900: '#0F172A',
+            },
+            
+            // SEMANTIC COLORS
+            success: {
+              50: '#ECFDF5',
+              500: '#10B981',
+              600: '#059669',
+            },
+            warning: {
+              50: '#FFFBEB',
+              500: '#F59E0B',
+              600: '#D97706',
+            },
+            error: {
+              50: '#FEF2F2',
+              500: '#EF4444',
+              600: '#DC2626',
+            },
+            info: {
+              50: '#EFF6FF',
+              500: '#3B82F6',
+              600: '#2563EB',
+            },
+            
+            // DASHBOARD SPECIFIC
+            surface: {
+              primary: '#0F172A',      // Dark background
+              secondary: '#1E293B',    // Card backgrounds
+              tertiary: '#334155',     // Elevated surfaces
+              border: '#475569',       // Borders and dividers
+            },
+            
             text: {
-              primary: '#05220B',    // Verde oscuro - Texto principal
-              secondary: '#134338',  // Teal - Texto secundario
-              light: '#FFFFFF',      // Blanco - Texto en fondos oscuros
-              muted: '#134338',      // Teal - Texto atenuado
-            },
-            border: {
-              light: '#134338',      // Teal - Borders sutiles
-              medium: '#16F98A',     // Verde brillante - Borders activos
-              dark: '#05220B',       // Verde oscuro - Borders fuertes
-            },
-            // ESTADOS CON PSICOLOGÍA
-            state: {
-              success: '#16F98A',    // Verde - Confianza, dinero, éxito
-              warning: '#134338',    // Teal - Advertencias suaves
-              error: '#05220B',      // Verde oscuro - Errores (no agresivo)
-              info: '#16F98A',       // Verde - Información positiva
+              primary: '#FFFFFF',      // Primary text
+              secondary: '#CBD5E1',    // Secondary text
+              muted: '#94A3B8',        // Muted text
+              accent: '#16F98A',       // Accent text
             },
           },
       fontFamily: {

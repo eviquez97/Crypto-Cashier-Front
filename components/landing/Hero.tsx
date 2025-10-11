@@ -3,12 +3,14 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, Shield, Zap, Globe, TrendingUp, Users, Lock, Award } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false)
   const { scrollY } = useScroll()
   const y = useTransform(scrollY, [0, 500], [0, -150])
   const opacity = useTransform(scrollY, [0, 300], [1, 0])
+  const { t } = useTranslation()
 
   useEffect(() => {
     setIsLoaded(true)
@@ -100,7 +102,7 @@ const Hero = () => {
               className="inline-flex items-center space-x-2 bg-brand-primary/20 border border-brand-primary/50 rounded-full px-4 py-2 shadow-lg shadow-brand-primary/25"
             >
               <Award className="w-4 h-4 text-brand-primary" />
-              <span className="text-sm font-semibold text-brand-light">Enterprise-Grade Infrastructure</span>
+              <span className="text-sm font-semibold text-brand-light">{t('hero.badge')}</span>
             </motion.div>
 
             {/* DRAMATIC H1 with Massive Impact */}

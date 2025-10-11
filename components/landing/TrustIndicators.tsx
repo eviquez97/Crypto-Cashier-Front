@@ -127,10 +127,10 @@ const TrustIndicators = () => {
           
           <div className="relative z-10">
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-base-light mb-4">
+              <h3 className="text-3xl font-bold text-brand-light mb-4">
                 Powering the Future of Digital Payments
               </h3>
-              <p className="text-base-light/70 text-lg">
+              <p className="text-brand-light/70 text-lg">
                 Real-time metrics from our global infrastructure
               </p>
             </div>
@@ -145,19 +145,19 @@ const TrustIndicators = () => {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="w-16 h-16 bg-brand-neon/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-8 h-8 text-brand-neon" />
+                  <div className="w-16 h-16 bg-brand-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-8 h-8 text-brand-primary" />
                   </div>
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
                     viewport={{ once: true }}
-                    className="text-4xl font-bold text-brand-neon mb-2"
+                    className="text-4xl font-bold text-brand-primary mb-2"
                   >
                     {stat.value}
                   </motion.div>
-                  <p className="text-base-light/70 text-sm font-medium">
+                  <p className="text-brand-light/70 text-sm font-medium">
                     {stat.label}
                   </p>
                 </motion.div>
@@ -175,10 +175,10 @@ const TrustIndicators = () => {
           className="mt-16"
         >
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-semibold text-text-primary mb-4">
+            <h3 className="text-2xl font-semibold text-brand-light mb-4">
               Industry Certifications & Compliance
             </h3>
-            <p className="text-text-secondary">
+            <p className="text-brand-light/70">
               Meeting the highest standards of security and regulatory compliance
             </p>
           </div>
@@ -193,8 +193,8 @@ const TrustIndicators = () => {
                 viewport={{ once: true }}
                 className="flex items-center space-x-2 px-4 py-2 bg-base-light rounded-xl border border-accent-medium/20"
               >
-                <CheckCircle className="w-4 h-4 text-brand-neon" />
-                <span className="text-text-primary font-medium">{cert}</span>
+                <CheckCircle className="w-4 h-4 text-brand-primary" />
+                <span className="text-brand-light font-medium">{cert}</span>
               </motion.div>
             ))}
           </div>

@@ -60,7 +60,7 @@ app.post('/webhooks/coinfixi', (req, res) => {
   }
 
   return (
-    <section className="section bg-gradient-to-b from-base-light/80 to-base-light overflow-hidden relative">
+    <section className="section bg-brand-dark overflow-hidden relative">
       {/* Background */}
       <div className="absolute inset-0">
         <div 
@@ -86,13 +86,13 @@ app.post('/webhooks/coinfixi', (req, res) => {
         >
           <div className="inline-flex items-center space-x-2 bg-accent-medium/10 border border-accent-medium/20 rounded-full px-4 py-2 mb-6">
             <Terminal className="w-4 h-4 text-accent-medium" />
-            <span className="text-sm font-semibold text-text-primary">Developer-First API</span>
+            <span className="text-sm font-semibold text-brand-light">Developer-First API</span>
           </div>
           
-          <h2 className="text-4xl lg:text-5xl font-display font-bold text-text-primary mb-6">
-            Integrate in <span className="bg-gradient-to-r from-brand-neon to-accent-bright bg-clip-text text-transparent">Minutes</span>, Not Months
+          <h2 className="text-4xl lg:text-5xl font-display font-bold text-brand-light mb-6">
+            Integrate in <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">Minutes</span>, Not Months
           </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-brand-light/70 max-w-3xl mx-auto">
             Clean, modern API designed for developers. RESTful endpoints, comprehensive docs, 
             and SDKs for all major languages.
           </p>
@@ -238,10 +238,10 @@ app.post('/webhooks/coinfixi', (req, res) => {
                       <feature.icon className="w-6 h-6 text-base-light" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-text-primary mb-2">
+                      <h3 className="text-xl font-bold text-brand-light mb-2">
                         {feature.title}
                       </h3>
-                      <p className="text-text-secondary leading-relaxed">
+                      <p className="text-brand-light/70 leading-relaxed">
                         {feature.description}
                       </p>
                     </div>
@@ -254,16 +254,16 @@ app.post('/webhooks/coinfixi', (req, res) => {
                 whileHover={{ scale: 1.02 }}
                 className="bg-gradient-to-r from-base-mid to-base-dark rounded-2xl p-6 text-center"
               >
-                <h3 className="text-2xl font-bold text-base-light mb-4">
+                <h3 className="text-2xl font-bold text-brand-light mb-4">
                   Ready to build?
                 </h3>
-                <p className="text-base-light/70 mb-6">
+                <p className="text-brand-light/70 mb-6">
                   Get your API keys and start integrating in minutes
                 </p>
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(18,178,193,0.3)" }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-gradient-to-r from-brand-neon to-accent-bright text-base-light px-8 py-3 rounded-xl font-bold shadow-xl w-full"
+                  className="bg-brand-primary text-brand-dark px-8 py-3 rounded-xl font-bold shadow-xl w-full"
                 >
                   View Documentation
                 </motion.button>
@@ -287,8 +287,8 @@ app.post('/webhooks/coinfixi', (req, res) => {
             { value: '24/7', label: 'Developer Support' }
           ].map((stat, index) => (
             <div key={stat.label} className="text-center">
-              <div className="text-3xl font-bold text-brand-neon mb-2">{stat.value}</div>
-              <div className="text-text-secondary text-sm">{stat.label}</div>
+              <div className="text-3xl font-bold text-brand-primary mb-2">{stat.value}</div>
+              <div className="text-brand-light/70 text-sm">{stat.label}</div>
             </div>
           ))}
         </motion.div>

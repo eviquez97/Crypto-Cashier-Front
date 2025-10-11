@@ -19,13 +19,13 @@ const Navbar = () => {
 
   // Button handlers
   const handleSignIn = () => {
-    // Redirect to login page
+    // Redirect to login page for existing users
     window.open('/login', '_blank')
   }
 
   const handleGetStarted = () => {
-    // Redirect to signup/dashboard
-    window.open('/dashboard', '_blank')
+    // Redirect to demo/signup for new enterprise clients
+    window.open('/demo-request', '_blank')
   }
 
   const navItems = [

@@ -7,32 +7,37 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // Design System Tokens - Dark theme only, no white/purple
+      // Design System Tokens - EXACT COLOR PALETTE FROM IMAGE
       colors: {
         base: {
-          dark: '#0F1115',    // Fondo principal oscuro
-          mid: '#1A1E23',     // Cards y secciones
-          darker: '#0A0C0F',  // Fondo más oscuro para contraste
+          light: '#E5F9F8',    // Fondo principal claro (robot body)
+          dark: '#1F2B2D',     // Texto y elementos oscuros (visor/hands)
+          mid: '#23717B',      // Fondo secundario (carpet/background)
+        },
+        accent: {
+          medium: '#0D8A9E',   // Acento medio (glowing lines)
+          bright: '#12B2C1',   // Acento brillante (intense glow)
         },
         text: {
-          primary: '#FFFFFF',   // Texto principal blanco sobre fondos oscuros
-          secondary: '#9AA3B2', // Texto secundario gris
-          muted: '#6B7280',     // Texto atenuado
+          primary: '#1F2B2D',  // Texto principal (dark charcoal)
+          secondary: '#23717B', // Texto secundario (dark teal)
+          muted: '#0D8A9E',     // Texto atenuado (medium teal)
         },
         brand: {
-          neon: '#B6FF00',      // ÚNICO acento - CTAs, checks, highlights
+          neon: '#12B2C1',      // CTAs y highlights (bright cyan)
+          secondary: '#0D8A9E', // Acentos secundarios (medium teal)
         },
         gray: {
-          800: '#1F2937',  // Gris oscuro para borders
-          700: '#374151',  // Gris medio oscuro
-          600: '#4B5563',  // Gris medio
-          500: '#6B7280',  // Gris
-          400: '#9CA3AF',  // Gris claro
+          100: '#E5F9F8',  // Muy claro (robot body)
+          800: '#1F2B2D',  // Muy oscuro (visor)
+          700: '#23717B',  // Verde azulado oscuro
+          600: '#0D8A9E',  // Verde azulado medio
+          500: '#12B2C1',  // Cian brillante
         },
         state: {
-          success: '#10B981',
-          warn: '#F59E0B',
-          error: '#EF4444',
+          success: '#12B2C1',
+          warn: '#0D8A9E',
+          error: '#1F2B2D',
         },
       },
       fontFamily: {

@@ -20,11 +20,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 ease-out transform focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
     
     const variants = {
-      primary: 'bg-brand-neon text-base-dark shadow-fintech hover:shadow-fintech-hover focus:ring-brand-neon/50',
-      secondary: 'bg-transparent text-text-primary border-2 border-gray-700 hover:bg-gray-800 hover:border-gray-600 focus:ring-gray-700/50',
-      neon: 'bg-brand-neon text-base-dark shadow-fintech hover:shadow-fintech-hover focus:ring-brand-neon/50',
-      outline: 'bg-transparent text-text-primary border-2 border-gray-700 hover:bg-gray-800 focus:ring-gray-700/50',
-      ghost: 'bg-transparent text-text-primary hover:bg-gray-800 focus:ring-gray-800/50'
+      primary: 'bg-brand-neon text-base-light shadow-fintech hover:shadow-fintech-hover focus:ring-brand-neon/50',
+      secondary: 'bg-transparent text-accent-medium border-2 border-accent-medium hover:bg-accent-medium hover:text-base-light focus:ring-accent-medium/50',
+      neon: 'bg-brand-neon text-base-light shadow-fintech hover:shadow-fintech-hover focus:ring-brand-neon/50',
+      outline: 'bg-transparent text-text-primary border-2 border-accent-medium hover:bg-accent-medium hover:text-base-light focus:ring-accent-medium/50',
+      ghost: 'bg-transparent text-text-primary hover:bg-gray-100 focus:ring-gray-100/50'
     }
     
     const sizes = {

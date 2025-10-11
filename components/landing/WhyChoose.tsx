@@ -28,7 +28,7 @@ const WhyChoose = () => {
   ]
 
   return (
-    <section id="features" className="section bg-base-mid">
+    <section id="features" className="section bg-base-light">
       <div className="container">
         {/* Header */}
         <motion.div

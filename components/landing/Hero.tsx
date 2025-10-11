@@ -5,12 +5,12 @@ import { ArrowRight } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen bg-hero overflow-hidden">
-      {/* Shape radial decorativo en verde según especificación */}
+    <section className="relative min-h-screen bg-base-light overflow-hidden">
+      {/* Shape radial decorativo con nueva paleta */}
       <div 
-        className="absolute inset-0 bg-hero-radial"
+        className="absolute inset-0"
         style={{
-          background: 'radial-gradient(600px circle at 70% 20%, rgba(182,255,0,.12), transparent 60%)'
+          background: 'radial-gradient(600px circle at 70% 20%, rgba(18,178,193,.15), transparent 60%)'
         }}
       />
       
@@ -109,14 +109,14 @@ const Hero = () => {
               }}
               className="relative z-10 w-80 mx-auto"
             >
-              <div className="bg-base-mid rounded-2xl p-6 shadow-fintech border border-gray-700">
+              <div className="bg-base-mid rounded-2xl p-6 shadow-fintech border border-accent-medium">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-brand-neon rounded-full flex items-center justify-center">
-                      <span className="text-base-dark font-bold text-sm">CF</span>
+                      <span className="text-base-light font-bold text-sm">CF</span>
                     </div>
-                    <span className="text-text-primary font-semibold">Coinfixi Dashboard</span>
+                    <span className="text-base-light font-semibold">Coinfixi Dashboard</span>
                   </div>
                   <div className="w-2 h-2 bg-brand-neon rounded-full animate-pulse" />
                 </div>
@@ -124,27 +124,27 @@ const Hero = () => {
                 {/* Métricas */}
                 <div className="space-y-4">
                   <div>
-                    <p className="text-text-secondary text-sm">Today's Activity</p>
-                    <p className="text-3xl font-bold text-text-primary">$284,590</p>
+                    <p className="text-base-light text-sm">Today's Activity</p>
+                    <p className="text-3xl font-bold text-base-light">$284,590</p>
                   </div>
                   
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-base-darker rounded-xl p-3 border border-gray-800">
-                      <p className="text-xs text-text-muted">Deposits</p>
-                      <p className="text-lg font-semibold text-text-primary">142</p>
+                    <div className="bg-base-dark rounded-xl p-3 border border-accent-medium">
+                      <p className="text-xs text-base-light/70">Deposits</p>
+                      <p className="text-lg font-semibold text-base-light">142</p>
                       <p className="text-xs text-brand-neon">↗ 12%</p>
                     </div>
-                    <div className="bg-base-darker rounded-xl p-3 border border-gray-800">
-                      <p className="text-xs text-text-muted">Withdrawals</p>
-                      <p className="text-lg font-semibold text-text-primary">89</p>
-                      <p className="text-xs text-text-secondary">→ Stable</p>
+                    <div className="bg-base-dark rounded-xl p-3 border border-accent-medium">
+                      <p className="text-xs text-base-light/70">Withdrawals</p>
+                      <p className="text-lg font-semibold text-base-light">89</p>
+                      <p className="text-xs text-base-light/70">→ Stable</p>
                     </div>
                   </div>
                   
-                  {/* Toast "New deposit confirmed" (verde) */}
+                  {/* Toast "New deposit confirmed" */}
                   <div className="bg-brand-neon/10 border border-brand-neon/30 rounded-xl p-3">
                     <p className="text-brand-neon text-sm font-medium">• New deposit confirmed</p>
-                    <p className="text-text-primary text-sm">1,250 USDT • TRON</p>
+                    <p className="text-base-light text-sm">1,250 USDT • TRON</p>
                   </div>
                 </div>
               </div>

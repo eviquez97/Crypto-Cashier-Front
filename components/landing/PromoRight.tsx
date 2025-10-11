@@ -11,7 +11,7 @@ const PromoRight = () => {
   ]
 
   return (
-    <section className="section bg-base-mid">
+    <section className="section bg-brand-dark">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Mockup */}
@@ -35,49 +35,49 @@ const PromoRight = () => {
               }}
               className="relative z-10 w-64 mx-auto"
             >
-              <div className="bg-base-mid rounded-3xl p-4 shadow-fintech border border-gray-700">
+              <div className="bg-brand-teal/20 rounded-3xl p-4 shadow-fintech border border-brand-primary/30">
                 {/* Phone header */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">
-                    <div className="w-6 h-6 bg-brand-neon rounded-full flex items-center justify-center">
-                      <span className="text-base-dark font-bold text-xs">CF</span>
+                    <div className="w-6 h-6 bg-brand-primary rounded-full flex items-center justify-center">
+                      <span className="text-brand-dark font-bold text-xs">CF</span>
                     </div>
-                    <span className="text-text-primary text-sm font-semibold">Coinfixi</span>
+                    <span className="text-brand-light text-sm font-semibold">Coinfixi</span>
                   </div>
-                  <div className="w-1.5 h-1.5 bg-brand-neon rounded-full animate-pulse" />
+                  <div className="w-1.5 h-1.5 bg-brand-primary rounded-full animate-pulse" />
                 </div>
                 
                 {/* Phone content */}
                 <div className="space-y-3">
                   <div>
-                    <p className="text-text-secondary text-xs">Available Balance</p>
-                    <p className="text-xl font-bold text-text-primary">$1,234,567</p>
+                    <p className="text-brand-light/70 text-xs">Available Balance</p>
+                    <p className="text-xl font-bold text-brand-light">$1,234,567</p>
                   </div>
                   
                   <div className="space-y-2">
-                    <div className="bg-base-darker rounded-lg p-2 border border-gray-800">
+                    <div className="bg-brand-dark/50 rounded-lg p-2 border border-brand-primary/20">
                       <div className="flex justify-between items-center">
-                        <span className="text-xs text-text-muted">BTC</span>
-                        <span className="text-xs text-text-primary font-semibold">0.0234</span>
+                        <span className="text-xs text-brand-light/70">BTC</span>
+                        <span className="text-xs text-brand-light font-semibold">0.0234</span>
                       </div>
                     </div>
-                    <div className="bg-base-darker rounded-lg p-2 border border-gray-800">
+                    <div className="bg-brand-dark/50 rounded-lg p-2 border border-brand-primary/20">
                       <div className="flex justify-between items-center">
-                        <span className="text-xs text-text-muted">ETH</span>
-                        <span className="text-xs text-text-primary font-semibold">12.45</span>
+                        <span className="text-xs text-brand-light/70">ETH</span>
+                        <span className="text-xs text-brand-light font-semibold">12.45</span>
                       </div>
                     </div>
-                    <div className="bg-base-darker rounded-lg p-2 border border-gray-800">
+                    <div className="bg-brand-dark/50 rounded-lg p-2 border border-brand-primary/20">
                       <div className="flex justify-between items-center">
-                        <span className="text-xs text-text-muted">USDT</span>
-                        <span className="text-xs text-text-primary font-semibold">5,678</span>
+                        <span className="text-xs text-brand-light/70">USDT</span>
+                        <span className="text-xs text-brand-light font-semibold">5,678</span>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="bg-brand-neon/10 rounded-lg p-2 border border-brand-neon/30">
-                    <p className="text-brand-neon text-xs">• Payment processed</p>
-                    <p className="text-text-primary text-xs">2,500 USDT → User #1234</p>
+                  <div className="bg-brand-primary/10 rounded-lg p-2 border border-brand-primary/30">
+                    <p className="text-brand-primary text-xs">• Payment processed</p>
+                    <p className="text-brand-light text-xs">2,500 USDT → User #1234</p>
                   </div>
                 </div>
               </div>
@@ -87,7 +87,7 @@ const PromoRight = () => {
             <motion.div
               animate={{ rotate: -360 }}
               transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-              className="absolute -top-4 -left-4 w-12 h-12 bg-brand-neon/10 rounded-full blur-xl"
+              className="absolute -top-4 -left-4 w-12 h-12 bg-brand-primary/10 rounded-full blur-xl"
             />
           </motion.div>
 
@@ -100,11 +100,11 @@ const PromoRight = () => {
             className="space-y-8 lg:order-2"
           >
             {/* H2: "White-Label Checkout" */}
-            <h2 className="text-h2-mobile lg:text-h2 font-display font-semibold text-text-primary">
+            <h2 className="text-h2-mobile lg:text-h2 font-display font-semibold text-brand-light">
               White-Label Checkout
             </h2>
             
-            <p className="text-body-lg text-text-secondary leading-relaxed">
+            <p className="text-body-lg text-brand-light/70 leading-relaxed">
               Fully customizable payment experience that matches your brand. Integrate seamlessly with your existing systems while maintaining complete control over the user experience.
             </p>
             
@@ -123,8 +123,8 @@ const PromoRight = () => {
                   viewport={{ once: true, amount: 0.3 }}
                   className="flex items-center space-x-3"
                 >
-                  <div className="w-2 h-2 bg-brand-neon rounded-full" />
-                  <span className="text-body text-text-primary font-medium">{feature}</span>
+                  <div className="w-2 h-2 bg-brand-primary rounded-full" />
+                  <span className="text-body text-brand-light font-medium">{feature}</span>
                 </motion.div>
               ))}
             </div>
@@ -140,7 +140,7 @@ const PromoRight = () => {
               <motion.button
                 whileHover={{ scale: 1.05, y: -1 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-primary flex items-center justify-center group"
+                className="bg-brand-primary text-brand-dark px-6 py-3 rounded-xl font-semibold hover:bg-brand-primary/90 transition-all duration-300 flex items-center justify-center group"
               >
                 Get Started
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -149,7 +149,7 @@ const PromoRight = () => {
               <motion.button
                 whileHover={{ scale: 1.05, y: -1 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-secondary"
+                className="px-6 py-3 border-2 border-brand-primary text-brand-light rounded-xl font-semibold hover:bg-brand-primary hover:text-brand-dark transition-all duration-300"
               >
                 View Demo
               </motion.button>

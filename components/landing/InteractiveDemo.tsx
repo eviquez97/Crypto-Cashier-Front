@@ -3,11 +3,13 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Code, Terminal, Check, Copy, Play, Zap } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const InteractiveDemo = () => {
   const [activeTab, setActiveTab] = useState<'deposit' | 'withdrawal' | 'webhook'>('deposit')
   const [copied, setCopied] = useState(false)
   const [isRunning, setIsRunning] = useState(false)
+  const { t } = useTranslation()
 
   const codeExamples = {
     deposit: `// Create a deposit address
@@ -98,15 +100,14 @@ app.post('/webhooks/coinfixi', (req, res) => {
         >
           <div className="inline-flex items-center space-x-2 bg-accent-medium/10 border border-accent-medium/20 rounded-full px-4 py-2 mb-6">
             <Terminal className="w-4 h-4 text-accent-medium" />
-            <span className="text-sm font-semibold text-brand-light">Developer-First API</span>
+            <span className="text-sm font-semibold text-brand-light">{t('interactiveDemo.badge')}</span>
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-display font-bold text-brand-light mb-6">
-            Integrate in <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">Minutes</span>, Not Months
+            {t('interactiveDemo.title')} <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">{t('interactiveDemo.titleHighlight')}</span>{t('interactiveDemo.titleEnd')}
           </h2>
           <p className="text-xl text-brand-light/70 max-w-3xl mx-auto">
-            Clean, modern API designed for developers. RESTful endpoints, comprehensive docs, 
-            and SDKs for all major languages.
+            {t('interactiveDemo.subtitle')}
           </p>
         </motion.div>
 
@@ -160,7 +161,7 @@ app.post('/webhooks/coinfixi', (req, res) => {
                       }`}
                     >
                       <Play className={`w-4 h-4 ${isRunning ? 'animate-spin' : ''}`} />
-                      <span className="text-sm font-medium">{isRunning ? 'Running...' : 'Run'}</span>
+                      <span className="text-sm font-medium">{isRunning ? t('interactiveDemo.running') : t('interactiveDemo.run')}</span>
                     </motion.button>
                   </div>
                 </div>
@@ -178,7 +179,7 @@ app.post('/webhooks/coinfixi', (req, res) => {
                         : 'text-base-light/50 hover:text-base-light/80'
                     }`}
                   >
-                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                    {t(`interactiveDemo.tabs.${tab}`)}
                   </button>
                 ))}
               </div>

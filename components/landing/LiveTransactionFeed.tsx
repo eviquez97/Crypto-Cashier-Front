@@ -79,7 +79,7 @@ const LiveTransactionFeed = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'completed': return 'text-brand-primary bg-brand-primary/10 border-brand-primary/30'
-      case 'processing': return 'text-brand-teal bg-brand-teal/10 border-brand-teal/30'
+      case 'processing': return 'text-info-500 bg-info-500/10 border-info-500/30'
       case 'pending': return 'text-brand-light/70 bg-brand-light/10 border-brand-light/30'
       default: return 'text-brand-light/70 bg-brand-light/10 border-brand-light/30'
     }
@@ -133,7 +133,7 @@ const LiveTransactionFeed = () => {
 
         {/* Transaction Feed */}
         <div className="max-w-5xl mx-auto">
-          <div className="bg-brand-teal/20 backdrop-blur-xl rounded-3xl p-8 border border-brand-primary/30 shadow-2xl"
+          <div className="bg-info-500/20 backdrop-blur-xl rounded-3xl p-8 border border-brand-primary/30 shadow-2xl"
             style={{
               backdropFilter: 'blur(20px)',
               background: 'linear-gradient(135deg, rgba(19,67,56,0.3) 0%, rgba(19,67,56,0.2) 100%)',
@@ -162,7 +162,7 @@ const LiveTransactionFeed = () => {
                     exit={{ opacity: 0, x: -100, scale: 0.95 }}
                     transition={{ duration: 0.4, ease: 'easeOut' }}
                     whileHover={{ scale: 1.02, x: 4 }}
-                    className="bg-brand-teal/10 backdrop-blur-sm rounded-2xl p-5 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300 shadow-lg"
+                    className="bg-info-500/10 backdrop-blur-sm rounded-2xl p-5 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300 shadow-lg"
                   >
                     <div className="flex items-center justify-between">
                       {/* Left: Type & Amount */}
@@ -171,7 +171,7 @@ const LiveTransactionFeed = () => {
                         <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
                           transaction.type === 'deposit' 
                             ? 'bg-brand-primary/20 text-brand-primary' 
-                            : 'bg-brand-teal/20 text-brand-teal'
+                            : 'bg-info-500/20 text-info-500'
                         }`}>
                           {transaction.type === 'deposit' ? (
                             <ArrowDownLeft className="w-6 h-6" />
@@ -230,7 +230,7 @@ const LiveTransactionFeed = () => {
                     key={transactions.length}
                     initial={{ scale: 1.2 }}
                     animate={{ scale: 1 }}
-                    className="text-2xl font-bold text-brand-teal mb-1"
+                    className="text-2xl font-bold text-info-500 mb-1"
                   >
                     {transactions.filter(t => t.status === 'processing').length}
                   </motion.div>

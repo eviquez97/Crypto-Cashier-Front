@@ -108,17 +108,17 @@ Please follow up within 24 hours.`
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-brand-dark via-base-dark to-brand-teal flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-surface-primary via-surface-secondary to-surface-tertiary flex items-center justify-center p-4">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-brand-primary/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-brand-teal/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-info-500/10 rounded-full blur-3xl" />
         </div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="relative z-10 bg-brand-teal/10 backdrop-blur-xl rounded-3xl p-8 border border-brand-primary/20 shadow-2xl text-center max-w-md"
+          className="relative z-10 bg-info-500/10 backdrop-blur-xl rounded-3xl p-8 border border-brand-primary/20 shadow-2xl text-center max-w-md"
         >
           <motion.div
             initial={{ scale: 0 }}
@@ -161,11 +161,11 @@ Please follow up within 24 hours.`
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-dark via-base-dark to-brand-teal py-12 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-surface-primary via-surface-secondary to-surface-tertiary py-12 p-4">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-brand-primary/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-brand-teal/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-info-500/10 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto">
@@ -198,7 +198,7 @@ Please follow up within 24 hours.`
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-8"
           >
-            <div className="bg-brand-teal/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20">
+            <div className="bg-info-500/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20">
               <h3 className="text-2xl font-display font-bold text-brand-light mb-6">
                 What You'll Get
               </h3>
@@ -263,7 +263,7 @@ Please follow up within 24 hours.`
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-brand-teal/10 backdrop-blur-xl rounded-3xl p-8 border border-brand-primary/20 shadow-2xl"
+            className="bg-info-500/10 backdrop-blur-xl rounded-3xl p-8 border border-brand-primary/20 shadow-2xl"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name Fields */}

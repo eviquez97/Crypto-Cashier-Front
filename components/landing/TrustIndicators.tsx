@@ -84,7 +84,7 @@ const TrustIndicators = () => {
               whileHover={{ y: -4, scale: 1.02 }}
               className="group relative"
             >
-              <div className="bg-brand-teal/10 rounded-2xl p-8 shadow-lg hover:shadow-xl border border-brand-primary/20 transition-all duration-300 h-full">
+              <div className="bg-info-500/10 rounded-2xl p-8 shadow-lg hover:shadow-xl border border-brand-primary/20 transition-all duration-300 h-full">
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <div className="w-14 h-14 bg-brand-primary rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">

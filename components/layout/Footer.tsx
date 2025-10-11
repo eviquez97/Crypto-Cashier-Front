@@ -73,7 +73,7 @@ const Footer = () => {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 bg-brand-teal/20 rounded-xl flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-200 text-brand-light/70"
+                  className="w-10 h-10 bg-info-500/20 rounded-xl flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-200 text-brand-light/70"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />

@@ -159,12 +159,12 @@ const ResourcesPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-dark via-base-dark to-brand-teal">
+    <div className="min-h-screen bg-gradient-to-br from-surface-primary via-surface-secondary to-surface-tertiary">
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-brand-primary/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-brand-teal/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-info-500/10 rounded-full blur-3xl" />
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
@@ -201,7 +201,7 @@ const ResourcesPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
-              className="bg-brand-teal/10 backdrop-blur-xl rounded-3xl p-8 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300"
+              className="bg-info-500/10 backdrop-blur-xl rounded-3xl p-8 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300"
             >
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center">
@@ -284,7 +284,7 @@ const ResourcesPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-brand-teal/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300 group cursor-pointer"
+                className="bg-info-500/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300 group cursor-pointer"
                 onClick={() => window.open(tool.link, '_blank')}
               >
                 <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-primary/30 transition-colors duration-300">
@@ -329,7 +329,7 @@ const ResourcesPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-brand-teal/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300 group cursor-pointer"
+              className="bg-info-500/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300 group cursor-pointer"
               onClick={() => window.open(item.link, '_blank')}
             >
               <div className="flex items-center space-x-4 mb-4">
@@ -365,7 +365,7 @@ const ResourcesPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-brand-primary/10 to-brand-teal/10 backdrop-blur-xl rounded-3xl p-12 border border-brand-primary/20 text-center"
+            className="bg-gradient-to-r from-brand-primary/10 to-info-500/10 backdrop-blur-xl rounded-3xl p-12 border border-brand-primary/20 text-center"
           >
             <h2 className="text-4xl font-display font-bold text-brand-light mb-4">
               Need Help Getting Started?

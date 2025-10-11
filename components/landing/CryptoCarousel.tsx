@@ -78,7 +78,7 @@ const CryptoCarousel = () => {
                 <motion.div
                   key={`${crypto.symbol}-${index}`}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="flex-shrink-0 w-72 bg-brand-teal/20 backdrop-blur-xl rounded-3xl p-6 border border-brand-primary/30 shadow-2xl"
+                  className="flex-shrink-0 w-72 bg-info-500/20 backdrop-blur-xl rounded-3xl p-6 border border-brand-primary/30 shadow-2xl"
                   style={{
                     backdropFilter: 'blur(20px)',
                     background: 'linear-gradient(135deg, rgba(19,67,56,0.3) 0%, rgba(19,67,56,0.2) 100%)',
@@ -183,7 +183,7 @@ const CryptoCarousel = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center space-x-8 bg-brand-teal/20 rounded-2xl px-12 py-6 border border-brand-primary/30">
+          <div className="inline-flex items-center space-x-8 bg-info-500/20 rounded-2xl px-12 py-6 border border-brand-primary/30">
             <div>
               <div className="text-3xl font-bold text-brand-primary mb-1">50+</div>
               <div className="text-brand-light/70 text-sm">Cryptocurrencies</div>

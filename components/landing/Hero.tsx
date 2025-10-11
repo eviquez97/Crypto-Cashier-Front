@@ -120,7 +120,7 @@ const Hero = () => {
                 {t('hero.title').split(' ').slice(2, 4).join(' ')}
               </span>
               <br />
-              <span className="text-5xl lg:text-6xl text-brand-teal font-medium">
+              <span className="text-5xl lg:text-6xl text-info-500 font-medium">
                 {t('hero.title').split(' ').slice(4).join(' ')}
               </span>
             </motion.h1>
@@ -141,28 +141,28 @@ const Hero = () => {
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <motion.div
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center space-x-3 p-4 bg-brand-teal/10 rounded-xl border border-brand-primary/30 backdrop-blur-sm hover:bg-brand-primary/10 transition-all duration-300"
+                  className="flex items-center space-x-3 p-4 bg-info-500/10 rounded-xl border border-brand-primary/30 backdrop-blur-sm hover:bg-brand-primary/10 transition-all duration-300"
                 >
                   <Shield className="w-6 h-6 text-brand-primary" />
                   <span className="text-sm font-medium text-brand-light">Bank-Grade Security</span>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center space-x-3 p-4 bg-brand-teal/10 rounded-xl border border-brand-primary/30 backdrop-blur-sm hover:bg-brand-primary/10 transition-all duration-300"
+                  className="flex items-center space-x-3 p-4 bg-info-500/10 rounded-xl border border-brand-primary/30 backdrop-blur-sm hover:bg-brand-primary/10 transition-all duration-300"
                 >
                   <Zap className="w-6 h-6 text-brand-primary" />
                   <span className="text-sm font-medium text-brand-light">Sub-Second Processing</span>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center space-x-3 p-4 bg-brand-teal/10 rounded-xl border border-brand-primary/30 backdrop-blur-sm hover:bg-brand-primary/10 transition-all duration-300"
+                  className="flex items-center space-x-3 p-4 bg-info-500/10 rounded-xl border border-brand-primary/30 backdrop-blur-sm hover:bg-brand-primary/10 transition-all duration-300"
                 >
                   <Globe className="w-6 h-6 text-brand-primary" />
                   <span className="text-sm font-medium text-brand-light">Global Coverage</span>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center space-x-3 p-4 bg-brand-teal/10 rounded-xl border border-brand-primary/30 backdrop-blur-sm hover:bg-brand-primary/10 transition-all duration-300"
+                  className="flex items-center space-x-3 p-4 bg-info-500/10 rounded-xl border border-brand-primary/30 backdrop-blur-sm hover:bg-brand-primary/10 transition-all duration-300"
                 >
                   <TrendingUp className="w-6 h-6 text-brand-primary" />
                   <span className="text-sm font-medium text-brand-light">99.99% Uptime</span>
@@ -324,10 +324,10 @@ const Hero = () => {
                     >
                       <div className="flex items-center justify-between mb-2">
                         <p className="text-brand-light/70 text-xs">Withdrawals</p>
-                        <Zap className="w-4 h-4 text-brand-teal" />
+                        <Zap className="w-4 h-4 text-info-500" />
                       </div>
                       <p className="text-2xl font-bold text-brand-light">89</p>
-                      <p className="text-brand-teal text-xs">→ Stable</p>
+                      <p className="text-info-500 text-xs">→ Stable</p>
                     </motion.div>
                   </div>
                   
@@ -349,7 +349,7 @@ const Hero = () => {
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-brand-light text-sm">Withdrawal processed</span>
-                        <span className="text-brand-teal text-xs font-medium">0.5 BTC</span>
+                        <span className="text-info-500 text-xs font-medium">0.5 BTC</span>
                       </div>
                     </motion.div>
                   </div>
@@ -381,7 +381,7 @@ const Hero = () => {
                 ease: 'linear',
                 delay: 2
               }}
-              className="absolute -bottom-8 -left-8 w-16 h-16 bg-brand-teal/20 rounded-full blur-xl"
+              className="absolute -bottom-8 -left-8 w-16 h-16 bg-info-500/20 rounded-full blur-xl"
             />
           </motion.div>
         </div>

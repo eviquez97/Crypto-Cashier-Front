@@ -137,7 +137,7 @@ const PromoLeft = () => {
               className="relative"
             >
               {/* Card principal */}
-              <div className="bg-brand-teal/20 rounded-2xl p-6 shadow-fintech relative z-10 border border-brand-primary/30">
+              <div className="bg-info-500/20 rounded-2xl p-6 shadow-fintech relative z-10 border border-brand-primary/30">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">

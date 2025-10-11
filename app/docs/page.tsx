@@ -147,12 +147,12 @@ app.post('/webhooks/coinfixi', (req, res) => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-dark via-base-dark to-brand-teal">
+    <div className="min-h-screen bg-gradient-to-br from-surface-primary via-surface-secondary to-surface-tertiary">
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-brand-primary/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-brand-teal/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-info-500/10 rounded-full blur-3xl" />
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
@@ -209,7 +209,7 @@ app.post('/webhooks/coinfixi', (req, res) => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-1"
           >
-            <div className="bg-brand-teal/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20 sticky top-8">
+            <div className="bg-info-500/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20 sticky top-8">
               <h3 className="text-lg font-semibold text-brand-light mb-4">Documentation</h3>
               
               <nav className="space-y-2">
@@ -242,7 +242,7 @@ app.post('/webhooks/coinfixi', (req, res) => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-3"
           >
-            <div className="bg-brand-teal/10 backdrop-blur-xl rounded-2xl p-8 border border-brand-primary/20">
+            <div className="bg-info-500/10 backdrop-blur-xl rounded-2xl p-8 border border-brand-primary/20">
               {/* Section Header */}
               <div className="mb-8">
                 {(() => {
@@ -407,7 +407,7 @@ app.post('/webhooks/coinfixi', (req, res) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-brand-teal/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300"
+              className="bg-info-500/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300"
             >
               <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center mb-4">
                 <FileText className="w-6 h-6 text-brand-primary" />
@@ -425,7 +425,7 @@ app.post('/webhooks/coinfixi', (req, res) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-brand-teal/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300"
+              className="bg-info-500/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300"
             >
               <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center mb-4">
                 <Code className="w-6 h-6 text-brand-primary" />
@@ -443,7 +443,7 @@ app.post('/webhooks/coinfixi', (req, res) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-brand-teal/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300"
+              className="bg-info-500/10 backdrop-blur-xl rounded-2xl p-6 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300"
             >
               <div className="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center mb-4">
                 <Play className="w-6 h-6 text-brand-primary" />
@@ -466,7 +466,7 @@ app.post('/webhooks/coinfixi', (req, res) => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-brand-primary/10 to-brand-teal/10 backdrop-blur-xl rounded-3xl p-12 border border-brand-primary/20 text-center"
+          className="bg-gradient-to-r from-brand-primary/10 to-info-500/10 backdrop-blur-xl rounded-3xl p-12 border border-brand-primary/20 text-center"
         >
           <h2 className="text-4xl font-display font-bold text-brand-light mb-4">
             Ready to Start Building?

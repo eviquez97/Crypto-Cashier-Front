@@ -132,7 +132,7 @@ const Testimonials = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.6, ease: 'easeInOut' }}
-                className="bg-brand-teal/10 rounded-3xl p-12 lg:p-16 shadow-2xl border border-brand-primary/20 backdrop-blur-sm relative overflow-hidden"
+                className="bg-info-500/10 rounded-3xl p-12 lg:p-16 shadow-2xl border border-brand-primary/20 backdrop-blur-sm relative overflow-hidden"
               >
                 {/* Background Pattern */}
                 <div 
@@ -251,7 +251,7 @@ const Testimonials = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={prevTestimonial}
-                className="w-12 h-12 bg-brand-teal/20 border border-brand-primary/20 rounded-xl flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 shadow-lg text-brand-light"
+                className="w-12 h-12 bg-info-500/20 border border-brand-primary/20 rounded-xl flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 shadow-lg text-brand-light"
               >
                 <ChevronLeft className="w-5 h-5" />
               </motion.button>
@@ -274,7 +274,7 @@ const Testimonials = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={nextTestimonial}
-                className="w-12 h-12 bg-brand-teal/20 border border-brand-primary/20 rounded-xl flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 shadow-lg text-brand-light"
+                className="w-12 h-12 bg-info-500/20 border border-brand-primary/20 rounded-xl flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 shadow-lg text-brand-light"
               >
                 <ChevronRight className="w-5 h-5" />
               </motion.button>
@@ -290,7 +290,7 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="mt-20"
         >
-          <div className="bg-brand-teal/20 rounded-2xl p-8 border border-brand-primary/20">
+          <div className="bg-info-500/20 rounded-2xl p-8 border border-brand-primary/20">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
               <div>
                 <div className="text-3xl font-bold text-brand-primary mb-2">500+</div>

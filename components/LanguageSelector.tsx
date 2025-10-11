@@ -39,7 +39,7 @@ const LanguageSelector = () => {
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="flex items-center space-x-2 px-4 py-2 bg-brand-teal/20 border border-brand-primary/30 rounded-xl text-brand-light hover:bg-brand-teal/30 transition-all duration-200"
+        className="flex items-center space-x-2 px-4 py-2 bg-info-500/20 border border-brand-primary/30 rounded-xl text-brand-light hover:bg-info-500/30 transition-all duration-200"
       >
         <Globe className="w-4 h-4" />
         <span className="text-2xl">{currentLanguage.flag}</span>
@@ -88,7 +88,7 @@ const LanguageSelector = () => {
                     className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 group ${
                       currentLanguage.code === language.code
                         ? 'bg-brand-primary/20 text-brand-primary'
-                        : 'text-brand-light hover:bg-brand-teal/20'
+                        : 'text-brand-light hover:bg-info-500/20'
                     }`}
                   >
                     <span className="text-2xl">{language.flag}</span>

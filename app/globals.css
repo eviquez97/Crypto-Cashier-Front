@@ -33,7 +33,7 @@
       }
       
       p {
-        @apply text-body text-brand-teal;
+        @apply text-body text-text-secondary;
       }
     }
 
@@ -45,12 +45,12 @@
       }
       
       .btn-secondary {
-        @apply px-6 py-3 border-2 border-brand-teal text-brand-teal font-semibold rounded-xl hover:bg-brand-teal hover:text-brand-light transition-all duration-300;
+        @apply px-6 py-3 border-2 border-info-500 text-info-500 font-semibold rounded-xl hover:bg-info-500 hover:text-text-primary transition-all duration-300;
         /* Teal = Tecnología, innovación, secundario */
       }
       
       .btn-ghost {
-        @apply px-6 py-3 text-text-primary font-semibold rounded-xl hover:bg-brand-teal/10 transition-all duration-300;
+        @apply px-6 py-3 text-text-primary font-semibold rounded-xl hover:bg-info-500/10 transition-all duration-300;
       }
       
       /* Cards con psicología de estabilidad */

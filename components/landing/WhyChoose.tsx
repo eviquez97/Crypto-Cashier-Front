@@ -63,7 +63,7 @@ const WhyChoose = () => {
               }}
               viewport={{ once: true, amount: 0.3 }}
                   whileHover={{ y: -4, scale: 1.02 }}
-                  className="bg-brand-teal/10 rounded-2xl p-8 group border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300"
+                  className="bg-info-500/10 rounded-2xl p-8 group border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300"
                 >
                   <div className="flex items-start space-x-4">
                     {/* DRAMATIC icon with glow */}

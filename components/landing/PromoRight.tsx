@@ -49,7 +49,7 @@ const PromoRight = () => {
               }}
               className="relative z-10 w-64 mx-auto"
             >
-              <div className="bg-brand-teal/20 rounded-3xl p-4 shadow-fintech border border-brand-primary/30">
+              <div className="bg-info-500/20 rounded-3xl p-4 shadow-fintech border border-brand-primary/30">
                 {/* Phone header */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">

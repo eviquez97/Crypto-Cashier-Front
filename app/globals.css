@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-light-gray text-gray-900 font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold;
+  }
+}
+
+@layer components {
+  /* Botones Premium */
+  .btn-primary {
+    @apply bg-gradient-purple text-white font-semibold px-6 py-3 rounded-xl shadow-button hover:shadow-button-hover hover:scale-105 transition-all duration-300 ease-out;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-purple-primary border-2 border-purple-primary font-semibold px-6 py-3 rounded-xl hover:bg-purple-primary hover:text-white hover:scale-105 transition-all duration-300 ease-out;
+  }
+  
+  .btn-neon {
+    @apply bg-neon-green text-dark-base font-semibold px-6 py-3 rounded-xl shadow-glow-neon hover:shadow-lg hover:scale-105 transition-all duration-300 ease-out;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent text-white border-2 border-white font-semibold px-6 py-3 rounded-xl hover:bg-white hover:text-dark-base hover:scale-105 transition-all duration-300 ease-out;
+  }
+  
+  /* Cards Premium */
+  .card {
+    @apply bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 ease-out;
+  }
+  
+  .card-dark {
+    @apply bg-dark-base rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 ease-out;
+  }
+  
+  /* Inputs Premium */
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl font-medium text-gray-900 placeholder-gray-400 focus:outline-none focus:border-purple-primary focus:ring-4 focus:ring-purple-primary/10 transition-all duration-200;
+  }
+  
+  /* Gradientes Personalizados */
+  .gradient-hero {
+    @apply bg-gradient-hero;
+  }
+  
+  .gradient-purple {
+    @apply bg-gradient-purple;
+  }
+  
+  .gradient-dark {
+    @apply bg-gradient-dark;
+  }
+  
+  /* Animaciones Personalizadas */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+  
+  /* Efectos de Glow */
+  .glow-purple {
+    box-shadow: 0 0 20px rgba(125, 83, 255, 0.3);
+  }
+  
+  .glow-neon {
+    box-shadow: 0 0 20px rgba(182, 255, 0, 0.4);
+  }
+  
+  /* Estados de Transacción */
+  .status-pending {
+    @apply bg-warning/10 text-warning border border-warning/20 rounded-lg px-3 py-1 text-sm font-medium;
+  }
+  
+  .status-confirmed {
+    @apply bg-neon-green/10 text-neon-green-dark border border-neon-green/20 rounded-lg px-3 py-1 text-sm font-medium;
+  }
+  
+  .status-failed {
+    @apply bg-error/10 text-error border border-error/20 rounded-lg px-3 py-1 text-sm font-medium;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-purple bg-clip-text text-transparent;
+  }
+  
+  .text-neon {
+    @apply text-neon-green;
+  }
+  
+  .bg-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(125, 83, 255, 0.1) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+}

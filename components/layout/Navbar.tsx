@@ -2,9 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import LanguageSelector from '../LanguageSelector'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,10 +29,10 @@ const Navbar = () => {
   }
 
   const navItems = [
-    { name: 'Home', href: '#' },
-    { name: 'Features', href: '#features' },
-    { name: 'Docs', href: '#docs' },
-    { name: 'Resources', href: '#resources' },
+    { name: t('nav.home'), href: '#' },
+    { name: t('nav.features'), href: '#features' },
+    { name: t('nav.docs'), href: '#docs' },
+    { name: t('nav.resources'), href: '#resources' },
   ]
 
   return (
@@ -74,15 +77,16 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Derecha: Sign In (outline) + Get Started (neon) */}
-          <div className="flex items-center space-x-4">
+          {/* Derecha: Language Selector + Sign In (outline) + Get Started (neon) */}
+          <div className="flex items-center space-x-3">
+            <LanguageSelector />
             <motion.button
               onClick={handleSignIn}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-6 py-2 border-2 border-brand-primary text-brand-light rounded-xl font-semibold hover:bg-brand-primary hover:text-brand-dark transition-all duration-200 cursor-pointer"
             >
-              Sign In
+              {t('nav.signIn')}
             </motion.button>
             <motion.button
               onClick={handleGetStarted}
@@ -90,7 +94,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
               className="px-6 py-2 bg-brand-primary text-brand-dark rounded-xl font-semibold hover:shadow-fintech-hover transition-all duration-200 cursor-pointer"
             >
-              Get Started
+              {t('nav.getStarted')}
             </motion.button>
           </div>
         </div>

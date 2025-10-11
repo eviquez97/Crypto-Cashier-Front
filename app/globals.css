@@ -35,10 +35,6 @@
   p {
     @apply text-body;
   }
-  
-  .text-body-lg {
-    @apply text-body-lg;
-  }
 }
 
 @layer components {

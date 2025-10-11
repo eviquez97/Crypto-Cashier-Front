@@ -418,7 +418,3 @@ export default function AdminClientsPage() {
     </div>
   )
 }
-
-
- 
- 

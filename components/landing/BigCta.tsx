@@ -123,9 +123,9 @@ const BigCta = () => {
             viewport={{ once: true }}
             className="text-xl lg:text-2xl text-base-light/80 mb-12 leading-relaxed"
           >
-            Join 500+ enterprise clients who trust Coinfixi for their crypto payment processing. 
+            <span className="text-brand-primary font-semibold">Join 500+ enterprise clients who trust Coinfixi for their crypto payment processing.</span> 
             <br />
-            <span className="text-brand-neon font-semibold">Get started in 48 hours with zero setup fees.</span>
+            <span className="text-brand-primary font-semibold">Get started in 48 hours with zero setup fees.</span>
           </motion.p>
 
           {/* Benefits Grid */}

@@ -14,6 +14,17 @@ const Hero = () => {
     setIsLoaded(true)
   }, [])
 
+  // CTA Handlers
+  const handleStartFreeTrial = () => {
+    // Redirect to signup/dashboard
+    window.open('/dashboard', '_blank')
+  }
+
+  const handleRequestDemo = () => {
+    // Redirect to contact/demo booking
+    window.open('mailto:sales@coinfixi.com?subject=Enterprise Demo Request&body=Hi, I would like to schedule an enterprise demo for Coinfixi.', '_blank')
+  }
+
   return (
     <section className="relative min-h-screen bg-brand-dark overflow-hidden">
       {/* DRAMATIC BACKGROUND - Dark Mode Premium */}
@@ -166,13 +177,14 @@ const Hero = () => {
             >
               {/* MEGA IMPACT CTA with Green Glow */}
               <motion.button
+                onClick={handleStartFreeTrial}
                 whileHover={{ 
                   scale: 1.08, 
                   boxShadow: "0 30px 60px rgba(22,249,138,0.5)",
                   y: -3
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative group bg-brand-primary text-brand-dark px-10 py-5 rounded-2xl font-bold text-xl shadow-2xl shadow-brand-primary/50 overflow-hidden"
+                className="relative group bg-brand-primary text-brand-dark px-10 py-5 rounded-2xl font-bold text-xl shadow-2xl shadow-brand-primary/50 overflow-hidden cursor-pointer"
               >
                 <span className="relative z-10 flex items-center justify-center">
                   Start Free Trial
@@ -183,6 +195,7 @@ const Hero = () => {
               
               {/* DRAMATIC Secondary CTA */}
               <motion.button
+                onClick={handleRequestDemo}
                 whileHover={{ 
                   scale: 1.08, 
                   y: -3,
@@ -190,7 +203,7 @@ const Hero = () => {
                   boxShadow: "0 20px 40px rgba(22,249,138,0.3)"
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 border-2 border-brand-primary text-brand-light rounded-2xl font-bold text-xl hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 shadow-lg"
+                className="px-10 py-5 border-2 border-brand-primary text-brand-light rounded-2xl font-bold text-xl hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 shadow-lg cursor-pointer"
               >
                 Request Enterprise Demo
               </motion.button>

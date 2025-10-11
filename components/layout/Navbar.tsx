@@ -14,6 +14,17 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Button handlers
+  const handleSignIn = () => {
+    // Redirect to login page
+    window.open('/login', '_blank')
+  }
+
+  const handleGetStarted = () => {
+    // Redirect to signup/dashboard
+    window.open('/dashboard', '_blank')
+  }
+
   const navItems = [
     { name: 'Home', href: '#' },
     { name: 'Features', href: '#features' },
@@ -66,16 +77,18 @@ const Navbar = () => {
           {/* Derecha: Sign In (outline) + Get Started (neon) */}
           <div className="flex items-center space-x-4">
             <motion.button
+              onClick={handleSignIn}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 border-2 border-brand-primary text-brand-light rounded-xl font-semibold hover:bg-brand-primary hover:text-brand-dark transition-all duration-200"
+              className="px-6 py-2 border-2 border-brand-primary text-brand-light rounded-xl font-semibold hover:bg-brand-primary hover:text-brand-dark transition-all duration-200 cursor-pointer"
             >
               Sign In
             </motion.button>
             <motion.button
+              onClick={handleGetStarted}
               whileHover={{ scale: 1.05, shadow: '0 14px 40px rgba(22,249,138,0.3)' }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 bg-brand-primary text-brand-dark rounded-xl font-semibold hover:shadow-fintech-hover transition-all duration-200"
+              className="px-6 py-2 bg-brand-primary text-brand-dark rounded-xl font-semibold hover:shadow-fintech-hover transition-all duration-200 cursor-pointer"
             >
               Get Started
             </motion.button>

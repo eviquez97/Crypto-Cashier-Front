@@ -2,9 +2,12 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { Star, ChevronLeft, ChevronRight, Quote, Play, Award, TrendingUp, Shield, Globe } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { useState, useEffect } from 'react'
 
 const Testimonials = () => {
+  const { t } = useTranslation()
+  
   const testimonials = [
     {
       quote: "Coinfixi has revolutionized our payment infrastructure. We've processed over $500M with zero downtime. The security and compliance features give our clients complete confidence.",
@@ -108,15 +111,14 @@ const Testimonials = () => {
         >
           <div className="inline-flex items-center space-x-2 bg-brand-primary/10 border border-brand-primary/20 rounded-full px-4 py-2 mb-6">
             <Award className="w-4 h-4 text-brand-primary" />
-            <span className="text-sm font-semibold text-brand-light">Verified Customer Stories</span>
+            <span className="text-sm font-semibold text-brand-light">{t('testimonials.badge')}</span>
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-display font-bold text-brand-light mb-6">
-            Trusted by <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">Industry Leaders</span>
+            {t('testimonials.title')} <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">{t('testimonials.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-brand-light/70 max-w-3xl mx-auto">
-            See how leading companies are transforming their payment infrastructure 
-            with Coinfixi's enterprise-grade solutions.
+            {t('testimonials.subtitle')}
           </p>
         </motion.div>
 

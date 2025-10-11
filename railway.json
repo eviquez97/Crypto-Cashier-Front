@@ -1,10 +1,12 @@
 {
+  "$schema": "https://railway.app/railway.schema.json",
   "build": {
     "builder": "DOCKERFILE",
     "dockerfilePath": "Dockerfile",
     "dockerBuildArgs": {
       "BUILD_TIMESTAMP": "${{RAILWAY_DEPLOYMENT_ID}}",
-      "NEXT_PUBLIC_API_BASE": "https://crypto-cashier-production.up.railway.app"
+      "NEXT_PUBLIC_API_BASE": "https://crypto-cashier-production.up.railway.app",
+      "PREMIUM_UI_VERSION": "2.0.0"
     }
   },
   "deploy": {

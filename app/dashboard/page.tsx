@@ -96,9 +96,9 @@ const DashboardPage = () => {
       icon: DollarSign,
       subtitle: 'Last 24 hours',
       sparkline: [0, 45, 35, 65, 85, 95, 100],
-      color: 'text-emerald-400',
-      bgColor: 'bg-emerald-500/10',
-      borderColor: 'border-emerald-500/20'
+      color: 'text-success-500',
+      bgColor: 'bg-success-500/10',
+      borderColor: 'border-success-500/20'
     },
     {
       title: 'Active Users',
@@ -108,9 +108,9 @@ const DashboardPage = () => {
       icon: Users,
       subtitle: 'Currently online',
       sparkline: [0, 20, 40, 30, 60, 80, 90],
-      color: 'text-blue-400',
-      bgColor: 'bg-blue-500/10',
-      borderColor: 'border-blue-500/20'
+      color: 'text-info-500',
+      bgColor: 'bg-info-500/10',
+      borderColor: 'border-info-500/20'
     },
     {
       title: 'Success Rate',
@@ -120,9 +120,9 @@ const DashboardPage = () => {
       icon: Shield,
       subtitle: 'Transaction success',
       sparkline: [0, 85, 90, 95, 98, 99, 100],
-      color: 'text-green-400',
-      bgColor: 'bg-green-500/10',
-      borderColor: 'border-green-500/20'
+      color: 'text-brand-primary',
+      bgColor: 'bg-brand-primary/10',
+      borderColor: 'border-brand-primary/20'
     },
     {
       title: 'Avg. Response',
@@ -132,9 +132,9 @@ const DashboardPage = () => {
       icon: Activity,
       subtitle: 'API response time',
       sparkline: [0, 100, 80, 60, 40, 20, 10],
-      color: 'text-purple-400',
-      bgColor: 'bg-purple-500/10',
-      borderColor: 'border-purple-500/20'
+      color: 'text-warning-500',
+      bgColor: 'bg-warning-500/10',
+      borderColor: 'border-warning-500/20'
     }
   ]
 
@@ -416,10 +416,10 @@ const DashboardPage = () => {
               {/* Real-time Toggle */}
               <button
                 onClick={() => setRealTimeData(!realTimeData)}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-xl transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-200 border ${
                   realTimeData 
-                    ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' 
-                    : 'bg-brand-dark/50 text-brand-light/70 border border-brand-primary/20'
+                    ? 'bg-success-500/10 text-success-500 border-success-500/20' 
+                    : 'bg-surface-tertiary text-text-secondary border-surface-border hover:bg-surface-secondary'
                 }`}
               >
                 {realTimeData ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
@@ -428,10 +428,10 @@ const DashboardPage = () => {
 
               {/* Notifications */}
               <div className="relative">
-                <button className="relative p-2 text-brand-light/70 hover:text-brand-light hover:bg-brand-primary/10 rounded-xl transition-all duration-200">
+                <button className="relative p-2 text-text-secondary hover:text-text-primary hover:bg-surface-tertiary rounded-lg transition-all duration-200">
                   <Bell className="w-5 h-5" />
                   {notifications > 0 && (
-                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
+                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-error-500 rounded-full flex items-center justify-center">
                       <span className="text-xs font-bold text-white">{notifications}</span>
                     </div>
                   )}
@@ -439,14 +439,14 @@ const DashboardPage = () => {
               </div>
 
               {/* Refresh */}
-              <button className="p-2 text-brand-light/70 hover:text-brand-light hover:bg-brand-primary/10 rounded-xl transition-all duration-200">
+              <button className="p-2 text-text-secondary hover:text-text-primary hover:bg-surface-tertiary rounded-lg transition-all duration-200">
                 <RefreshCw className="w-5 h-5" />
               </button>
 
               {/* Profile */}
-              <Link href="/" className="flex items-center space-x-2 px-4 py-2 text-brand-light/70 hover:text-brand-light hover:bg-brand-primary/10 rounded-xl transition-all duration-200">
+              <Link href="/" className="flex items-center space-x-2 px-4 py-2 text-text-secondary hover:text-text-primary hover:bg-surface-tertiary rounded-lg transition-all duration-200">
                 <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
-                  <span className="text-brand-dark font-bold text-sm">EU</span>
+                  <span className="text-surface-primary font-bold text-sm">EU</span>
                 </div>
                 <span className="hidden sm:inline text-sm font-medium">Enterprise User</span>
                 <LogOut className="w-4 h-4" />
@@ -467,17 +467,17 @@ const DashboardPage = () => {
         >
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-4xl font-display font-bold text-brand-light mb-2">
+              <h2 className="text-4xl font-display font-bold text-text-primary mb-2">
                 Welcome back, <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">Enterprise User</span>
               </h2>
-              <p className="text-brand-light/70 text-lg">
+              <p className="text-text-secondary text-lg">
                 Here's your real-time payment infrastructure overview
               </p>
             </div>
             
             <div className="flex items-center space-x-4">
               <div className="text-right">
-                <p className="text-sm text-brand-light/70">Last Updated</p>
+                <p className="text-sm text-text-secondary">Last Updated</p>
                 <p className="text-brand-primary font-mono text-sm">{new Date().toLocaleTimeString()}</p>
               </div>
               <div className="w-12 h-12 bg-brand-primary/10 rounded-2xl flex items-center justify-center border border-brand-primary/20">
@@ -500,7 +500,7 @@ const DashboardPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-              className={`${stat.bgColor} backdrop-blur-xl rounded-3xl p-6 border ${stat.borderColor} hover:border-brand-primary/40 transition-all duration-300 cursor-pointer group`}
+              className={`${stat.bgColor} bg-surface-secondary rounded-3xl p-6 border ${stat.borderColor} hover:border-brand-primary/40 transition-all duration-300 cursor-pointer group`}
               onClick={() => setExpandedCard(expandedCard === stat.title ? null : stat.title)}
             >
               <div className="flex items-center justify-between mb-4">
@@ -508,7 +508,7 @@ const DashboardPage = () => {
                   <stat.icon className={`w-7 h-7 ${stat.color}`} />
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className={`flex items-center space-x-1 text-sm font-medium ${stat.trend === 'up' ? 'text-emerald-500' : 'text-red-500'}`}>
+                  <div className={`flex items-center space-x-1 text-sm font-medium ${stat.trend === 'up' ? 'text-success-500' : 'text-error-500'}`}>
                     {stat.trend === 'up' ? (
                       <TrendingUp className="w-4 h-4" />
                     ) : (
@@ -516,13 +516,13 @@ const DashboardPage = () => {
                     )}
                     <span>{stat.change}</span>
                   </div>
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
                 </div>
               </div>
               
-              <h3 className="text-3xl font-bold text-brand-light mb-1">{stat.value}</h3>
-              <p className="text-brand-light/70 text-sm mb-3">{stat.title}</p>
-              <p className="text-brand-light/50 text-xs mb-4">{stat.subtitle}</p>
+              <h3 className="text-3xl font-bold text-text-primary mb-1">{stat.value}</h3>
+              <p className="text-text-secondary text-sm mb-3">{stat.title}</p>
+              <p className="text-text-muted text-xs mb-4">{stat.subtitle}</p>
               
               {/* Sparkline Chart */}
               <div className="mb-4">
@@ -537,24 +537,24 @@ const DashboardPage = () => {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="border-t border-brand-primary/20 pt-4 mt-4"
+                    className="border-t border-surface-border pt-4 mt-4"
                   >
                     <div className="grid grid-cols-2 gap-4 text-xs">
                       <div>
-                        <p className="text-brand-light/50">Peak</p>
-                        <p className="text-brand-light font-medium">$3.2M</p>
+                        <p className="text-text-muted">Peak</p>
+                        <p className="text-text-primary font-medium">$3.2M</p>
                       </div>
                       <div>
-                        <p className="text-brand-light/50">Low</p>
-                        <p className="text-brand-light font-medium">$1.8M</p>
+                        <p className="text-text-muted">Low</p>
+                        <p className="text-text-primary font-medium">$1.8M</p>
                       </div>
                       <div>
-                        <p className="text-brand-light/50">Avg</p>
-                        <p className="text-brand-light font-medium">$2.6M</p>
+                        <p className="text-text-muted">Avg</p>
+                        <p className="text-text-primary font-medium">$2.6M</p>
                       </div>
                       <div>
-                        <p className="text-brand-light/50">Growth</p>
-                        <p className="text-emerald-500 font-medium">+24%</p>
+                        <p className="text-text-muted">Growth</p>
+                        <p className="text-success-500 font-medium">+24%</p>
                       </div>
                     </div>
                   </motion.div>

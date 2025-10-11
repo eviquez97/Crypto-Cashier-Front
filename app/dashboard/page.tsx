@@ -254,32 +254,118 @@ const DashboardPage = () => {
   )
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-dark via-base-dark to-brand-teal">
-      {/* Advanced Header */}
-      <motion.header
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+    <div className="min-h-screen bg-gradient-to-br from-brand-dark via-base-dark to-brand-teal flex">
+      {/* Vertical Sidebar */}
+      <motion.aside
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="bg-brand-teal/5 backdrop-blur-xl border-b border-brand-primary/10 sticky top-0 z-50"
+        className="w-20 lg:w-64 bg-brand-teal/5 backdrop-blur-xl border-r border-brand-primary/10 flex flex-col items-center lg:items-start p-4 lg:p-6 sticky top-0 h-screen overflow-y-auto"
       >
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center space-x-4">
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-primary/80 rounded-2xl flex items-center justify-center shadow-lg shadow-brand-primary/25">
-                  <span className="text-brand-dark font-bold text-xl">CF</span>
+        {/* Logo */}
+        <div className="flex items-center space-x-3 mb-8">
+          <div className="relative">
+            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-brand-primary to-brand-primary/80 rounded-2xl flex items-center justify-center shadow-lg shadow-brand-primary/25">
+              <span className="text-brand-dark font-bold text-lg lg:text-xl">CF</span>
+            </div>
+            <div className="absolute -top-1 -right-1 w-3 h-3 lg:w-4 lg:h-4 bg-emerald-500 rounded-full border-2 border-brand-dark"></div>
+          </div>
+          <div className="hidden lg:block">
+            <h1 className="text-lg font-display font-bold text-brand-light">Coinfixi</h1>
+            <div className="flex items-center space-x-1">
+              <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></div>
+              <span className="text-xs text-emerald-500 font-medium">Live</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Quick Actions */}
+        <div className="flex-1 w-full">
+          <h3 className="hidden lg:block text-sm font-semibold text-brand-light/70 mb-4 uppercase tracking-wider">
+            Quick Actions
+          </h3>
+          
+          <div className="space-y-2">
+            {[
+              { icon: Plus, label: 'Create Deposit', color: 'emerald', shortcut: '⌘D' },
+              { icon: ArrowUpRight, label: 'Process Withdrawal', color: 'blue', shortcut: '⌘W' },
+              { icon: Settings, label: 'API Settings', color: 'purple', shortcut: '⌘A' },
+              { icon: Shield, label: 'Security Center', color: 'red', shortcut: '⌘S' },
+              { icon: BarChart3, label: 'Analytics', color: 'yellow', shortcut: '⌘N' },
+              { icon: Download, label: 'Export Data', color: 'indigo', shortcut: '⌘E' },
+              { icon: Users, label: 'User Management', color: 'pink', shortcut: '⌘U' },
+              { icon: Database, label: 'Database', color: 'cyan', shortcut: '⌘B' }
+            ].map((action, index) => (
+              <motion.button
+                key={action.label}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                whileHover={{ scale: 1.02, x: 4 }}
+                whileTap={{ scale: 0.98 }}
+                className={`w-full flex items-center space-x-3 p-3 lg:p-4 bg-brand-dark/20 hover:bg-brand-dark/40 rounded-xl border border-brand-primary/10 hover:border-${action.color}-500/30 transition-all duration-200 group relative`}
+              >
+                <div className={`w-8 h-8 lg:w-10 lg:h-10 bg-${action.color}-500/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                  <action.icon className={`w-4 h-4 lg:w-5 lg:h-5 text-${action.color}-500`} />
                 </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-brand-dark"></div>
-              </div>
-              <div>
-                <h1 className="text-2xl font-display font-bold text-brand-light">Coinfixi Dashboard</h1>
-                <div className="flex items-center space-x-2">
-                  <p className="text-sm text-brand-light/70">Enterprise Payment Infrastructure</p>
-                  <div className="flex items-center space-x-1">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs text-emerald-500 font-medium">Live</span>
-                  </div>
+                <div className="hidden lg:block flex-1 text-left">
+                  <p className="text-sm font-medium text-brand-light group-hover:text-brand-primary transition-colors">
+                    {action.label}
+                  </p>
+                  <p className="text-xs text-brand-light/50 font-mono">
+                    {action.shortcut}
+                  </p>
+                </div>
+                
+                {/* Tooltip for mobile */}
+                <div className="lg:hidden absolute left-full ml-2 px-2 py-1 bg-brand-dark/90 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">
+                  {action.label}
+                </div>
+              </motion.button>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom Actions */}
+        <div className="w-full space-y-2 mt-4">
+          {/* Profile */}
+          <Link href="/" className="w-full flex items-center space-x-3 p-3 lg:p-4 bg-brand-primary/10 hover:bg-brand-primary/20 rounded-xl border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-200 group">
+            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-brand-primary rounded-xl flex items-center justify-center flex-shrink-0">
+              <span className="text-brand-dark font-bold text-sm lg:text-base">EU</span>
+            </div>
+            <div className="hidden lg:block flex-1 text-left">
+              <p className="text-sm font-medium text-brand-light">Enterprise User</p>
+              <p className="text-xs text-brand-light/70">Admin</p>
+            </div>
+            <LogOut className="hidden lg:block w-4 h-4 text-brand-light/70 group-hover:text-brand-primary transition-colors" />
+          </Link>
+
+          {/* Logout */}
+          <button className="lg:hidden w-full p-3 text-brand-light/70 hover:text-brand-light hover:bg-brand-primary/10 rounded-xl transition-all duration-200">
+            <LogOut className="w-5 h-5 mx-auto" />
+          </button>
+        </div>
+      </motion.aside>
+
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col">
+        {/* Advanced Header */}
+        <motion.header
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-brand-teal/5 backdrop-blur-xl border-b border-brand-primary/10 sticky top-0 z-40"
+        >
+        <div className="px-6 py-4">
+          <div className="flex items-center justify-between">
+            {/* Page Title */}
+            <div>
+              <h1 className="text-2xl font-display font-bold text-brand-light">Dashboard</h1>
+              <div className="flex items-center space-x-2">
+                <p className="text-sm text-brand-light/70">Enterprise Payment Infrastructure</p>
+                <div className="flex items-center space-x-1">
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                  <span className="text-xs text-emerald-500 font-medium">Live</span>
                 </div>
               </div>
             </div>
@@ -370,8 +456,8 @@ const DashboardPage = () => {
         </div>
       </motion.header>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-8">
+        {/* Main Content */}
+        <main className="flex-1 px-6 py-8 overflow-y-auto">
         {/* Advanced Welcome Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -695,50 +781,8 @@ const DashboardPage = () => {
           </motion.div>
         </div>
 
-        {/* Advanced Quick Actions */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-8"
-        >
-          <div className="bg-gradient-to-r from-brand-primary/5 to-brand-teal/5 backdrop-blur-xl rounded-3xl p-8 border border-brand-primary/20">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-display font-bold text-brand-light">Quick Actions</h3>
-              <div className="flex items-center space-x-2">
-                <span className="text-sm text-brand-light/70">Powered by AI</span>
-                <div className="w-2 h-2 bg-brand-primary rounded-full animate-pulse"></div>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {[
-                { icon: Plus, label: 'Create Deposit', color: 'emerald' },
-                { icon: ArrowUpRight, label: 'Process Withdrawal', color: 'blue' },
-                { icon: Settings, label: 'API Settings', color: 'purple' },
-                { icon: Shield, label: 'Security Center', color: 'red' },
-                { icon: BarChart3, label: 'Analytics', color: 'yellow' },
-                { icon: Download, label: 'Export Data', color: 'indigo' }
-              ].map((action, index) => (
-                <motion.button
-                  key={action.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`p-6 bg-brand-dark/30 hover:bg-brand-dark/50 rounded-2xl border border-brand-primary/10 hover:border-${action.color}-500/30 transition-all duration-200 group`}
-                >
-                  <div className={`w-12 h-12 bg-${action.color}-500/20 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 mx-auto`}>
-                    <action.icon className={`w-6 h-6 text-${action.color}-500`} />
-                  </div>
-                  <p className="text-sm font-medium text-brand-light text-center">{action.label}</p>
-                </motion.button>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      </main>
+        </main>
+      </div>
     </div>
   )
 }

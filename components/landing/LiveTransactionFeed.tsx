@@ -69,10 +69,10 @@ const LiveTransactionFeed = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'completed': return 'text-brand-neon bg-brand-neon/10 border-brand-neon/30'
-      case 'processing': return 'text-accent-bright bg-accent-bright/10 border-accent-bright/30'
-      case 'pending': return 'text-accent-medium bg-accent-medium/10 border-accent-medium/30'
-      default: return 'text-text-secondary bg-gray-100 border-gray-200'
+      case 'completed': return 'text-brand-primary bg-brand-primary/10 border-brand-primary/30'
+      case 'processing': return 'text-brand-teal bg-brand-teal/10 border-brand-teal/30'
+      case 'pending': return 'text-brand-light/70 bg-brand-light/10 border-brand-light/30'
+      default: return 'text-brand-light/70 bg-brand-light/10 border-brand-light/30'
     }
   }
 
@@ -86,7 +86,7 @@ const LiveTransactionFeed = () => {
   }
 
   return (
-    <section className="section bg-gradient-to-b from-base-light to-base-light/80 overflow-hidden relative">
+    <section className="section bg-brand-dark overflow-hidden relative">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div 
@@ -109,15 +109,15 @@ const LiveTransactionFeed = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-brand-neon/10 border border-brand-neon/20 rounded-full px-4 py-2 mb-6">
-            <div className="w-2 h-2 bg-brand-neon rounded-full animate-pulse" />
-            <span className="text-sm font-semibold text-text-primary">Live Transactions</span>
+          <div className="inline-flex items-center space-x-2 bg-brand-primary/10 border border-brand-primary/20 rounded-full px-4 py-2 mb-6">
+            <div className="w-2 h-2 bg-brand-primary rounded-full animate-pulse" />
+            <span className="text-sm font-semibold text-brand-light">Live Transactions</span>
           </div>
           
-          <h2 className="text-4xl lg:text-5xl font-display font-bold text-text-primary mb-6">
-            <span className="bg-gradient-to-r from-brand-neon to-accent-bright bg-clip-text text-transparent">Real-Time</span> Global Payments
+          <h2 className="text-4xl lg:text-5xl font-display font-bold text-brand-light mb-6">
+            <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">Real-Time</span> Global Payments
           </h2>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-brand-light/70 max-w-3xl mx-auto">
             Watch transactions happening across the world in real-time. 
             Enterprise-grade processing with sub-second confirmations.
           </p>
@@ -125,21 +125,21 @@ const LiveTransactionFeed = () => {
 
         {/* Transaction Feed */}
         <div className="max-w-5xl mx-auto">
-          <div className="bg-gradient-to-br from-base-light/80 to-base-light backdrop-blur-xl rounded-3xl p-8 border border-accent-medium/20 shadow-2xl"
+          <div className="bg-brand-teal/20 backdrop-blur-xl rounded-3xl p-8 border border-brand-primary/30 shadow-2xl"
             style={{
               backdropFilter: 'blur(20px)',
-              background: 'linear-gradient(135deg, rgba(229,249,248,0.95) 0%, rgba(229,249,248,0.85) 100%)',
+              background: 'linear-gradient(135deg, rgba(19,67,56,0.3) 0%, rgba(19,67,56,0.2) 100%)',
             }}
           >
             {/* Feed Header */}
-            <div className="flex items-center justify-between mb-8 pb-6 border-b border-accent-medium/20">
+            <div className="flex items-center justify-between mb-8 pb-6 border-b border-brand-primary/20">
               <div>
-                <h3 className="text-2xl font-bold text-text-primary mb-2">Live Activity Feed</h3>
-                <p className="text-text-secondary text-sm">Real-time updates from our global network</p>
+                <h3 className="text-2xl font-bold text-brand-light mb-2">Live Activity Feed</h3>
+                <p className="text-brand-light/70 text-sm">Real-time updates from our global network</p>
               </div>
-              <div className="flex items-center space-x-2 bg-brand-neon/10 border border-brand-neon/20 rounded-xl px-4 py-2">
-                <div className="w-2 h-2 bg-brand-neon rounded-full animate-pulse" />
-                <span className="text-brand-neon font-semibold text-sm">Live</span>
+              <div className="flex items-center space-x-2 bg-brand-primary/10 border border-brand-primary/20 rounded-xl px-4 py-2">
+                <div className="w-2 h-2 bg-brand-primary rounded-full animate-pulse" />
+                <span className="text-brand-primary font-semibold text-sm">Live</span>
               </div>
             </div>
 
@@ -154,7 +154,7 @@ const LiveTransactionFeed = () => {
                     exit={{ opacity: 0, x: -100, scale: 0.95 }}
                     transition={{ duration: 0.4, ease: 'easeOut' }}
                     whileHover={{ scale: 1.02, x: 4 }}
-                    className="bg-base-light/50 backdrop-blur-sm rounded-2xl p-5 border border-accent-medium/10 hover:border-accent-medium/30 transition-all duration-300 shadow-lg"
+                    className="bg-brand-teal/10 backdrop-blur-sm rounded-2xl p-5 border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-300 shadow-lg"
                   >
                     <div className="flex items-center justify-between">
                       {/* Left: Type & Amount */}
@@ -162,8 +162,8 @@ const LiveTransactionFeed = () => {
                         {/* Icon */}
                         <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
                           transaction.type === 'deposit' 
-                            ? 'bg-brand-neon/20 text-brand-neon' 
-                            : 'bg-accent-bright/20 text-accent-bright'
+                            ? 'bg-brand-primary/20 text-brand-primary' 
+                            : 'bg-brand-teal/20 text-brand-teal'
                         }`}>
                           {transaction.type === 'deposit' ? (
                             <ArrowDownLeft className="w-6 h-6" />
@@ -175,12 +175,12 @@ const LiveTransactionFeed = () => {
                         {/* Details */}
                         <div>
                           <div className="flex items-center space-x-3 mb-1">
-                            <span className="text-lg font-bold text-text-primary">
+                            <span className="text-lg font-bold text-brand-light">
                               {transaction.amount.toLocaleString()} {transaction.currency}
                             </span>
                             <span className="text-2xl">{transaction.flag}</span>
                           </div>
-                          <div className="flex items-center space-x-2 text-sm text-text-secondary">
+                          <div className="flex items-center space-x-2 text-sm text-brand-light/70">
                             <span className="capitalize font-medium">{transaction.type}</span>
                             <span>•</span>
                             <span>{transaction.country}</span>
@@ -204,40 +204,40 @@ const LiveTransactionFeed = () => {
             </div>
 
             {/* Footer Stats */}
-            <div className="mt-8 pt-6 border-t border-accent-medium/20">
+            <div className="mt-8 pt-6 border-t border-brand-primary/20">
               <div className="grid grid-cols-3 gap-6">
                 <div className="text-center">
                   <motion.div
                     key={transactions.length}
                     initial={{ scale: 1.2 }}
                     animate={{ scale: 1 }}
-                    className="text-2xl font-bold text-brand-neon mb-1"
+                    className="text-2xl font-bold text-brand-primary mb-1"
                   >
                     {transactions.filter(t => t.status === 'completed').length}
                   </motion.div>
-                  <div className="text-text-secondary text-sm">Completed</div>
+                  <div className="text-brand-light/70 text-sm">Completed</div>
                 </div>
                 <div className="text-center">
                   <motion.div
                     key={transactions.length}
                     initial={{ scale: 1.2 }}
                     animate={{ scale: 1 }}
-                    className="text-2xl font-bold text-accent-bright mb-1"
+                    className="text-2xl font-bold text-brand-teal mb-1"
                   >
                     {transactions.filter(t => t.status === 'processing').length}
                   </motion.div>
-                  <div className="text-text-secondary text-sm">Processing</div>
+                  <div className="text-brand-light/70 text-sm">Processing</div>
                 </div>
                 <div className="text-center">
                   <motion.div
                     key={transactions.length}
                     initial={{ scale: 1.2 }}
                     animate={{ scale: 1 }}
-                    className="text-2xl font-bold text-accent-medium mb-1"
+                    className="text-2xl font-bold text-brand-light/70 mb-1"
                   >
                     {transactions.filter(t => t.status === 'pending').length}
                   </motion.div>
-                  <div className="text-text-secondary text-sm">Pending</div>
+                  <div className="text-brand-light/70 text-sm">Pending</div>
                 </div>
               </div>
             </div>
@@ -252,13 +252,13 @@ const LiveTransactionFeed = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <p className="text-text-secondary mb-6 text-lg">
+          <p className="text-brand-light/70 mb-6 text-lg">
             Processing millions of transactions for 500+ enterprise clients worldwide
           </p>
           <motion.button
-            whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(18,178,193,0.3)" }}
+            whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(22,249,138,0.3)" }}
             whileTap={{ scale: 0.98 }}
-            className="bg-gradient-to-r from-brand-neon to-accent-bright text-base-light px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl"
+            className="bg-brand-primary text-brand-dark px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl"
           >
             Start Processing Today
           </motion.button>

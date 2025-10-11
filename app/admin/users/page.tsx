@@ -11,6 +11,8 @@ import {
   Key,
   Activity,
   Eye,
+  CheckCircle,
+  XCircle,
 } from 'lucide-react'
 import { Card, Table, Button, Badge, Modal, useToastActions } from '@/components/ui'
 import { adminAPI } from '@/lib/api'
@@ -407,4 +409,5 @@ export default function UsersPage() {
     </div>
   )
 }
+
 

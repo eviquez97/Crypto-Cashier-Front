@@ -18,6 +18,12 @@ interface Transaction {
 const LiveTransactionFeed = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([])
 
+  // Button handler
+  const handleStartProcessing = () => {
+    // Redirect to dashboard/signup
+    window.open('/dashboard', '_blank')
+  }
+
   const currencies = ['BTC', 'ETH', 'USDT', 'USDC', 'BNB', 'SOL', 'XRP']
   const countries = [
     { name: 'USA', flag: '🇺🇸' },
@@ -256,9 +262,10 @@ const LiveTransactionFeed = () => {
             Processing millions of transactions for 500+ enterprise clients worldwide
           </p>
           <motion.button
+            onClick={handleStartProcessing}
             whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(22,249,138,0.3)" }}
             whileTap={{ scale: 0.98 }}
-            className="bg-brand-primary text-brand-dark px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl"
+            className="bg-brand-primary text-brand-dark px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl cursor-pointer"
           >
             Start Processing Today
           </motion.button>

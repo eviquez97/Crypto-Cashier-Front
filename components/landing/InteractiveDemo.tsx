@@ -48,15 +48,27 @@ app.post('/webhooks/coinfixi', (req, res) => {
 });`
   }
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(codeExamples[activeTab])
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(codeExamples[activeTab])
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy:', err)
+      alert('Failed to copy code. Please try again.')
+    }
   }
 
   const handleRun = () => {
     setIsRunning(true)
-    setTimeout(() => setIsRunning(false), 2000)
+    console.log('Running code example:', activeTab)
+    console.log(codeExamples[activeTab])
+    
+    // Simulate API call
+    setTimeout(() => {
+      setIsRunning(false)
+      alert(`✓ Code executed successfully!\n\nTab: ${activeTab}\n\nIn production, this would execute the API call to Coinfixi.`)
+    }, 1500)
   }
 
   return (
@@ -137,13 +149,18 @@ app.post('/webhooks/coinfixi', (req, res) => {
                       )}
                     </motion.button>
                     <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
+                      whileHover={{ scale: isRunning ? 1 : 1.1 }}
+                      whileTap={{ scale: isRunning ? 1 : 0.9 }}
                       onClick={handleRun}
-                      className="flex items-center space-x-2 px-3 py-1 bg-brand-neon/20 text-brand-neon rounded-lg hover:bg-brand-neon/30 transition-colors"
+                      disabled={isRunning}
+                      className={`flex items-center space-x-2 px-3 py-1 rounded-lg transition-all duration-300 ${
+                        isRunning 
+                          ? 'bg-brand-primary/30 text-brand-primary cursor-wait' 
+                          : 'bg-brand-primary/20 text-brand-primary hover:bg-brand-primary/30'
+                      }`}
                     >
-                      <Play className="w-4 h-4" />
-                      <span className="text-sm font-medium">Run</span>
+                      <Play className={`w-4 h-4 ${isRunning ? 'animate-spin' : ''}`} />
+                      <span className="text-sm font-medium">{isRunning ? 'Running...' : 'Run'}</span>
                     </motion.button>
                   </div>
                 </div>

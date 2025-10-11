@@ -7,7 +7,6 @@ import WhyChoose from '@/components/sections/WhyChoose'
 import AlternatingSection from '@/components/sections/AlternatingSection'
 import Testimonials from '@/components/sections/Testimonials'
 import BigCTA from '@/components/sections/BigCTA'
-import Pricing from '@/components/sections/Pricing'
 import Newsletter from '@/components/sections/Newsletter'
 import Footer from '@/components/layout/Footer'
 
@@ -40,7 +39,6 @@ export default function Home() {
       
       <Testimonials />
       <BigCTA />
-      <Pricing />
       <Newsletter />
       <Footer />
     </div>

@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { Shield, Award, Lock, Users, CheckCircle, Globe, Zap, TrendingUp } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const TrustIndicators = () => {
+  const { t } = useTranslation()
+  
   const trustItems = [
     {
       icon: Shield,
@@ -62,11 +65,10 @@ const TrustIndicators = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-display font-bold text-brand-light mb-6">
-            Trusted by <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">Enterprise Leaders</span>
+            {t('trustIndicators.title')} <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">{t('trustIndicators.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-brand-light/70 max-w-3xl mx-auto">
-            Join the world's most trusted crypto payment infrastructure. 
-            Built for enterprise-grade security, compliance, and reliability.
+            {t('trustIndicators.subtitle')}
           </p>
         </motion.div>
 
@@ -128,10 +130,10 @@ const TrustIndicators = () => {
           <div className="relative z-10">
             <div className="text-center mb-12">
               <h3 className="text-3xl font-bold text-brand-light mb-4">
-                Powering the Future of Digital Payments
+                {t('trustIndicators.certifications')}
               </h3>
               <p className="text-brand-light/70 text-lg">
-                Real-time metrics from our global infrastructure
+                {t('trustIndicators.certificationsDesc')}
               </p>
             </div>
 

@@ -2,12 +2,15 @@
 
 import { motion } from 'framer-motion'
 import { Check, Shield, Zap, ArrowRight } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const PromoRight = () => {
+  const { t } = useTranslation()
+  
   const features = [
-    'Custom Branding',
-    'Risk Controls', 
-    'Real-time Webhooks'
+    t('promoRight.features.branding'),
+    t('promoRight.features.controls'), 
+    t('promoRight.features.webhooks')
   ]
 
   // Button handlers
@@ -112,11 +115,11 @@ const PromoRight = () => {
           >
             {/* H2: "White-Label Checkout" */}
             <h2 className="text-h2-mobile lg:text-h2 font-display font-semibold text-brand-light">
-              White-Label Checkout
+              {t('promoRight.title')}
             </h2>
             
             <p className="text-body-lg text-brand-light/70 leading-relaxed">
-              Fully customizable payment experience that matches your brand. Integrate seamlessly with your existing systems while maintaining complete control over the user experience.
+              {t('promoRight.subtitle')}
             </p>
             
             {/* Bullets: Custom Branding · Risk Controls · Real-time Webhooks */}
@@ -154,7 +157,7 @@ const PromoRight = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-brand-primary text-brand-dark px-6 py-3 rounded-xl font-semibold hover:bg-brand-primary/90 transition-all duration-300 flex items-center justify-center group cursor-pointer"
               >
-                Get Started
+                {t('promoRight.getStarted')}
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </motion.button>
               
@@ -164,7 +167,7 @@ const PromoRight = () => {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 border-2 border-brand-primary text-brand-light rounded-xl font-semibold hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 cursor-pointer"
               >
-                View Demo
+                {t('promoRight.viewDemo')}
               </motion.button>
             </motion.div>
           </motion.div>

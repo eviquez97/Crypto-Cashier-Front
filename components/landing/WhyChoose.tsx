@@ -2,28 +2,31 @@
 
 import { motion } from 'framer-motion'
 import { Shield, Zap, Globe, Building } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const WhyChoose = () => {
+  const { t } = useTranslation()
+  
   const features = [
     {
       icon: Shield,
-      title: 'Trust & Security',
-      description: 'AWS KMS encryption with ephemeral wallets. One address, one transaction. Maximum security for your operations.'
+      title: t('whyChoose.features.security.title'),
+      description: t('whyChoose.features.security.desc')
     },
     {
       icon: Zap,
-      title: 'Instant Settlements',
-      description: 'Real-time processing with instant confirmations. No waiting periods or delays in your payment flow.'
+      title: t('whyChoose.features.settlements.title'),
+      description: t('whyChoose.features.settlements.desc')
     },
     {
       icon: Globe,
-      title: 'Multi-chain Support',
-      description: 'BTC, ETH, TRON, BSC, Polygon, Lightning. Real addresses that actually receive funds across all major chains.'
+      title: t('whyChoose.features.whiteLabel.title'),
+      description: t('whyChoose.features.whiteLabel.desc')
     },
     {
       icon: Building,
-      title: 'White-label Infrastructure',
-      description: 'Fully customizable payment experience that matches your brand. Complete control over the user journey.'
+      title: t('whyChoose.features.support.title'),
+      description: t('whyChoose.features.support.desc')
     }
   ]
 
@@ -39,10 +42,10 @@ const WhyChoose = () => {
           className="text-center mb-16"
         >
               <h2 className="text-h2-mobile lg:text-h2 font-display font-semibold text-brand-light mb-6">
-                Why Choose Coinfixi
+                {t('whyChoose.title')}
               </h2>
               <p className="text-body-lg text-brand-light/70 max-w-2xl mx-auto">
-                Built for gaming operators who demand reliability, security, and transparency in their crypto payments.
+                {t('whyChoose.subtitle')}
               </p>
         </motion.div>
 

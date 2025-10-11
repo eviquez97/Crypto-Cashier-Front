@@ -2,23 +2,26 @@
 
 import { motion } from 'framer-motion'
 import { Shield, Zap, Globe, ArrowRight } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const PromoLeft = () => {
+  const { t } = useTranslation()
+  
   const features = [
     {
       icon: Shield,
-      title: 'Enterprise Security',
-      description: 'Banking-grade encryption and compliance'
+      title: t('promoLeft.features.security.title'),
+      description: t('promoLeft.features.security.desc')
     },
     {
       icon: Zap,
-      title: 'Lightning Fast',
-      description: 'Sub-second transaction processing'
+      title: t('promoLeft.features.fast.title'),
+      description: t('promoLeft.features.fast.desc')
     },
     {
       icon: Globe,
-      title: 'Global Reach',
-      description: 'Support for 50+ cryptocurrencies'
+      title: t('promoLeft.features.global.title'),
+      description: t('promoLeft.features.global.desc')
     }
   ]
 
@@ -50,7 +53,7 @@ const PromoLeft = () => {
           >
             {/* H2: "Coinfixi for the Future" */}
             <h2 className="text-h2-mobile lg:text-h2 font-display font-semibold text-brand-light">
-              Coinfixi for the Future
+              {t('promoLeft.title')}
             </h2>
             
             {/* 3 bullets con ícono */}
@@ -97,7 +100,7 @@ const PromoLeft = () => {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 border-2 border-brand-primary text-brand-light rounded-xl font-semibold hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 flex items-center justify-center group cursor-pointer"
               >
-                View API Docs
+                {t('promoLeft.viewDocs')}
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </motion.button>
               
@@ -107,7 +110,7 @@ const PromoLeft = () => {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-transparent text-brand-light hover:bg-brand-primary/10 rounded-xl font-semibold transition-all duration-300 cursor-pointer"
               >
-                Learn More
+                {t('promoLeft.learnMore')}
               </motion.button>
             </motion.div>
           </motion.div>

@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { ArrowUpRight, ArrowDownLeft, CheckCircle, Clock, Zap } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 interface Transaction {
   id: string
@@ -23,6 +24,8 @@ const LiveTransactionFeed = () => {
     // Redirect to dashboard/signup
     window.open('/dashboard', '_blank')
   }
+  
+  const { t } = useTranslation()
 
   const currencies = ['BTC', 'ETH', 'USDT', 'USDC', 'BNB', 'SOL', 'XRP']
   const countries = [
@@ -117,15 +120,14 @@ const LiveTransactionFeed = () => {
         >
           <div className="inline-flex items-center space-x-2 bg-brand-primary/10 border border-brand-primary/20 rounded-full px-4 py-2 mb-6">
             <div className="w-2 h-2 bg-brand-primary rounded-full animate-pulse" />
-            <span className="text-sm font-semibold text-brand-light">Live Transactions</span>
+            <span className="text-sm font-semibold text-brand-light">{t('liveTransactions.badge')}</span>
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-display font-bold text-brand-light mb-6">
-            <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">Real-Time</span> Global Payments
+            <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">{t('liveTransactions.title')}</span> {t('liveTransactions.titleHighlight')} {t('liveTransactions.titleEnd')}
           </h2>
           <p className="text-xl text-brand-light/70 max-w-3xl mx-auto">
-            Watch transactions happening across the world in real-time. 
-            Enterprise-grade processing with sub-second confirmations.
+            {t('liveTransactions.subtitle')}
           </p>
         </motion.div>
 
@@ -259,7 +261,7 @@ const LiveTransactionFeed = () => {
           className="mt-16 text-center"
         >
           <p className="text-brand-light/70 mb-6 text-lg">
-            Processing millions of transactions for 500+ enterprise clients worldwide
+            {t('liveTransactions.description')}
           </p>
           <motion.button
             onClick={handleStartProcessing}
@@ -267,7 +269,7 @@ const LiveTransactionFeed = () => {
             whileTap={{ scale: 0.98 }}
             className="bg-brand-primary text-brand-dark px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl cursor-pointer"
           >
-            Start Processing Today
+            {t('liveTransactions.cta')}
           </motion.button>
         </motion.div>
       </div>

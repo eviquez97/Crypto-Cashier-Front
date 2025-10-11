@@ -112,20 +112,20 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <h1 className="text-4xl font-bold text-white">Dashboard</h1>
             
-            {/* Environmental Quality Index Card */}
-            <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-gray-400 text-sm">Environmental Quality Index</h3>
-                <BarChart3 className="w-5 h-5 text-red-400" />
+              {/* Environmental Quality Index Card */}
+              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-gray-400 text-sm">Environmental Quality Index</h3>
+                  <BarChart3 className="w-5 h-5 text-red-500" />
+                </div>
+                <div className="mb-2">
+                  <span className="text-3xl font-bold text-white">75.50/100%</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <TrendingDown className="w-4 h-4 text-red-500" />
+                  <span className="text-red-500 text-sm">1.4% than last month</span>
+                </div>
               </div>
-              <div className="mb-2">
-                <span className="text-3xl font-bold text-white">75.50/100%</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <TrendingDown className="w-4 h-4 text-red-400" />
-                <span className="text-red-400 text-sm">1.4% than last month</span>
-              </div>
-            </div>
           </div>
         </motion.header>
 
@@ -162,15 +162,15 @@ export default function Dashboard() {
               className="bg-white rounded-2xl p-6 border border-gray-200"
             >
               <h3 className="text-gray-700 text-sm font-medium mb-4">Climate Change Index</h3>
-              <div className="h-32 flex items-end space-x-2 mb-2">
-                {[40, 60, 45, 80, 65, 90, 75, 85].map((height, index) => (
-                  <div
-                    key={index}
-                    className="bg-brand-primary rounded-t-sm flex-1 hover:bg-brand-primary/80 transition-colors duration-200"
-                    style={{ height: `${height}%` }}
-                  />
-                ))}
-              </div>
+                <div className="h-32 flex items-end space-x-2 mb-2">
+                  {[40, 60, 45, 80, 65, 90, 75, 85].map((height, index) => (
+                    <div
+                      key={index}
+                      className="bg-brand-primary rounded-t-sm flex-1 hover:bg-brand-primary/90 transition-colors duration-200"
+                      style={{ height: `${height}%` }}
+                    />
+                  ))}
+                </div>
               <div className="flex justify-between text-xs text-gray-500">
                 <span>20</span>
                 <span>40</span>
@@ -235,41 +235,41 @@ export default function Dashboard() {
                   <HelpCircle className="w-5 h-5 text-gray-400" />
                 </div>
                 
-                {/* Map representation */}
-                <div className="relative bg-gray-700 rounded-lg p-8 h-64 flex items-center justify-center">
-                  {/* Simple map representation */}
-                  <div className="grid grid-cols-4 gap-4 w-full h-full">
-                    {/* Countries representation */}
-                    <div className="bg-brand-primary/20 rounded p-2 text-center">
-                      <p className="text-xs text-white">Ukraine</p>
-                      <p className="text-xs text-brand-primary">89%</p>
+                  {/* Map representation */}
+                  <div className="relative bg-gray-700 rounded-lg p-8 h-64 flex items-center justify-center">
+                    {/* Simple map representation */}
+                    <div className="grid grid-cols-4 gap-4 w-full h-full">
+                      {/* Countries representation */}
+                      <div className="bg-brand-primary rounded p-2 text-center">
+                        <p className="text-xs text-white">Ukraine</p>
+                        <p className="text-xs text-white">89%</p>
+                      </div>
+                      <div className="bg-brand-primary rounded p-2 text-center">
+                        <p className="text-xs text-white">Germany</p>
+                        <p className="text-xs text-white">72%</p>
+                      </div>
+                      <div className="bg-brand-primary rounded p-2 text-center">
+                        <p className="text-xs text-white">France</p>
+                        <p className="text-xs text-white">68%</p>
+                      </div>
+                      <div className="bg-brand-primary rounded p-2 text-center">
+                        <p className="text-xs text-white">UK</p>
+                        <p className="text-xs text-white">75%</p>
+                      </div>
                     </div>
-                    <div className="bg-brand-primary/20 rounded p-2 text-center">
-                      <p className="text-xs text-white">Germany</p>
-                      <p className="text-xs text-brand-primary">72%</p>
-                    </div>
-                    <div className="bg-brand-primary/20 rounded p-2 text-center">
-                      <p className="text-xs text-white">France</p>
-                      <p className="text-xs text-brand-primary">68%</p>
-                    </div>
-                    <div className="bg-brand-primary/20 rounded p-2 text-center">
-                      <p className="text-xs text-white">UK</p>
-                      <p className="text-xs text-brand-primary">75%</p>
-                    </div>
-                  </div>
-                  
-                  {/* Tooltip for Ukraine */}
-                  <div className="absolute top-4 left-4 bg-white rounded-lg p-3 shadow-lg">
-                    <div className="flex items-center space-x-2">
-                      <TrendingUp className="w-4 h-4 text-brand-primary" />
-                      <div>
-                        <p className="text-gray-900 font-medium text-sm">Ukraine</p>
-                        <p className="text-gray-600 text-xs">High Level</p>
-                        <p className="text-brand-primary font-bold text-sm">89%</p>
+                    
+                    {/* Tooltip for Ukraine */}
+                    <div className="absolute top-4 left-4 bg-white rounded-lg p-3 shadow-lg">
+                      <div className="flex items-center space-x-2">
+                        <TrendingUp className="w-4 h-4 text-brand-primary" />
+                        <div>
+                          <p className="text-gray-900 font-medium text-sm">Ukraine</p>
+                          <p className="text-gray-600 text-xs">High Level</p>
+                          <p className="text-brand-primary font-bold text-sm">89%</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
               </div>
             </motion.div>
           </div>

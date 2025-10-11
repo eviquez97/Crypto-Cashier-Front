@@ -205,11 +205,11 @@ const Hero = () => {
             >
               <div className="flex items-center space-x-2">
                 <Users className="w-5 h-5 text-brand-primary" />
-                <span className="text-sm font-medium text-text-primary">500+ Active Clients</span>
+                <span className="text-sm font-medium text-brand-light">500+ Active Clients</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Lock className="w-5 h-5 text-brand-primary" />
-                <span className="text-sm font-medium text-text-primary">SOC 2 Compliant</span>
+                <span className="text-sm font-medium text-brand-light">SOC 2 Compliant</span>
               </div>
             </motion.div>
 
@@ -220,14 +220,14 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.8, ease: 'cubic-bezier(.22,.61,.36,1)' }}
               className="pt-8"
             >
-              <p className="text-text-muted text-sm mb-4 font-medium">Trusted by leading gaming operators</p>
+              <p className="text-brand-light/70 text-sm mb-4 font-medium">Trusted by leading gaming operators</p>
               <div className="flex items-center justify-center space-x-6 opacity-60">
-                {/* Logos de partners - más realistas */}
-                <div className="text-text-muted text-sm font-semibold">Bet365</div>
-                <div className="text-text-muted text-sm font-semibold">Pinnacle</div>
-                <div className="text-text-muted text-sm font-semibold">Betway</div>
-                <div className="text-text-muted text-sm font-semibold">1xBet</div>
-                <div className="text-text-muted text-sm font-semibold">DraftKings</div>
+                {/* Logos de partners - nombres genéricos para evitar problemas legales */}
+                <div className="text-brand-light/70 text-sm font-semibold">GamingCorp</div>
+                <div className="text-brand-light/70 text-sm font-semibold">BetTech</div>
+                <div className="text-brand-light/70 text-sm font-semibold">CryptoBet</div>
+                <div className="text-brand-light/70 text-sm font-semibold">GameFlow</div>
+                <div className="text-brand-light/70 text-sm font-semibold">BetSecure</div>
               </div>
             </motion.div>
           </motion.div>

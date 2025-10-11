@@ -11,12 +11,12 @@
       }
       
       body {
-        @apply bg-background text-text-primary font-sans antialiased;
+        @apply bg-brand-dark text-brand-light font-sans antialiased;
         font-feature-settings: 'rlig' 1, 'calt' 1;
       }
       
       h1, h2, h3, h4, h5, h6 {
-        @apply font-display text-text-primary;
+        @apply font-display text-brand-light;
       }
       
       /* Tipografía exacta según especificación */
@@ -33,7 +33,7 @@
       }
       
       p {
-        @apply text-body text-text-secondary;
+        @apply text-body text-brand-teal;
       }
     }
 

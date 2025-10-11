@@ -15,33 +15,47 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className="relative min-h-screen bg-gradient-hero overflow-hidden">
-      {/* Premium Background with Strategic Colors */}
+    <section className="relative min-h-screen bg-brand-dark overflow-hidden">
+      {/* DRAMATIC BACKGROUND - Dark Mode Premium */}
       <div className="absolute inset-0">
-        {/* Animated gradient orbs with psychological impact */}
+        {/* Massive green glow effect */}
         <motion.div
-          className="absolute top-20 left-10 w-96 h-96 bg-brand-primary/15 rounded-full blur-3xl"
+          className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[800px] h-[800px] bg-brand-primary/30 rounded-full blur-3xl"
           animate={{
-            scale: [1, 1.2, 1],
+            scale: [1, 1.3, 1],
+            opacity: [0.4, 0.8, 0.4],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        {/* Secondary glow */}
+        <motion.div
+          className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-brand-primary/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1.2, 1, 1.2],
             opacity: [0.3, 0.6, 0.3],
           }}
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
+            delay: 2
           }}
         />
-        <motion.div
-          className="absolute bottom-20 right-10 w-80 h-80 bg-brand-teal/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.7, 0.4],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
+        
+        {/* Grid pattern overlay */}
+        <div 
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(22,249,138,0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(22,249,138,0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '60px 60px'
           }}
         />
         
@@ -67,33 +81,33 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: 'cubic-bezier(.22,.61,.36,1)' }}
             className="space-y-8"
           >
-            {/* Premium Badge with Strategic Color */}
+            {/* DRAMATIC Badge with Green Glow */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center space-x-2 bg-brand-primary/10 border border-brand-primary/20 rounded-full px-4 py-2"
+              className="inline-flex items-center space-x-2 bg-brand-primary/20 border border-brand-primary/50 rounded-full px-4 py-2 shadow-lg shadow-brand-primary/25"
             >
               <Award className="w-4 h-4 text-brand-primary" />
-              <span className="text-sm font-semibold text-text-primary">Enterprise-Grade Infrastructure</span>
+              <span className="text-sm font-semibold text-brand-light">Enterprise-Grade Infrastructure</span>
             </motion.div>
 
-            {/* Premium H1 with Strategic Gradient */}
+            {/* DRAMATIC H1 with Massive Impact */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={isLoaded ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-5xl lg:text-7xl font-display font-bold leading-[0.9]"
+              className="text-6xl lg:text-8xl font-display font-bold leading-[0.8]"
             >
-              <span className="bg-gradient-to-r from-brand-primary to-brand-teal bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-primary via-brand-primary to-brand-light bg-clip-text text-transparent drop-shadow-lg">
                 Premium Crypto
               </span>
               <br />
-              <span className="text-text-primary">
+              <span className="text-brand-light drop-shadow-lg">
                 Payments
               </span>
               <br />
-              <span className="text-4xl lg:text-5xl text-text-secondary font-medium">
+              <span className="text-5xl lg:text-6xl text-brand-teal font-medium">
                 for the Digital Era
               </span>
             </motion.h1>
@@ -105,40 +119,40 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="space-y-4"
             >
-              <p className="text-xl text-text-secondary leading-relaxed">
+              <p className="text-xl text-brand-light/80 leading-relaxed">
                 The world's most trusted crypto payment infrastructure for gaming operators, 
                 fintech companies, and enterprise businesses.
               </p>
               
-              {/* Key benefits with strategic colors */}
+              {/* DRAMATIC benefits with Dark Mode */}
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="flex items-center space-x-3 p-3 bg-brand-light/50 rounded-xl border border-brand-primary/20"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="flex items-center space-x-3 p-4 bg-brand-teal/10 rounded-xl border border-brand-primary/30 backdrop-blur-sm hover:bg-brand-primary/10 transition-all duration-300"
                 >
-                  <Shield className="w-5 h-5 text-brand-primary" />
-                  <span className="text-sm font-medium text-text-primary">Bank-Grade Security</span>
+                  <Shield className="w-6 h-6 text-brand-primary" />
+                  <span className="text-sm font-medium text-brand-light">Bank-Grade Security</span>
                 </motion.div>
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="flex items-center space-x-3 p-3 bg-brand-light/50 rounded-xl border border-brand-primary/20"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="flex items-center space-x-3 p-4 bg-brand-teal/10 rounded-xl border border-brand-primary/30 backdrop-blur-sm hover:bg-brand-primary/10 transition-all duration-300"
                 >
-                  <Zap className="w-5 h-5 text-brand-primary" />
-                  <span className="text-sm font-medium text-text-primary">Sub-Second Processing</span>
+                  <Zap className="w-6 h-6 text-brand-primary" />
+                  <span className="text-sm font-medium text-brand-light">Sub-Second Processing</span>
                 </motion.div>
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="flex items-center space-x-3 p-3 bg-brand-light/50 rounded-xl border border-brand-primary/20"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="flex items-center space-x-3 p-4 bg-brand-teal/10 rounded-xl border border-brand-primary/30 backdrop-blur-sm hover:bg-brand-primary/10 transition-all duration-300"
                 >
-                  <Globe className="w-5 h-5 text-brand-primary" />
-                  <span className="text-sm font-medium text-text-primary">Global Coverage</span>
+                  <Globe className="w-6 h-6 text-brand-primary" />
+                  <span className="text-sm font-medium text-brand-light">Global Coverage</span>
                 </motion.div>
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="flex items-center space-x-3 p-3 bg-brand-light/50 rounded-xl border border-brand-primary/20"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="flex items-center space-x-3 p-4 bg-brand-teal/10 rounded-xl border border-brand-primary/30 backdrop-blur-sm hover:bg-brand-primary/10 transition-all duration-300"
                 >
-                  <TrendingUp className="w-5 h-5 text-brand-primary" />
-                  <span className="text-sm font-medium text-text-primary">99.99% Uptime</span>
+                  <TrendingUp className="w-6 h-6 text-brand-primary" />
+                  <span className="text-sm font-medium text-brand-light">99.99% Uptime</span>
                 </motion.div>
               </div>
             </motion.div>
@@ -150,32 +164,33 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="flex flex-col sm:flex-row gap-4 mt-8"
             >
-              {/* Primary CTA with strategic green for confidence */}
+              {/* MEGA IMPACT CTA with Green Glow */}
               <motion.button
                 whileHover={{ 
-                  scale: 1.05, 
-                  boxShadow: "0 20px 40px rgba(22,249,138,0.3)",
-                  y: -2
+                  scale: 1.08, 
+                  boxShadow: "0 30px 60px rgba(22,249,138,0.5)",
+                  y: -3
                 }}
-                whileTap={{ scale: 0.98 }}
-                className="relative group bg-brand-primary text-brand-light px-8 py-4 rounded-2xl font-bold text-lg shadow-2xl overflow-hidden"
+                whileTap={{ scale: 0.95 }}
+                className="relative group bg-brand-primary text-brand-dark px-10 py-5 rounded-2xl font-bold text-xl shadow-2xl shadow-brand-primary/50 overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center">
                   Start Free Trial
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </span>
-                <div className="absolute inset-0 bg-brand-teal opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-brand-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
               
-              {/* Secondary CTA with teal for technology */}
+              {/* DRAMATIC Secondary CTA */}
               <motion.button
                 whileHover={{ 
-                  scale: 1.05, 
-                  y: -2,
-                  borderColor: "#16F98A"
+                  scale: 1.08, 
+                  y: -3,
+                  borderColor: "#16F98A",
+                  boxShadow: "0 20px 40px rgba(22,249,138,0.3)"
                 }}
-                whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 border-2 border-brand-teal text-brand-teal rounded-2xl font-bold text-lg hover:bg-brand-teal hover:text-brand-light transition-all duration-300"
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-5 border-2 border-brand-primary text-brand-primary rounded-2xl font-bold text-xl hover:bg-brand-primary hover:text-brand-dark transition-all duration-300 shadow-lg"
               >
                 Request Enterprise Demo
               </motion.button>

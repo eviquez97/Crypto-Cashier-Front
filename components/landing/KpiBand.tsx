@@ -36,7 +36,7 @@ const KpiBand = () => {
   }, [])
 
   return (
-    <section id="kpi-band" className="bg-base-mid py-16">
+    <section id="kpi-band" className="bg-brand-teal py-16">
       <div className="container">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {kpis.map((kpi, index) => (
@@ -60,19 +60,19 @@ const KpiBand = () => {
                   delay: index * 0.1 + 0.2,
                   ease: 'ease-out'
                 }}
-                className="text-4xl lg:text-5xl font-bold text-brand-neon mb-2"
+                className="text-4xl lg:text-5xl font-bold text-brand-primary mb-2 drop-shadow-lg"
               >
                 {kpi.value}
               </motion.div>
               
               {/* Label mejorado */}
-              <div className="text-sm text-base-light font-medium">
+              <div className="text-sm text-brand-light font-medium">
                 {kpi.label}
               </div>
               
               {/* Separadores verticales */}
               {index < kpis.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 w-px h-12 bg-accent-medium transform -translate-y-1/2" />
+                <div className="hidden lg:block absolute top-1/2 -right-4 w-px h-12 bg-brand-primary/30 transform -translate-y-1/2" />
               )}
             </motion.div>
           ))}

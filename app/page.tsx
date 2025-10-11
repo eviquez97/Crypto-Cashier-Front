@@ -4,7 +4,10 @@ import Navbar from '@/components/layout/Navbar'
 import Hero from '@/components/landing/Hero'
 import KpiBand from '@/components/landing/KpiBand'
 import WhyChoose from '@/components/landing/WhyChoose'
+import CryptoCarousel from '@/components/landing/CryptoCarousel'
 import TrustIndicators from '@/components/landing/TrustIndicators'
+import LiveTransactionFeed from '@/components/landing/LiveTransactionFeed'
+import InteractiveDemo from '@/components/landing/InteractiveDemo'
 import PromoLeft from '@/components/landing/PromoLeft'
 import PromoRight from '@/components/landing/PromoRight'
 import Testimonials from '@/components/landing/Testimonials'
@@ -19,7 +22,10 @@ export default function Home() {
       <Hero />
       <KpiBand />
       <WhyChoose />
+      <CryptoCarousel />
       <TrustIndicators />
+      <LiveTransactionFeed />
+      <InteractiveDemo />
       <PromoLeft />
       <PromoRight />
       <Testimonials />

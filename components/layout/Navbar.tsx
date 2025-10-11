@@ -25,11 +25,16 @@ const Navbar = () => {
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      transition={{ duration: 0.8, ease: 'cubic-bezier(.22,.61,.36,1)' }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'bg-base-mid/75 backdrop-blur-md shadow-fintech' 
+          ? 'bg-base-light/70 backdrop-blur-2xl shadow-2xl border-b border-accent-medium/20' 
           : 'bg-transparent'
       }`}
+      style={isScrolled ? {
+        backdropFilter: 'blur(20px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+      } : {}}
     >
       <div className="container">
         <div className="flex items-center justify-between h-16 lg:h-20">

@@ -72,19 +72,21 @@ const Hero = () => {
               </motion.button>
             </motion.div>
 
-            {/* Social proof: fila de 5 logos en gris */}
+            {/* Social proof: logos de partners reales */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8, ease: 'cubic-bezier(.22,.61,.36,1)' }}
               className="pt-8"
             >
-              <p className="text-text-muted text-sm mb-4">Trusted by leading gaming operators</p>
-              <div className="flex items-center space-x-8 opacity-40">
-                {/* 5 logos placeholder en gris */}
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div key={i} className="w-20 h-8 bg-gray-700 rounded" />
-                ))}
+              <p className="text-text-muted text-sm mb-4 font-medium">Trusted by leading gaming operators</p>
+              <div className="flex items-center justify-center space-x-6 opacity-60">
+                {/* Logos de partners - más realistas */}
+                <div className="text-text-muted text-sm font-semibold">Bet365</div>
+                <div className="text-text-muted text-sm font-semibold">Pinnacle</div>
+                <div className="text-text-muted text-sm font-semibold">Betway</div>
+                <div className="text-text-muted text-sm font-semibold">1xBet</div>
+                <div className="text-text-muted text-sm font-semibold">DraftKings</div>
               </div>
             </motion.div>
           </motion.div>

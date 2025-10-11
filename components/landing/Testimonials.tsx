@@ -41,12 +41,12 @@ const Testimonials = () => {
   }, [testimonials.length])
 
   return (
-    <section className="section bg-base-dark relative overflow-hidden">
-      {/* Fondo base.dark con patrón radial tenue */}
+    <section className="section bg-base-light relative overflow-hidden">
+      {/* Fondo con patrón radial tenue */}
       <div 
         className="absolute inset-0 opacity-20"
         style={{
-          background: 'radial-gradient(circle at 30% 70%, rgba(182,255,0,0.1), transparent 60%)'
+          background: 'radial-gradient(circle at 30% 70%, rgba(18,178,193,0.1), transparent 60%)'
         }}
       />
       
@@ -67,7 +67,7 @@ const Testimonials = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4, ease: 'easeInOut' }}
-                className="bg-base-mid rounded-2xl p-8 lg:p-12 shadow-fintech relative border border-gray-800"
+                className="bg-base-light rounded-2xl p-8 lg:p-12 shadow-fintech relative border border-accent-medium"
               >
                 {/* Quote */}
                 <motion.blockquote

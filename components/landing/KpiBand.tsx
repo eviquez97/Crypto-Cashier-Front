@@ -36,7 +36,7 @@ const KpiBand = () => {
   }, [])
 
   return (
-    <section id="kpi-band" className="bg-base-dark py-16">
+    <section id="kpi-band" className="bg-base-mid py-16">
       <div className="container">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {kpis.map((kpi, index) => (
@@ -51,7 +51,7 @@ const KpiBand = () => {
               }}
               className="text-center relative"
             >
-              {/* Número 40/semibold */}
+              {/* Número con mejor tipografía */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={isVisible ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
@@ -60,19 +60,19 @@ const KpiBand = () => {
                   delay: index * 0.1 + 0.2,
                   ease: 'ease-out'
                 }}
-                className="text-4xl lg:text-5xl font-semibold text-text-primary mb-2"
+                className="text-4xl lg:text-5xl font-bold text-brand-neon mb-2"
               >
                 {kpi.value}
               </motion.div>
               
-              {/* Label 14/gray secondary */}
-              <div className="text-sm text-text-secondary">
+              {/* Label mejorado */}
+              <div className="text-sm text-base-light font-medium">
                 {kpi.label}
               </div>
               
               {/* Separadores verticales */}
               {index < kpis.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 w-px h-12 bg-gray-800 transform -translate-y-1/2" />
+                <div className="hidden lg:block absolute top-1/2 -right-4 w-px h-12 bg-accent-medium transform -translate-y-1/2" />
               )}
             </motion.div>
           ))}

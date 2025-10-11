@@ -255,29 +255,22 @@ const DashboardPage = () => {
 
   return (
     <div className="min-h-screen bg-surface-primary flex">
-      {/* Vertical Sidebar */}
-      <motion.aside
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        className="w-20 lg:w-72 bg-surface-secondary border-r border-surface-border flex flex-col items-center lg:items-start p-4 lg:p-6 sticky top-0 h-screen overflow-y-auto"
-      >
-        {/* Logo */}
-        <div className="flex items-center space-x-3 mb-8">
-          <div className="relative">
-            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-brand-primary rounded-2xl flex items-center justify-center shadow-lg">
-              <span className="text-surface-primary font-bold text-lg lg:text-xl">CF</span>
+        {/* Clean Minimalist Sidebar */}
+        <motion.aside
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="w-16 lg:w-64 bg-surface-primary border-r border-surface-border/30 flex flex-col items-center lg:items-start p-3 lg:p-4 sticky top-0 h-screen overflow-y-auto"
+        >
+          {/* Minimalist Logo */}
+          <div className="flex items-center space-x-3 mb-12">
+            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-brand-primary rounded-xl flex items-center justify-center">
+              <span className="text-surface-primary font-bold text-sm lg:text-base">CF</span>
             </div>
-            <div className="absolute -top-1 -right-1 w-3 h-3 lg:w-4 lg:h-4 bg-success-500 rounded-full border-2 border-surface-secondary"></div>
-          </div>
-          <div className="hidden lg:block">
-            <h1 className="text-lg font-display font-bold text-text-primary">Coinfixi</h1>
-            <div className="flex items-center space-x-1">
-              <div className="w-1.5 h-1.5 bg-success-500 rounded-full animate-pulse"></div>
-              <span className="text-xs text-success-500 font-medium">Live</span>
+            <div className="hidden lg:block">
+              <h1 className="text-base font-semibold text-text-primary">Coinfixi</h1>
             </div>
           </div>
-        </div>
 
         {/* Quick Actions */}
         <div className="flex-1 w-full">
@@ -285,42 +278,28 @@ const DashboardPage = () => {
             Quick Actions
           </h3>
           
-          <div className="space-y-1">
+          <div className="space-y-2">
             {[
-              { icon: Plus, label: 'Create Deposit', color: 'success', shortcut: '⌘D' },
-              { icon: ArrowUpRight, label: 'Process Withdrawal', color: 'info', shortcut: '⌘W' },
-              { icon: Settings, label: 'API Settings', color: 'warning', shortcut: '⌘A' },
-              { icon: Shield, label: 'Security Center', color: 'error', shortcut: '⌘S' },
-              { icon: BarChart3, label: 'Analytics', color: 'brand', shortcut: '⌘N' },
-              { icon: Download, label: 'Export Data', color: 'brand', shortcut: '⌘E' },
-              { icon: Users, label: 'User Management', color: 'info', shortcut: '⌘U' },
-              { icon: Database, label: 'Database', color: 'warning', shortcut: '⌘B' }
+              { icon: Plus, label: 'Create Deposit' },
+              { icon: ArrowUpRight, label: 'Withdraw' },
+              { icon: Settings, label: 'Settings' },
+              { icon: BarChart3, label: 'Analytics' },
+              { icon: Users, label: 'Users' },
+              { icon: Shield, label: 'Security' }
             ].map((action, index) => (
               <motion.button
                 key={action.label}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                whileHover={{ scale: 1.02, x: 4 }}
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center space-x-3 p-3 lg:p-4 bg-surface-tertiary/50 hover:bg-surface-tertiary rounded-xl border border-surface-border hover:border-brand-primary/30 transition-all duration-200 group relative"
+                className="w-full flex items-center justify-center lg:justify-start space-x-3 p-2 lg:p-3 hover:bg-surface-secondary rounded-lg transition-all duration-200 group"
               >
-                <div className={`w-8 h-8 lg:w-10 lg:h-10 bg-${action.color}-500/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                  <action.icon className={`w-4 h-4 lg:w-5 lg:h-5 text-${action.color}-500`} />
-                </div>
-                <div className="hidden lg:block flex-1 text-left">
-                  <p className="text-sm font-medium text-text-primary group-hover:text-brand-primary transition-colors">
-                    {action.label}
-                  </p>
-                  <p className="text-xs text-text-muted font-mono">
-                    {action.shortcut}
-                  </p>
-                </div>
-                
-                {/* Tooltip for mobile */}
-                <div className="lg:hidden absolute left-full ml-2 px-2 py-1 bg-surface-primary/95 text-text-primary text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50 border border-surface-border">
+                <action.icon className="w-5 h-5 text-text-secondary group-hover:text-brand-primary transition-colors" />
+                <span className="hidden lg:block text-sm font-medium text-text-secondary group-hover:text-text-primary transition-colors">
                   {action.label}
-                </div>
+                </span>
               </motion.button>
             ))}
           </div>
@@ -329,170 +308,115 @@ const DashboardPage = () => {
         {/* Bottom Actions */}
         <div className="w-full space-y-1 mt-4">
           {/* Profile */}
-          <Link href="/" className="w-full flex items-center space-x-3 p-3 lg:p-4 bg-brand-primary/10 hover:bg-brand-primary/20 rounded-xl border border-brand-primary/20 hover:border-brand-primary/40 transition-all duration-200 group">
-            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-brand-primary rounded-xl flex items-center justify-center flex-shrink-0">
-              <span className="text-surface-primary font-bold text-sm lg:text-base">EU</span>
+          <div className="w-full flex items-center justify-center lg:justify-start space-x-3 p-2 lg:p-3 hover:bg-surface-secondary rounded-lg transition-all duration-200 group cursor-pointer">
+            <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
+              <span className="text-surface-primary font-bold text-sm">EU</span>
             </div>
             <div className="hidden lg:block flex-1 text-left">
               <p className="text-sm font-medium text-text-primary">Enterprise User</p>
               <p className="text-xs text-text-secondary">Admin</p>
             </div>
             <LogOut className="hidden lg:block w-4 h-4 text-text-secondary group-hover:text-brand-primary transition-colors" />
-          </Link>
-
-          {/* Logout */}
-          <button className="lg:hidden w-full p-3 text-text-secondary hover:text-text-primary hover:bg-surface-tertiary rounded-xl transition-all duration-200">
-            <LogOut className="w-5 h-5 mx-auto" />
-          </button>
+          </div>
         </div>
       </motion.aside>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        {/* Advanced Header */}
+        {/* Clean Header */}
         <motion.header
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-surface-secondary border-b border-surface-border sticky top-0 z-40"
+          className="bg-surface-primary border-b border-surface-border/30 sticky top-0 z-40"
         >
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between">
-            {/* Page Title */}
-            <div>
-              <h1 className="text-2xl font-display font-bold text-text-primary">Dashboard</h1>
-              <div className="flex items-center space-x-2">
-                <p className="text-sm text-text-secondary">Enterprise Payment Infrastructure</p>
-                <div className="flex items-center space-x-1">
-                  <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
-                  <span className="text-xs text-success-500 font-medium">Live</span>
-                </div>
+          <div className="px-6 py-6">
+            <div className="flex items-center justify-between">
+              {/* Page Title */}
+              <div>
+                <h1 className="text-2xl font-semibold text-text-primary">Dashboard</h1>
+                <p className="text-sm text-text-secondary mt-1">Enterprise Payment Infrastructure</p>
               </div>
-            </div>
 
-            {/* Advanced Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
-              {[
-                { id: 'overview', label: 'Overview', icon: BarChart3 },
-                { id: 'transactions', label: 'Transactions', icon: Activity },
-                { id: 'analytics', label: 'Analytics', icon: PieChart },
-                { id: 'security', label: 'Security', icon: Shield },
-                { id: 'settings', label: 'Settings', icon: Settings }
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-lg font-medium transition-all duration-200 ${
-                    activeTab === tab.id
-                      ? 'bg-brand-primary text-surface-primary shadow-lg'
-                      : 'text-text-secondary hover:text-text-primary hover:bg-surface-tertiary'
-                  }`}
-                >
-                  <tab.icon className="w-4 h-4" />
-                  <span>{tab.label}</span>
-                </button>
-              ))}
-            </nav>
-
-            {/* Advanced Actions */}
-            <div className="flex items-center space-x-3">
-              {/* Timeframe Selector */}
-              <div className="hidden md:flex items-center space-x-1 bg-surface-tertiary rounded-lg p-1">
-                {timeFrames.map((tf) => (
+              {/* Clean Navigation */}
+              <nav className="hidden lg:flex items-center space-x-1">
+                {[
+                  { id: 'overview', label: 'Overview' },
+                  { id: 'transactions', label: 'Transactions' },
+                  { id: 'analytics', label: 'Analytics' }
+                ].map((tab) => (
                   <button
-                    key={tf.value}
-                    onClick={() => setSelectedTimeframe(tf.value)}
-                    className={`px-3 py-1 rounded-md text-xs font-medium transition-all duration-200 ${
-                      selectedTimeframe === tf.value
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                      activeTab === tab.id
                         ? 'bg-brand-primary text-surface-primary'
                         : 'text-text-secondary hover:text-text-primary hover:bg-surface-secondary'
                     }`}
                   >
-                    {tf.label}
+                    {tab.label}
                   </button>
                 ))}
-              </div>
+              </nav>
 
-              {/* Real-time Toggle */}
-              <button
-                onClick={() => setRealTimeData(!realTimeData)}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-200 border ${
-                  realTimeData 
-                    ? 'bg-success-500/10 text-success-500 border-success-500/20' 
-                    : 'bg-surface-tertiary text-text-secondary border-surface-border hover:bg-surface-secondary'
-                }`}
-              >
-                {realTimeData ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
-                <span className="hidden sm:inline text-sm font-medium">Live</span>
-              </button>
+              {/* Simple Actions */}
+              <div className="flex items-center space-x-2">
+                {/* Timeframe Selector */}
+                <div className="hidden md:flex items-center space-x-1 bg-surface-secondary rounded-lg p-1">
+                  {timeFrames.slice(0, 3).map((tf) => (
+                    <button
+                      key={tf.value}
+                      onClick={() => setSelectedTimeframe(tf.value)}
+                      className={`px-3 py-1 rounded-md text-xs font-medium transition-all duration-200 ${
+                        selectedTimeframe === tf.value
+                          ? 'bg-brand-primary text-surface-primary'
+                          : 'text-text-secondary hover:text-text-primary'
+                      }`}
+                    >
+                      {tf.label}
+                    </button>
+                  ))}
+                </div>
 
-              {/* Notifications */}
-              <div className="relative">
-                <button className="relative p-2 text-text-secondary hover:text-text-primary hover:bg-surface-tertiary rounded-lg transition-all duration-200">
+                {/* Notifications */}
+                <button className="relative p-2 text-text-secondary hover:text-text-primary hover:bg-surface-secondary rounded-lg transition-all duration-200">
                   <Bell className="w-5 h-5" />
                   {notifications > 0 && (
-                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-error-500 rounded-full flex items-center justify-center">
-                      <span className="text-xs font-bold text-white">{notifications}</span>
+                    <div className="absolute -top-1 -right-1 w-4 h-4 bg-error-500 rounded-full flex items-center justify-center">
+                      <span className="text-xs font-bold text-white text-[10px]">{notifications}</span>
                     </div>
                   )}
                 </button>
               </div>
-
-              {/* Refresh */}
-              <button className="p-2 text-text-secondary hover:text-text-primary hover:bg-surface-tertiary rounded-lg transition-all duration-200">
-                <RefreshCw className="w-5 h-5" />
-              </button>
-
-              {/* Profile */}
-              <Link href="/" className="flex items-center space-x-2 px-4 py-2 text-text-secondary hover:text-text-primary hover:bg-surface-tertiary rounded-lg transition-all duration-200">
-                <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
-                  <span className="text-surface-primary font-bold text-sm">EU</span>
-                </div>
-                <span className="hidden sm:inline text-sm font-medium">Enterprise User</span>
-                <LogOut className="w-4 h-4" />
-              </Link>
-            </div>
           </div>
         </div>
       </motion.header>
 
         {/* Main Content */}
         <main className="flex-1 px-6 py-8 overflow-y-auto">
-        {/* Advanced Welcome Section */}
+        {/* Clean Welcome Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-8"
         >
-          <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-4xl font-display font-bold text-text-primary mb-2">
-                Welcome back, <span className="bg-gradient-to-r from-brand-primary to-brand-primary bg-clip-text text-transparent">Enterprise User</span>
-              </h2>
-              <p className="text-text-secondary text-lg">
-                Here's your real-time payment infrastructure overview
-              </p>
-            </div>
-            
-            <div className="flex items-center space-x-4">
-              <div className="text-right">
-                <p className="text-sm text-text-secondary">Last Updated</p>
-                <p className="text-brand-primary font-mono text-sm">{new Date().toLocaleTimeString()}</p>
-              </div>
-              <div className="w-12 h-12 bg-brand-primary/10 rounded-2xl flex items-center justify-center border border-brand-primary/20">
-                <Activity className="w-6 h-6 text-brand-primary" />
-              </div>
-            </div>
+          <div>
+            <h2 className="text-2xl font-semibold text-text-primary mb-2">
+              Welcome back, Enterprise User
+            </h2>
+            <p className="text-text-secondary">
+              Here's your payment infrastructure overview
+            </p>
           </div>
         </motion.div>
 
-        {/* Advanced Stats Grid */}
+        {/* Clean Stats Grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8"
         >
           {advancedStats.map((stat, index) => (
             <motion.div
@@ -500,29 +424,23 @@ const DashboardPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-              className={`${stat.bgColor} bg-surface-secondary rounded-3xl p-6 border ${stat.borderColor} hover:border-brand-primary/40 transition-all duration-300 cursor-pointer group`}
+              className="bg-surface-secondary rounded-xl p-6 border border-surface-border/30 hover:border-brand-primary/30 transition-all duration-300 cursor-pointer group"
               onClick={() => setExpandedCard(expandedCard === stat.title ? null : stat.title)}
             >
               <div className="flex items-center justify-between mb-4">
-                <div className={`w-14 h-14 ${stat.bgColor} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <stat.icon className={`w-7 h-7 ${stat.color}`} />
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className={`flex items-center space-x-1 text-sm font-medium ${stat.trend === 'up' ? 'text-success-500' : 'text-error-500'}`}>
-                    {stat.trend === 'up' ? (
-                      <TrendingUp className="w-4 h-4" />
-                    ) : (
-                      <TrendingDown className="w-4 h-4" />
-                    )}
-                    <span>{stat.change}</span>
-                  </div>
-                  <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
+                <stat.icon className={`w-6 h-6 ${stat.color}`} />
+                <div className={`flex items-center space-x-1 text-sm font-medium ${stat.trend === 'up' ? 'text-success-500' : 'text-error-500'}`}>
+                  {stat.trend === 'up' ? (
+                    <TrendingUp className="w-4 h-4" />
+                  ) : (
+                    <TrendingDown className="w-4 h-4" />
+                  )}
+                  <span>{stat.change}</span>
                 </div>
               </div>
               
-              <h3 className="text-3xl font-bold text-text-primary mb-1">{stat.value}</h3>
-              <p className="text-text-secondary text-sm mb-3">{stat.title}</p>
-              <p className="text-text-muted text-xs mb-4">{stat.subtitle}</p>
+              <h3 className="text-2xl font-bold text-text-primary mb-1">{stat.value}</h3>
+              <p className="text-text-secondary text-sm">{stat.title}</p>
               
               {/* Sparkline Chart */}
               <div className="mb-4">

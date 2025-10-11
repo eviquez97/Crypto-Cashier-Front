@@ -6,7 +6,7 @@ import {
   BarChart3, Search, Settings, Bell, TrendingUp, TrendingDown,
   Users, Shield, Plus, ArrowUpRight, Filter, MoreVertical,
   MapPin, Factory, Recycle, Zap, Activity, DollarSign,
-  ChevronDown, Circle, User, HelpCircle
+  ChevronDown, Circle, User, HelpCircle, Flag
 } from 'lucide-react'
 
 export default function Dashboard() {
@@ -102,7 +102,7 @@ export default function Dashboard() {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        {/* Header with Environmental Quality Index */}
+        {/* Header */}
         <motion.header
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -115,7 +115,7 @@ export default function Dashboard() {
             {/* Environmental Quality Index Card */}
             <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-gray-400 text-sm">Transaction Success Index</h3>
+                <h3 className="text-gray-400 text-sm">Environmental Quality Index</h3>
                 <BarChart3 className="w-5 h-5 text-red-400" />
               </div>
               <div className="mb-2">
@@ -134,7 +134,7 @@ export default function Dashboard() {
           {/* Top Row */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
             
-            {/* Transaction Success Rate */}
+            {/* Air Pollution Level Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -142,11 +142,11 @@ export default function Dashboard() {
               className="bg-gray-800 rounded-2xl p-6 border border-gray-700"
             >
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-gray-400 text-sm">Transaction Success Rate</h3>
+                <h3 className="text-gray-400 text-sm">Air Pollution Level</h3>
                 <BarChart3 className="w-5 h-5 text-brand-primary" />
               </div>
               <div className="mb-4">
-                <span className="text-3xl font-bold text-white">99.7%</span>
+                <span className="text-3xl font-bold text-white">35.05 µg/m³</span>
               </div>
               <div className="flex items-center space-x-2">
                 <TrendingUp className="w-4 h-4 text-brand-primary" />
@@ -154,14 +154,14 @@ export default function Dashboard() {
               </div>
             </motion.div>
 
-            {/* Volume Chart */}
+            {/* Climate Change Index Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white rounded-2xl p-6 border border-gray-200"
             >
-              <h3 className="text-gray-700 text-sm font-medium mb-4">Monthly Volume</h3>
+              <h3 className="text-gray-700 text-sm font-medium mb-4">Climate Change Index</h3>
               <div className="h-32 flex items-end space-x-2 mb-2">
                 {[40, 60, 45, 80, 65, 90, 75, 85].map((height, index) => (
                   <div
@@ -172,43 +172,47 @@ export default function Dashboard() {
                 ))}
               </div>
               <div className="flex justify-between text-xs text-gray-500">
+                <span>20</span>
+                <span>40</span>
+                <span>60</span>
+                <span>80</span>
+                <span>100</span>
+              </div>
+              <div className="flex justify-between text-xs text-gray-500 mt-2">
                 <span>W1</span>
                 <span>W2</span>
                 <span>W3</span>
                 <span>W4</span>
-                <span>W5</span>
-                <span>W6</span>
-                <span>W7</span>
-                <span>W8</span>
               </div>
             </motion.div>
 
-            {/* Active Users by Region */}
+            {/* Plastic Recycling by Region Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="bg-white rounded-2xl p-6 border border-gray-200"
             >
-              <h3 className="text-gray-700 text-sm font-medium mb-4">Active Users by Region</h3>
+              <h3 className="text-gray-700 text-sm font-medium mb-4">Plastic Recycling by Region</h3>
               <div className="space-y-3">
                 {[
-                  { region: 'North America', users: '2,847+', percentage: '35%' },
-                  { region: 'Europe', users: '1,921+', percentage: '60%' },
-                  { region: 'Asia', users: '3,264+', percentage: '85%' },
-                  { region: 'South America', users: '1,855+', percentage: '25%' }
+                  { region: 'USA', country: 'America', factory: '253+', recycled: '35%' },
+                  { region: 'German', country: 'Europe', factory: '211+', recycled: '60%' },
+                  { region: 'Japan', country: 'Asia', factory: '364+', recycled: '85%' },
+                  { region: 'China', country: 'Asia', factory: '855+', recycled: '25%' }
                 ].map((item, index) => (
                   <div key={index} className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
-                        <span className="text-gray-600 font-bold text-xs">{item.region.charAt(0)}</span>
-                      </div>
+                      <Flag className="w-4 h-4 text-gray-600" />
                       <div>
                         <p className="text-gray-900 font-medium text-sm">{item.region}</p>
-                        <p className="text-gray-500 text-xs">{item.users} users</p>
+                        <p className="text-gray-500 text-xs">{item.country}</p>
                       </div>
                     </div>
-                    <span className="text-gray-700 font-semibold">{item.percentage}</span>
+                    <div className="text-right">
+                      <p className="text-gray-900 font-semibold text-sm">Factory {item.factory}</p>
+                      <p className="text-gray-700 font-semibold">Recycled {item.recycled}</p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -218,93 +222,53 @@ export default function Dashboard() {
           {/* Bottom Row */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             
-            {/* Left Column - Two Cards */}
-            <div className="lg:col-span-4 space-y-6">
-              {/* Total Processed */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-gray-800 rounded-2xl p-6 border border-gray-700"
-              >
-                <h3 className="text-gray-400 text-sm mb-2">Total Processed</h3>
-                <span className="text-3xl font-bold text-white">$967,570</span>
-                <div className="flex items-center space-x-2 mt-2">
-                  <TrendingUp className="w-4 h-4 text-brand-primary" />
-                  <span className="text-brand-primary text-sm">5.3% than last month</span>
-                </div>
-              </motion.div>
-              
-              {/* Transaction Fees */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="bg-gray-800 rounded-2xl p-6 border border-gray-700"
-              >
-                <h3 className="text-gray-400 text-sm mb-2">Transaction Fees</h3>
-                <span className="text-3xl font-bold text-white">$99,681</span>
-                <p className="text-brand-primary text-sm mt-2">20% reduced fees</p>
-                <div className="mt-4 space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <Circle className="w-3 h-3 text-brand-primary" />
-                    <span className="text-gray-400 text-sm">Deposit fees: 1,697</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Circle className="w-3 h-3 text-brand-primary" />
-                    <span className="text-gray-400 text-sm">Withdrawal fees: 913</span>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Transaction Volume */}
+            {/* Global Pollution Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="lg:col-span-8"
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="lg:col-span-12"
             >
-              <div className="bg-white rounded-2xl p-6 border border-gray-200">
+              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-gray-700 text-lg font-semibold">Transaction Volume</h3>
-                  <div className="flex items-center space-x-2">
-                    <select 
-                      value={selectedRegion}
-                      onChange={(e) => setSelectedRegion(e.target.value)}
-                      className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-primary"
-                    >
-                      <option value="All regions">All regions</option>
-                      <option value="North America">North America</option>
-                      <option value="Europe">Europe</option>
-                      <option value="Asia">Asia</option>
-                    </select>
-                    <ChevronDown className="w-4 h-4 text-gray-400" />
-                  </div>
+                  <h3 className="text-white text-lg font-semibold">Global pollution</h3>
+                  <HelpCircle className="w-5 h-5 text-gray-400" />
                 </div>
                 
-                <div className="space-y-4">
-                  {[
-                    { type: 'Deposits', value: '4,167,987', unit: 'transactions' },
-                    { type: 'Withdrawals', value: '2,571,193', unit: 'transactions' },
-                    { type: 'Internal Transfers', value: '1,864,275', unit: 'transactions' }
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-2 h-8 bg-brand-primary rounded-full"></div>
-                        <div>
-                          <p className="text-gray-900 font-medium">{item.type}</p>
-                          <p className="text-gray-500 text-sm">{item.unit}</p>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-gray-900 font-bold text-lg">{item.value}</p>
-                        <div className="w-16 h-8 bg-brand-primary/20 rounded flex items-center justify-center">
-                          <div className="w-12 h-4 bg-brand-primary rounded"></div>
-                        </div>
+                {/* Map representation */}
+                <div className="relative bg-gray-700 rounded-lg p-8 h-64 flex items-center justify-center">
+                  {/* Simple map representation */}
+                  <div className="grid grid-cols-4 gap-4 w-full h-full">
+                    {/* Countries representation */}
+                    <div className="bg-brand-primary/20 rounded p-2 text-center">
+                      <p className="text-xs text-white">Ukraine</p>
+                      <p className="text-xs text-brand-primary">89%</p>
+                    </div>
+                    <div className="bg-brand-primary/20 rounded p-2 text-center">
+                      <p className="text-xs text-white">Germany</p>
+                      <p className="text-xs text-brand-primary">72%</p>
+                    </div>
+                    <div className="bg-brand-primary/20 rounded p-2 text-center">
+                      <p className="text-xs text-white">France</p>
+                      <p className="text-xs text-brand-primary">68%</p>
+                    </div>
+                    <div className="bg-brand-primary/20 rounded p-2 text-center">
+                      <p className="text-xs text-white">UK</p>
+                      <p className="text-xs text-brand-primary">75%</p>
+                    </div>
+                  </div>
+                  
+                  {/* Tooltip for Ukraine */}
+                  <div className="absolute top-4 left-4 bg-white rounded-lg p-3 shadow-lg">
+                    <div className="flex items-center space-x-2">
+                      <TrendingUp className="w-4 h-4 text-brand-primary" />
+                      <div>
+                        <p className="text-gray-900 font-medium text-sm">Ukraine</p>
+                        <p className="text-gray-600 text-xs">High Level</p>
+                        <p className="text-brand-primary font-bold text-sm">89%</p>
                       </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -313,4 +277,5 @@ export default function Dashboard() {
       </div>
     </div>
   )
+}
 }

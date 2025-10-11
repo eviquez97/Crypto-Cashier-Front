@@ -52,7 +52,7 @@ import {
   Wallet,
   Banknote,
   Bitcoin,
-  Ethereum
+  Coins
 } from 'lucide-react'
 import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
@@ -140,7 +140,7 @@ const DashboardPage = () => {
 
   const cryptoAssets = [
     { symbol: 'BTC', name: 'Bitcoin', price: '$43,250', change: '+2.4%', volume: '$1.2B', icon: Bitcoin },
-    { symbol: 'ETH', name: 'Ethereum', price: '$2,680', change: '+1.8%', volume: '$890M', icon: Ethereum },
+    { symbol: 'ETH', name: 'Ethereum', price: '$2,680', change: '+1.8%', volume: '$890M', icon: Coins },
     { symbol: 'USDT', name: 'Tether', price: '$1.00', change: '+0.1%', volume: '$2.1B', icon: DollarSign },
     { symbol: 'USDC', name: 'USD Coin', price: '$1.00', change: '+0.1%', volume: '$1.5B', icon: DollarSign }
   ]

@@ -216,11 +216,11 @@ const DashboardPage = () => {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'completed':
-        return <CheckCircle className="w-4 h-4 text-emerald-500" />
+        return <CheckCircle className="w-4 h-4 text-success-500" />
       case 'processing':
-        return <Clock className="w-4 h-4 text-yellow-500" />
+        return <Clock className="w-4 h-4 text-warning-500" />
       case 'pending':
-        return <AlertCircle className="w-4 h-4 text-orange-500" />
+        return <AlertCircle className="w-4 h-4 text-info-500" />
       default:
         return null
     }
@@ -229,13 +229,13 @@ const DashboardPage = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'completed':
-        return 'text-emerald-500 bg-emerald-500/10 border-emerald-500/20'
+        return 'text-success-500 bg-success-500/10 border-success-500/20'
       case 'processing':
-        return 'text-yellow-500 bg-yellow-500/10 border-yellow-500/20'
+        return 'text-warning-500 bg-warning-500/10 border-warning-500/20'
       case 'pending':
-        return 'text-orange-500 bg-orange-500/10 border-orange-500/20'
+        return 'text-info-500 bg-info-500/10 border-info-500/20'
       default:
-        return 'text-gray-500 bg-gray-500/10 border-gray-500/20'
+        return 'text-text-muted bg-surface-tertiary/50 border-surface-border'
     }
   }
 
@@ -573,10 +573,10 @@ const DashboardPage = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="lg:col-span-3"
           >
-            <div className="bg-brand-teal/5 backdrop-blur-xl rounded-3xl p-6 border border-brand-primary/10 h-full">
+            <div className="bg-surface-secondary rounded-3xl p-6 border border-surface-border h-full">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-display font-bold text-brand-light">Crypto Assets</h3>
-                <button className="p-2 text-brand-light/70 hover:text-brand-primary hover:bg-brand-primary/10 rounded-xl transition-all duration-200">
+                <h3 className="text-xl font-display font-bold text-text-primary">Crypto Assets</h3>
+                <button className="p-2 text-text-secondary hover:text-brand-primary hover:bg-surface-tertiary rounded-xl transition-all duration-200">
                   <Plus className="w-4 h-4" />
                 </button>
               </div>
@@ -588,22 +588,22 @@ const DashboardPage = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex items-center justify-between p-4 bg-brand-dark/30 rounded-2xl border border-brand-primary/10 hover:border-brand-primary/30 transition-all duration-200 cursor-pointer group"
+                    className="flex items-center justify-between p-4 bg-surface-tertiary/50 rounded-2xl border border-surface-border hover:border-brand-primary/30 transition-all duration-200 cursor-pointer group"
                   >
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 bg-brand-primary/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <asset.icon className="w-5 h-5 text-brand-primary" />
                       </div>
                       <div>
-                        <p className="font-semibold text-brand-light">{asset.symbol}</p>
-                        <p className="text-xs text-brand-light/70">{asset.name}</p>
+                        <p className="font-semibold text-text-primary">{asset.symbol}</p>
+                        <p className="text-xs text-text-secondary">{asset.name}</p>
                       </div>
                     </div>
                     
                     <div className="text-right">
-                      <p className="font-semibold text-brand-light">{asset.price}</p>
+                      <p className="font-semibold text-text-primary">{asset.price}</p>
                       <div className="flex items-center space-x-1">
-                        <span className={`text-xs font-medium ${asset.change.startsWith('+') ? 'text-emerald-500' : 'text-red-500'}`}>
+                        <span className={`text-xs font-medium ${asset.change.startsWith('+') ? 'text-success-500' : 'text-error-500'}`}>
                           {asset.change}
                         </span>
                       </div>
@@ -621,35 +621,35 @@ const DashboardPage = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="lg:col-span-6"
           >
-            <div className="bg-brand-teal/5 backdrop-blur-xl rounded-3xl p-6 border border-brand-primary/10 h-full">
+            <div className="bg-surface-secondary rounded-3xl p-6 border border-surface-border h-full">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-4">
-                  <h3 className="text-xl font-display font-bold text-brand-light">Recent Transactions</h3>
+                  <h3 className="text-xl font-display font-bold text-text-primary">Recent Transactions</h3>
                   <div className="flex items-center space-x-2">
                     <button
                       onClick={() => setShowFilters(!showFilters)}
-                      className="p-2 text-brand-light/70 hover:text-brand-primary hover:bg-brand-primary/10 rounded-xl transition-all duration-200"
+                      className="p-2 text-text-secondary hover:text-brand-primary hover:bg-surface-tertiary rounded-xl transition-all duration-200"
                     >
                       <Filter className="w-4 h-4" />
                     </button>
                     <div className="relative">
-                      <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-brand-light/50" />
+                      <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-text-muted" />
                       <input
                         type="text"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="Search transactions..."
-                        className="pl-10 pr-4 py-2 bg-brand-dark/50 border border-brand-primary/20 rounded-xl text-brand-light placeholder-brand-light/50 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 text-sm"
+                        className="pl-10 pr-4 py-2 bg-surface-tertiary border border-surface-border rounded-xl text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200 text-sm"
                       />
                     </div>
                   </div>
                 </div>
                 
                 <div className="flex items-center space-x-2">
-                  <button className="p-2 text-brand-light/70 hover:text-brand-primary hover:bg-brand-primary/10 rounded-xl transition-all duration-200">
+                  <button className="p-2 text-text-secondary hover:text-brand-primary hover:bg-surface-tertiary rounded-xl transition-all duration-200">
                     <Download className="w-4 h-4" />
                   </button>
-                  <button className="text-brand-primary hover:text-brand-light transition-colors text-sm font-medium">
+                  <button className="text-brand-primary hover:text-text-primary transition-colors text-sm font-medium">
                     View All
                   </button>
                 </div>
@@ -662,21 +662,21 @@ const DashboardPage = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
-                    className="flex items-center justify-between p-4 bg-brand-dark/20 rounded-2xl border border-brand-primary/10 hover:border-brand-primary/30 hover:bg-brand-dark/30 transition-all duration-200 cursor-pointer group"
+                    className="flex items-center justify-between p-4 bg-surface-tertiary/30 rounded-2xl border border-surface-border hover:border-brand-primary/30 hover:bg-surface-tertiary transition-all duration-200 cursor-pointer group"
                   >
                     <div className="flex items-center space-x-4">
                       <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${
-                        txn.type === 'deposit' ? 'bg-emerald-500/20' : 'bg-blue-500/20'
+                        txn.type === 'deposit' ? 'bg-success-500/20' : 'bg-info-500/20'
                       } group-hover:scale-110 transition-transform duration-300`}>
                         {txn.type === 'deposit' ? (
-                          <ArrowDownLeft className="w-6 h-6 text-emerald-500" />
+                          <ArrowDownLeft className="w-6 h-6 text-success-500" />
                         ) : (
-                          <ArrowUpRight className="w-6 h-6 text-blue-500" />
+                          <ArrowUpRight className="w-6 h-6 text-info-500" />
                         )}
                       </div>
                       <div>
-                        <p className="font-semibold text-brand-light">{txn.id}</p>
-                        <div className="flex items-center space-x-2 text-xs text-brand-light/70">
+                        <p className="font-semibold text-text-primary">{txn.id}</p>
+                        <div className="flex items-center space-x-2 text-xs text-text-secondary">
                           <span className="capitalize">{txn.type}</span>
                           <span>•</span>
                           <span>{txn.network}</span>
@@ -687,8 +687,8 @@ const DashboardPage = () => {
                     </div>
                     
                     <div className="text-right">
-                      <p className="font-semibold text-brand-light">{txn.amount}</p>
-                      <p className="text-sm text-brand-light/70">{txn.currency}</p>
+                      <p className="font-semibold text-text-primary">{txn.amount}</p>
+                      <p className="text-sm text-text-secondary">{txn.currency}</p>
                     </div>
                     
                     <div className="flex items-center space-x-3">
@@ -698,11 +698,11 @@ const DashboardPage = () => {
                           <span className="capitalize">{txn.status}</span>
                         </div>
                       </div>
-                      <div className="text-right text-xs text-brand-light/70">
+                      <div className="text-right text-xs text-text-secondary">
                         <p>{txn.time}</p>
                         <p>Fee: {txn.fee}</p>
                       </div>
-                      <button className="p-1 text-brand-light/50 hover:text-brand-light transition-colors">
+                      <button className="p-1 text-text-muted hover:text-text-primary transition-colors">
                         <MoreHorizontal className="w-4 h-4" />
                       </button>
                     </div>
@@ -720,27 +720,27 @@ const DashboardPage = () => {
             className="lg:col-span-3 space-y-6"
           >
             {/* System Metrics */}
-            <div className="bg-brand-teal/5 backdrop-blur-xl rounded-3xl p-6 border border-brand-primary/10">
-              <h3 className="text-xl font-display font-bold text-brand-light mb-6">System Health</h3>
+            <div className="bg-surface-secondary rounded-3xl p-6 border border-surface-border">
+              <h3 className="text-xl font-display font-bold text-text-primary mb-6">System Health</h3>
               
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {systemMetrics.map((metric, index) => (
                   <motion.div
                     key={metric.name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex items-center justify-between p-3 bg-brand-dark/20 rounded-xl border border-brand-primary/10"
+                    className="flex items-center justify-between p-3 bg-surface-tertiary/50 rounded-xl border border-surface-border"
                   >
                     <div className="flex items-center space-x-3">
                       <metric.icon className="w-5 h-5 text-brand-primary" />
-                      <span className="text-sm font-medium text-brand-light">{metric.name}</span>
+                      <span className="text-sm font-medium text-text-primary">{metric.name}</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <span className="text-sm font-semibold text-brand-light">{metric.value}</span>
+                      <span className="text-sm font-semibold text-text-primary">{metric.value}</span>
                       <div className={`w-2 h-2 rounded-full ${
-                        metric.status === 'healthy' ? 'bg-emerald-500' : 
-                        metric.status === 'warning' ? 'bg-yellow-500' : 'bg-red-500'
+                        metric.status === 'healthy' ? 'bg-success-500' : 
+                        metric.status === 'warning' ? 'bg-warning-500' : 'bg-error-500'
                       }`}></div>
                     </div>
                   </motion.div>
@@ -749,8 +749,8 @@ const DashboardPage = () => {
             </div>
 
             {/* Alerts */}
-            <div className="bg-brand-teal/5 backdrop-blur-xl rounded-3xl p-6 border border-brand-primary/10">
-              <h3 className="text-xl font-display font-bold text-brand-light mb-6">System Alerts</h3>
+            <div className="bg-surface-secondary rounded-3xl p-6 border border-surface-border">
+              <h3 className="text-xl font-display font-bold text-text-primary mb-6">System Alerts</h3>
               
               <div className="space-y-3">
                 {alerts.map((alert, index) => (
@@ -760,18 +760,18 @@ const DashboardPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     className={`p-3 rounded-xl border ${
-                      alert.type === 'info' ? 'bg-blue-500/10 border-blue-500/20' :
-                      alert.type === 'success' ? 'bg-emerald-500/10 border-emerald-500/20' :
-                      'bg-yellow-500/10 border-yellow-500/20'
+                      alert.type === 'info' ? 'bg-info-500/10 border-info-500/20' :
+                      alert.type === 'success' ? 'bg-success-500/10 border-success-500/20' :
+                      'bg-warning-500/10 border-warning-500/20'
                     }`}
                   >
                     <div className="flex items-start space-x-3">
-                      {alert.type === 'info' && <Info className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />}
-                      {alert.type === 'success' && <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />}
-                      {alert.type === 'warning' && <AlertTriangle className="w-4 h-4 text-yellow-500 mt-0.5 flex-shrink-0" />}
+                      {alert.type === 'info' && <Info className="w-4 h-4 text-info-500 mt-0.5 flex-shrink-0" />}
+                      {alert.type === 'success' && <CheckCircle className="w-4 h-4 text-success-500 mt-0.5 flex-shrink-0" />}
+                      {alert.type === 'warning' && <AlertTriangle className="w-4 h-4 text-warning-500 mt-0.5 flex-shrink-0" />}
                       <div>
-                        <p className="text-sm text-brand-light">{alert.message}</p>
-                        <p className="text-xs text-brand-light/70 mt-1">{alert.time}</p>
+                        <p className="text-sm text-text-primary">{alert.message}</p>
+                        <p className="text-xs text-text-secondary mt-1">{alert.time}</p>
                       </div>
                     </div>
                   </motion.div>

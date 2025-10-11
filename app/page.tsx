@@ -4,6 +4,7 @@ import Navbar from '@/components/layout/Navbar'
 import Hero from '@/components/landing/Hero'
 import KpiBand from '@/components/landing/KpiBand'
 import WhyChoose from '@/components/landing/WhyChoose'
+import TrustIndicators from '@/components/landing/TrustIndicators'
 import PromoLeft from '@/components/landing/PromoLeft'
 import PromoRight from '@/components/landing/PromoRight'
 import Testimonials from '@/components/landing/Testimonials'
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <KpiBand />
       <WhyChoose />
+      <TrustIndicators />
       <PromoLeft />
       <PromoRight />
       <Testimonials />

@@ -3,8 +3,11 @@
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { TrendingUp, TrendingDown } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const CryptoCarousel = () => {
+  const { t } = useTranslation()
+  
   const [cryptoPrices, setCryptoPrices] = useState([
     { symbol: 'BTC', name: 'Bitcoin', price: 45234.56, change: 5.23, logo: '₿' },
     { symbol: 'ETH', name: 'Ethereum', price: 2834.12, change: 3.45, logo: 'Ξ' },

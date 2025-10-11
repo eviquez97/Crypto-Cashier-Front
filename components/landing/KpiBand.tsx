@@ -2,15 +2,17 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const KpiBand = () => {
   const [isVisible, setIsVisible] = useState(false)
+  const { t } = useTranslation()
 
   const kpis = [
-    { value: '10B+', label: 'Processed' },
-    { value: '99.9%', label: 'Uptime' },
+    { value: '10B+', label: t('kpi.volume') },
+    { value: '99.9%', label: t('kpi.uptime') },
     { value: '50+', label: 'Assets' },
-    { value: '200K+', label: 'Customers' },
+    { value: '200K+', label: t('kpi.clients') },
   ]
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 // Export all UI components
 export { default as Table } from './Table'
-export type { TableProps, Column } from './Table'
+export type { TableProps } from './Table'
 
 export { default as Chart } from './Chart'
 export type { ChartProps, ChartType } from './Chart'
@@ -8,7 +8,7 @@ export type { ChartProps, ChartType } from './Chart'
 export { default as Modal } from './Modal'
 export type { ModalProps } from './Modal'
 
-export { default as Toast, ToastProvider, useToast, useToastActions } from './Toast'
+export { ToastProvider, useToast, useToastActions } from './Toast'
 export type { Toast as ToastType, ToastType as ToastVariant } from './Toast'
 
 export { default as Loader, Skeleton, PageLoader } from './Loader'

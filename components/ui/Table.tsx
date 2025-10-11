@@ -3,14 +3,7 @@
 import { motion } from 'framer-motion'
 import { ChevronDown, ChevronUp, ChevronsUpDown, Search } from 'lucide-react'
 import { useState, useMemo } from 'react'
-
-export interface Column<T> {
-  key: string
-  label: string
-  sortable?: boolean
-  render?: (value: any, row: T) => React.ReactNode
-  width?: string
-}
+import type { Column } from '@/lib/types'
 
 export interface TableProps<T> {
   data: T[]

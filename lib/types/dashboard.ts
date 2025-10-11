@@ -2,6 +2,15 @@
 // TIPOS PARA DASHBOARD CASINO / SPORTSBOOK
 // ============================================
 
+// ========== TABLE COLUMN TYPE ==========
+export interface Column<T> {
+  key: string
+  label: string
+  sortable?: boolean
+  render?: (value: any, row: T) => React.ReactNode
+  width?: string
+}
+
 // ========== TRANSACCIONES ==========
 export type TransactionType = 'deposit' | 'withdrawal' | 'fee' | 'conversion' | 'sweep' | 'settlement'
 export type ChainType = 'BTC' | 'ETH' | 'TRON' | 'BEP20' | 'BSC' | 'POLYGON'

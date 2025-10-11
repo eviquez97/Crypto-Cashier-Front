@@ -3,442 +3,293 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { 
-  Plus, ArrowUpRight, Settings, BarChart3, Users, Shield, 
-  Bell, Search, Filter, MoreVertical, ArrowDownLeft, LogOut,
-  TrendingUp, TrendingDown, Activity, DollarSign
+  BarChart3, Search, Settings, Bell, TrendingUp, TrendingDown,
+  Users, Shield, Plus, ArrowUpRight, Filter, MoreVertical,
+  MapPin, Factory, Recycle, Zap, Activity, DollarSign,
+  ChevronDown, Circle, User
 } from 'lucide-react'
-import Link from 'next/link'
 
 export default function Dashboard() {
-  const [activeTab, setActiveTab] = useState('overview')
-  const [selectedTimeframe, setSelectedTimeframe] = useState('24h')
-  const [notifications] = useState(3)
-
-  const timeFrames = [
-    { label: '1H', value: '1h' },
-    { label: '24H', value: '24h' },
-    { label: '7D', value: '7d' }
-  ]
+  const [activeTab, setActiveTab] = useState('dashboard')
+  const [selectedRegion, setSelectedRegion] = useState('All regions')
 
   return (
-    <div className="min-h-screen bg-surface-primary flex">
-      {/* Clean Minimalist Sidebar */}
+    <div className="min-h-screen bg-gray-900 flex">
+      {/* Left Sidebar */}
       <motion.aside
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="w-16 lg:w-64 bg-surface-primary border-r border-surface-border/30 flex flex-col items-center lg:items-start p-3 lg:p-4 sticky top-0 h-screen overflow-y-auto"
+        className="w-64 bg-gray-900 border-r border-gray-800 flex flex-col p-6 sticky top-0 h-screen overflow-y-auto"
       >
-        {/* Minimalist Logo */}
-        <div className="flex items-center space-x-3 mb-12">
-          <div className="w-8 h-8 lg:w-10 lg:h-10 bg-brand-primary rounded-xl flex items-center justify-center">
-            <span className="text-surface-primary font-bold text-sm lg:text-base">CF</span>
-          </div>
-          <div className="hidden lg:block">
-            <h1 className="text-base font-semibold text-text-primary">Coinfixi</h1>
-          </div>
-        </div>
-
-        {/* Quick Actions */}
-        <div className="flex-1 w-full">
-          <h3 className="hidden lg:block text-sm font-semibold text-text-secondary mb-4 uppercase tracking-wider">
-            Quick Actions
-          </h3>
-          
-          <div className="space-y-2">
-            {[
-              { icon: Plus, label: 'Create Deposit' },
-              { icon: ArrowUpRight, label: 'Withdraw' },
-              { icon: Settings, label: 'Settings' },
-              { icon: BarChart3, label: 'Analytics' },
-              { icon: Users, label: 'Users' },
-              { icon: Shield, label: 'Security' }
-            ].map((action, index) => (
-              <motion.button
-                key={action.label}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center justify-center lg:justify-start space-x-3 p-2 lg:p-3 hover:bg-surface-secondary rounded-lg transition-all duration-200 group"
-              >
-                <action.icon className="w-5 h-5 text-text-secondary group-hover:text-brand-primary transition-colors" />
-                <span className="hidden lg:block text-sm font-medium text-text-secondary group-hover:text-text-primary transition-colors">
-                  {action.label}
-                </span>
-              </motion.button>
-            ))}
-          </div>
-        </div>
-
-        {/* Profile */}
-        <div className="w-full flex items-center justify-center lg:justify-start space-x-3 p-2 lg:p-3 hover:bg-surface-secondary rounded-lg transition-all duration-200 group cursor-pointer">
+        {/* Branding */}
+        <div className="flex items-center space-x-3 mb-8">
           <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
-            <span className="text-surface-primary font-bold text-sm">EU</span>
+            <BarChart3 className="w-5 h-5 text-gray-900" />
           </div>
-          <div className="hidden lg:block flex-1 text-left">
-            <p className="text-sm font-medium text-text-primary">Enterprise User</p>
-            <p className="text-xs text-text-secondary">Admin</p>
+          <h1 className="text-xl font-bold text-white">Coinfixi</h1>
+        </div>
+
+        {/* Workspace */}
+        <div className="mb-6">
+          <p className="text-gray-400 text-sm mb-1">Team Workspace</p>
+          <p className="text-brand-primary font-medium">Enterprise</p>
+        </div>
+
+        {/* Search */}
+        <div className="relative mb-8">
+          <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          <input
+            type="text"
+            placeholder="Search for..."
+            className="w-full pl-10 pr-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent"
+          />
+        </div>
+
+        {/* Navigation */}
+        <div className="flex-1">
+          <h3 className="text-gray-400 text-xs uppercase tracking-wider mb-4">NAVIGATION</h3>
+          <nav className="space-y-2">
+            {[
+              { id: 'dashboard', label: 'Dashboard', icon: BarChart3, active: true },
+              { id: 'analytics', label: 'Analytics', icon: Activity },
+              { id: 'team', label: 'Team Structure', icon: Users, badge: '1' },
+              { id: 'reports', label: 'Reports', icon: Shield, badge: 'New' },
+              { id: 'support', label: 'Support', icon: Settings }
+            ].map((item) => (
+              <button
+                key={item.id}
+                onClick={() => setActiveTab(item.id)}
+                className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-left transition-all duration-200 ${
+                  item.active 
+                    ? 'bg-gray-800 text-white' 
+                    : 'text-gray-400 hover:text-white hover:bg-gray-800'
+                }`}
+              >
+                <div className="flex items-center space-x-3">
+                  <item.icon className="w-5 h-5" />
+                  <span className="font-medium">{item.label}</span>
+                </div>
+                {item.badge && (
+                  <span className="bg-brand-primary text-gray-900 text-xs px-2 py-1 rounded-full font-bold">
+                    {item.badge}
+                  </span>
+                )}
+              </button>
+            ))}
+          </nav>
+        </div>
+
+        {/* User Profile */}
+        <div className="border-t border-gray-800 pt-6">
+          <div className="flex items-center space-x-3 mb-4">
+            <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center">
+              <User className="w-4 h-4 text-gray-300" />
+            </div>
+            <div>
+              <p className="text-white font-medium text-sm">Enterprise User</p>
+              <p className="text-gray-400 text-xs">#enterprise-001</p>
+            </div>
           </div>
-          <LogOut className="hidden lg:block w-4 h-4 text-text-secondary group-hover:text-brand-primary transition-colors" />
+          <button className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors">
+            <Settings className="w-4 h-4" />
+            <span className="text-sm">Settings</span>
+          </button>
         </div>
       </motion.aside>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        {/* Clean Header */}
+        {/* Header */}
         <motion.header
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-surface-primary border-b border-surface-border/30 sticky top-0 z-40"
+          className="bg-gray-900 border-b border-gray-800 px-8 py-6"
         >
-          <div className="px-6 py-6">
-            <div className="flex items-center justify-between">
-              {/* Page Title */}
-              <div>
-                <h1 className="text-2xl font-semibold text-text-primary">Overview</h1>
-              </div>
-
-              {/* Search Bar */}
-              <div className="hidden md:flex items-center">
-                <div className="relative">
-                  <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-text-muted" />
-                  <input
-                    type="text"
-                    placeholder="Search"
-                    className="pl-10 pr-4 py-2 bg-surface-secondary border border-surface-border/30 rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-200"
-                  />
+          <div className="flex items-center justify-between">
+            <h1 className="text-3xl font-bold text-white">Dashboard</h1>
+            <div className="flex items-center space-x-4">
+              <button className="relative p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-200">
+                <Bell className="w-5 h-5" />
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-brand-primary rounded-full flex items-center justify-center">
+                  <span className="text-xs font-bold text-gray-900">3</span>
                 </div>
-              </div>
-
-              {/* Header Actions */}
-              <div className="flex items-center space-x-3">
-                {/* Notifications */}
-                <button className="relative p-2 text-text-secondary hover:text-text-primary hover:bg-surface-secondary rounded-lg transition-all duration-200">
-                  <Bell className="w-5 h-5" />
-                  {notifications > 0 && (
-                    <div className="absolute -top-1 -right-1 w-4 h-4 bg-error-500 rounded-full flex items-center justify-center">
-                      <span className="text-xs font-bold text-white text-[10px]">{notifications}</span>
-                    </div>
-                  )}
-                </button>
-
-                {/* Settings */}
-                <button className="p-2 text-text-secondary hover:text-text-primary hover:bg-surface-secondary rounded-lg transition-all duration-200">
-                  <Settings className="w-5 h-5" />
-                </button>
-
-                {/* Profile */}
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
-                    <span className="text-surface-primary font-bold text-sm">EU</span>
-                  </div>
-                  <span className="hidden sm:inline text-sm font-medium text-text-primary">Enterprise User</span>
-                </div>
+              </button>
+              <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
+                <span className="text-gray-900 font-bold text-sm">EU</span>
               </div>
             </div>
           </div>
         </motion.header>
 
         {/* Main Content */}
-        <main className="flex-1 px-6 py-8 overflow-y-auto bg-gray-50">
-          {/* Dashboard Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <main className="flex-1 p-8 bg-gray-900">
+          {/* Top Row */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
             
-            {/* Total Balance Card */}
+            {/* Transaction Success Rate */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="lg:col-span-4"
+              className="bg-gray-800 rounded-2xl p-6 border border-gray-700"
             >
-              <div className="bg-brand-primary rounded-2xl p-6 text-white relative overflow-hidden">
-                <div className="absolute top-4 right-4">
-                  <Plus className="w-6 h-6 text-white/80" />
-                </div>
-                <h3 className="text-white/90 text-sm font-medium mb-2">Total Balance</h3>
-                <h2 className="text-3xl font-bold text-white mb-6">$2,847,392</h2>
-                <div className="flex space-x-3">
-                  <button className="flex-1 bg-white/20 hover:bg-white/30 text-white py-3 px-4 rounded-lg font-medium transition-all duration-200">
-                    Deposit
-                  </button>
-                  <button className="flex-1 bg-white/10 hover:bg-white/20 text-white py-3 px-4 rounded-lg font-medium transition-all duration-200 border border-white/20">
-                    Send
-                  </button>
-                </div>
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-gray-400 text-sm">Transaction Success Rate</h3>
+                <BarChart3 className="w-5 h-5 text-brand-primary" />
+              </div>
+              <div className="mb-4">
+                <span className="text-3xl font-bold text-white">99.7%</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <TrendingDown className="w-4 h-4 text-red-400" />
+                <span className="text-red-400 text-sm">0.2% than last month</span>
               </div>
             </motion.div>
 
-            {/* Volume Graph Card */}
+            {/* Volume Chart */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:col-span-4"
+              className="bg-white rounded-2xl p-6 border border-gray-200"
             >
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900">Volume</h3>
-                  <span className="text-sm font-medium text-success-500">+12.5%</span>
-                </div>
-                <div className="h-32 flex items-end space-x-2">
-                  {[40, 60, 45, 80, 65, 90, 75].map((height, index) => (
-                    <div
-                      key={index}
-                      className="bg-brand-primary/20 rounded-t-sm flex-1 hover:bg-brand-primary/30 transition-colors duration-200"
-                      style={{ height: `${height}%` }}
-                    />
-                  ))}
-                </div>
-                <div className="flex justify-between text-xs text-gray-500 mt-2">
-                  <span>Jan</span>
-                  <span>Feb</span>
-                  <span>Mar</span>
-                  <span>Apr</span>
-                  <span>May</span>
-                  <span>Jun</span>
-                  <span>Jul</span>
-                </div>
+              <h3 className="text-gray-700 text-sm font-medium mb-4">Monthly Volume</h3>
+              <div className="h-32 flex items-end space-x-2">
+                {[40, 60, 45, 80, 65, 90, 75, 85].map((height, index) => (
+                  <div
+                    key={index}
+                    className="bg-brand-primary rounded-t-sm flex-1 hover:bg-brand-primary/80 transition-colors duration-200"
+                    style={{ height: `${height}%` }}
+                  />
+                ))}
+              </div>
+              <div className="flex justify-between text-xs text-gray-500 mt-2">
+                <span>W1</span>
+                <span>W2</span>
+                <span>W3</span>
+                <span>W4</span>
+                <span>W5</span>
+                <span>W6</span>
+                <span>W7</span>
+                <span>W8</span>
               </div>
             </motion.div>
 
-            {/* Crypto Assets Card */}
+            {/* Active Users by Region */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="lg:col-span-4"
+              className="bg-white rounded-2xl p-6 border border-gray-200"
             >
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900">Crypto Assets</h3>
-                  <Plus className="w-5 h-5 text-gray-400" />
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
+              <h3 className="text-gray-700 text-sm font-medium mb-4">Active Users by Region</h3>
+              <div className="space-y-3">
+                {[
+                  { region: 'North America', users: '2,847+', percentage: '35%' },
+                  { region: 'Europe', users: '1,921+', percentage: '60%' },
+                  { region: 'Asia', users: '3,264+', percentage: '85%' },
+                  { region: 'South America', users: '1,855+', percentage: '25%' }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
-                        <span className="text-orange-600 font-bold text-sm">₿</span>
+                      <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                        <span className="text-gray-600 font-bold text-xs">{item.region.charAt(0)}</span>
                       </div>
                       <div>
-                        <p className="font-medium text-gray-900">Bitcoin</p>
-                        <p className="text-sm text-gray-500">BTC</p>
+                        <p className="text-gray-900 font-medium text-sm">{item.region}</p>
+                        <p className="text-gray-500 text-xs">{item.users} users</p>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <p className="font-semibold text-gray-900">$43,250</p>
-                      <p className="text-sm text-success-500">+2.4%</p>
-                    </div>
+                    <span className="text-gray-700 font-semibold">{item.percentage}</span>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                        <span className="text-blue-600 font-bold text-sm">Ξ</span>
-                      </div>
-                      <div>
-                        <p className="font-medium text-gray-900">Ethereum</p>
-                        <p className="text-sm text-gray-500">ETH</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-semibold text-gray-900">$2,680</p>
-                      <p className="text-sm text-success-500">+1.8%</p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </motion.div>
+          </div>
 
-            {/* Success Rate Card */}
+          {/* Bottom Row */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            {/* Investment Metrics */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="lg:col-span-3"
+              className="lg:col-span-4"
             >
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Success Rate</h3>
-                <div className="text-center">
-                  <div className="relative w-24 h-24 mx-auto mb-4">
-                    <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 36 36">
-                      <path
-                        className="text-gray-200"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        fill="none"
-                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      />
-                      <path
-                        className="text-brand-primary"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        strokeDasharray="99.7, 100"
-                        strokeLinecap="round"
-                        fill="none"
-                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-gray-900">99.7%</span>
-                    </div>
+              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700 mb-6">
+                <h3 className="text-gray-400 text-sm mb-2">Total Processed</h3>
+                <span className="text-3xl font-bold text-white">$967,570</span>
+                <div className="flex items-center space-x-2 mt-2">
+                  <TrendingUp className="w-4 h-4 text-brand-primary" />
+                  <span className="text-brand-primary text-sm">5.3% than last month</span>
+                </div>
+              </div>
+              
+              <div className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+                <h3 className="text-gray-400 text-sm mb-2">Transaction Fees</h3>
+                <span className="text-3xl font-bold text-white">$99,681</span>
+                <p className="text-brand-primary text-sm mt-2">20% reduced fees</p>
+                <div className="mt-4 space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <Circle className="w-3 h-3 text-brand-primary" />
+                    <span className="text-gray-400 text-sm">Deposit fees: 1,697</span>
                   </div>
-                  <p className="text-sm text-gray-600">Transaction Success</p>
+                  <div className="flex items-center space-x-2">
+                    <Circle className="w-3 h-3 text-brand-primary" />
+                    <span className="text-gray-400 text-sm">Withdrawal fees: 913</span>
+                  </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Active Users Card */}
+            {/* Transaction Volume */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="lg:col-span-3"
-            >
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Active Users</h3>
-                <div className="text-center">
-                  <div className="relative w-24 h-24 mx-auto mb-4">
-                    <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 36 36">
-                      <path
-                        className="text-gray-200"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        fill="none"
-                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      />
-                      <path
-                        className="text-info-500"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        strokeDasharray="75, 100"
-                        strokeLinecap="round"
-                        fill="none"
-                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-gray-900">75%</span>
-                    </div>
-                  </div>
-                  <p className="text-sm text-gray-600">1,247 Users Online</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Quick Transfer Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="lg:col-span-6"
-            >
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900">Quick Transfer</h3>
-                  <span className="text-sm text-brand-primary cursor-pointer">View all</span>
-                </div>
-                <div className="flex items-center space-x-4 mb-4">
-                  {[
-                    { name: 'GamingCorp', initial: 'G' },
-                    { name: 'BetTech', initial: 'B' },
-                    { name: 'CryptoBet', initial: 'C' },
-                    { name: 'GameFlow', initial: 'G' },
-                    { name: 'BetSecure', initial: 'B' }
-                  ].map((user, index) => (
-                    <div key={index} className="flex flex-col items-center">
-                      <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-2">
-                        <span className="text-gray-600 font-medium text-sm">{user.initial}</span>
-                      </div>
-                      <span className="text-xs text-gray-600">{user.name}</span>
-                    </div>
-                  ))}
-                  <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center">
-                    <Plus className="w-5 h-5 text-brand-primary" />
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-gray-900">$2,760</span>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-sm text-gray-600">USD</span>
-                    <ArrowDownLeft className="w-4 h-4 text-gray-400" />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Recent Transactions Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
               className="lg:col-span-8"
             >
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+              <div className="bg-white rounded-2xl p-6 border border-gray-200">
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-lg font-semibold text-gray-900">Recent Transactions</h3>
+                  <h3 className="text-gray-700 text-lg font-semibold">Transaction Volume</h3>
                   <div className="flex items-center space-x-2">
-                    <button className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-50">
-                      <Filter className="w-5 h-5" />
-                    </button>
-                    <button className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-50">
-                      <MoreVertical className="w-5 h-5" />
-                    </button>
+                    <select 
+                      value={selectedRegion}
+                      onChange={(e) => setSelectedRegion(e.target.value)}
+                      className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                    >
+                      <option value="All regions">All regions</option>
+                      <option value="North America">North America</option>
+                      <option value="Europe">Europe</option>
+                      <option value="Asia">Asia</option>
+                    </select>
+                    <ChevronDown className="w-4 h-4 text-gray-400" />
                   </div>
                 </div>
+                
                 <div className="space-y-4">
                   {[
-                    { name: 'GamingCorp Deposit', amount: '$12,450', date: '14 Apr, 2024', status: 'Completed', statusColor: 'text-success-500' },
-                    { name: 'BetTech Withdrawal', amount: '$8,900', date: '16 Apr, 2024', status: 'Processing', statusColor: 'text-warning-500' },
-                    { name: 'CryptoBet Deposit', amount: '$14,000', date: '26 Apr, 2024', status: 'Completed', statusColor: 'text-success-500' },
-                    { name: 'GameFlow Withdrawal', amount: '$28,000', date: '30 Apr, 2024', status: 'Pending', statusColor: 'text-info-500' }
-                  ].map((transaction, index) => (
-                    <div key={index} className="flex items-center justify-between py-3 border-b border-gray-100 last:border-b-0">
+                    { type: 'Deposits', value: '4,167,987', unit: 'transactions' },
+                    { type: 'Withdrawals', value: '2,571,193', unit: 'transactions' },
+                    { type: 'Internal Transfers', value: '1,864,275', unit: 'transactions' },
+                    { type: 'API Calls', value: '8,643,742', unit: 'calls' }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                       <div className="flex items-center space-x-4">
-                        <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
-                          <span className="text-gray-600 font-medium text-sm">{transaction.name.charAt(0)}</span>
-                        </div>
+                        <div className="w-2 h-8 bg-brand-primary rounded-full"></div>
                         <div>
-                          <p className="font-medium text-gray-900">{transaction.name}</p>
-                          <p className="text-sm text-gray-500">{transaction.date}</p>
+                          <p className="text-gray-900 font-medium">{item.type}</p>
+                          <p className="text-gray-500 text-sm">{item.unit}</p>
                         </div>
                       </div>
-                      <div className="flex items-center space-x-4">
-                        <div className="text-right">
-                          <p className="font-semibold text-gray-900">{transaction.amount}</p>
-                          <p className={`text-sm ${transaction.statusColor}`}>{transaction.status}</p>
+                      <div className="text-right">
+                        <p className="text-gray-900 font-bold text-lg">{item.value}</p>
+                        <div className="w-16 h-8 bg-brand-primary/20 rounded flex items-center justify-center">
+                          <div className="w-12 h-4 bg-brand-primary rounded"></div>
                         </div>
-                        <button className="p-1 text-gray-400 hover:text-gray-600">
-                          <MoreVertical className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-
-            {/* System Health Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="lg:col-span-4"
-            >
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-900 mb-6">System Health</h3>
-                <div className="space-y-4">
-                  {[
-                    { name: 'CPU Usage', value: '23%', color: 'text-success-500' },
-                    { name: 'Memory', value: '67%', color: 'text-warning-500' },
-                    { name: 'Network', value: '45%', color: 'text-success-500' }
-                  ].map((metric, index) => (
-                    <div key={index} className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">{metric.name}</span>
-                      <div className="flex items-center space-x-2">
-                        <span className={`text-sm font-medium ${metric.color}`}>{metric.value}</span>
-                        <div className={`w-2 h-2 rounded-full ${metric.color.replace('text-', 'bg-')}`}></div>
                       </div>
                     </div>
                   ))}

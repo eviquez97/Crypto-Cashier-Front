@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { Loader2 } from 'lucide-react'
 import { ReactNode, ButtonHTMLAttributes } from 'react'
@@ -40,7 +40,17 @@ export default function Button({
   return (
     <button
       disabled={disabled || loading}
-      className={'inline-flex items-center justify-center font-semibold rounded-lg border transition-all duration-200 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#16F98A] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed ' + variantClasses[variant] + ' ' + sizeClasses[size] + ' ' + (fullWidth ? 'w-full' : '') + ' ' + className}
+      className={`
+        inline-flex items-center justify-center
+        font-semibold rounded-lg border
+        transition-all duration-200
+        focus:outline-none focus:ring-2 focus:ring-[#16F98A] focus:ring-offset-2
+        disabled:opacity-50 disabled:cursor-not-allowed
+        ${variantClasses[variant]}
+        ${sizeClasses[size]}
+        ${fullWidth ? 'w-full' : ''}
+        ${className}
+      `}
       {...props}
     >
       {loading && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
@@ -49,3 +59,4 @@ export default function Button({
     </button>
   )
 }
+

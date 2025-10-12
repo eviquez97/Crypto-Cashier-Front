@@ -1,0 +1,89 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const navItems = [
+    { name: 'Home', href: '#' },
+    { name: 'Features', href: '#features' },
+    { name: 'Docs', href: '#docs' },
+    { name: 'Resources', href: '#resources' },
+  ]
+
+  return (
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: 'cubic-bezier(.22,.61,.36,1)' }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled 
+          ? 'bg-base-light/70 backdrop-blur-2xl shadow-2xl border-b border-accent-medium/20' 
+          : 'bg-transparent'
+      }`}
+      style={isScrolled ? {
+        backdropFilter: 'blur(20px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+      } : {}}
+    >
+      <div className="container">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo - Chip redondo brand.neon con "CF" + wordmark */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center space-x-3"
+          >
+            <div className="w-10 h-10 bg-brand-neon rounded-full flex items-center justify-center">
+              <span className="text-base-dark font-bold text-lg">CF</span>
+            </div>
+            <span className="text-text-primary font-display font-bold text-xl">Coinfixi</span>
+          </motion.div>
+
+          {/* Centro: Navigation links */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                whileHover={{ y: -1 }}
+                className="text-text-secondary hover:text-brand-neon transition-colors duration-200 font-medium"
+              >
+                {item.name}
+              </motion.a>
+            ))}
+          </div>
+
+          {/* Derecha: Sign In (outline) + Get Started (neon) */}
+          <div className="flex items-center space-x-4">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-2 border-2 border-gray-700 text-text-primary rounded-xl font-semibold hover:bg-gray-800 hover:border-gray-600 transition-all duration-200"
+            >
+              Sign In
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05, shadow: '0 14px 40px rgba(182,255,0,0.3)' }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-2 bg-brand-neon text-base-dark rounded-xl font-semibold hover:shadow-fintech-hover transition-all duration-200"
+            >
+              Get Started
+            </motion.button>
+          </div>
+        </div>
+      </div>
+    </motion.nav>
+  )
+}
+
+export default Navbar

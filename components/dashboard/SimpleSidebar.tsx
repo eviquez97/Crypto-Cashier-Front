@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Home, CreditCard, Wallet, Users, FileText, Settings, HelpCircle } from 'lucide-react'
+import { Home, CreditCard, Wallet, Users, FileText, Settings, HelpCircle, LogOut } from 'lucide-react'
 
 export default function SimpleSidebar() {
   const pathname = usePathname()
@@ -18,11 +18,25 @@ export default function SimpleSidebar() {
   ]
 
   return (
-    <aside className="fixed left-0 top-0 h-full w-80 bg-[#134338] shadow-xl z-40">
+    <aside 
+      className="fixed left-0 top-0 h-full w-80 bg-[#134338] shadow-2xl z-50"
+      style={{
+        position: 'fixed',
+        left: 0,
+        top: 0,
+        height: '100vh',
+        width: '320px',
+        backgroundColor: '#134338',
+        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+        zIndex: 50,
+        overflowY: 'auto'
+      }}
+    >
+      {/* Header */}
       <div className="p-4 border-b border-[#05220B]">
         <div className="flex items-center space-x-3">
-          <div className="w-8 h-8 bg-[#16F98A] rounded-lg flex items-center justify-center">
-            <span className="text-[#05220B] font-bold text-sm">C</span>
+          <div className="w-10 h-10 bg-[#16F98A] rounded-lg flex items-center justify-center">
+            <span className="text-[#05220B] font-bold text-lg">C</span>
           </div>
           <div>
             <h2 className="text-white font-semibold text-lg">Crypto Cashier</h2>
@@ -31,7 +45,8 @@ export default function SimpleSidebar() {
         </div>
       </div>
 
-      <nav className="p-4 space-y-2">
+      {/* Navigation */}
+      <nav className="flex-1 p-4 space-y-2">
         {menuItems.map((item) => {
           const Icon = item.icon
           const active = pathname === item.href
@@ -40,18 +55,29 @@ export default function SimpleSidebar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`flex items-center space-x-3 px-3 py-3 rounded-lg transition-all duration-200 ${
-                active
-                  ? 'bg-[#16F98A] text-[#05220B]'
-                  : 'text-[#CBD5E1] hover:bg-[#05220B] hover:text-[#16F98A]'
+              className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-[#16F98A]/10 ${
+                active 
+                  ? 'bg-[#16F98A] text-[#05220B]' 
+                  : 'text-[#CBD5E1] hover:text-white'
               }`}
             >
               <Icon size={20} />
-              <span className="font-medium text-sm">{item.title}</span>
+              <span>{item.title}</span>
             </Link>
           )
         })}
       </nav>
+
+      {/* Footer */}
+      <div className="p-4 border-t border-[#05220B]">
+        <Link
+          href="/logout"
+          className="flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium text-red-400 hover:bg-red-400/10 hover:text-red-300 transition-all duration-200"
+        >
+          <LogOut size={20} />
+          <span>Logout</span>
+        </Link>
+      </div>
     </aside>
   )
 }

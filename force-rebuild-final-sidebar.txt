@@ -1,0 +1,8 @@
+Force rebuild for sidebar fix - FINAL DEPLOYMENT
+Timestamp: $(date)
+Changes: Fixed sidebar visibility in Crypto-Cashier-Front (correct directory)
+- Updated z-index to 50 for maximum visibility
+- Added logout button to sidebar
+- Improved styling and hover effects
+- Fixed layout structure
+- This is the ACTUAL frontend that gets deployed to Railway
